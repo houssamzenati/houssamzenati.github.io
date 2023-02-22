@@ -24,14 +24,24 @@ I also like learning Japanese and discovering its heritage, [as you may see here
 <dl>
 <dt>Sequential Counterfactual Risk Minimization</dt>
 <dd>Houssam Zenati, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard</dd>
+<h4>
 <a class="label label-info" href="https://www.w3schools.com/html/">[Paper]</a>
-<a class="label label-info" href="https://github.com/monniert/dti-clustering">[Code]</a>
+<a class="label label-info" href="https://github.com/monniert/dti-clustering">[Code]</a></h4>
 
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
+<dt>Nested Bandits</dt>
+<dd>Matthieu Martin, Panagiotis Mertikopoulos, Thibaud Rahier, Houssam Zenati</dd>
+<dd>International Conference on Machine Learning, 2022</dd>
+<h4>
+<a class="label label-info" href="https://proceedings.mlr.press/v162/martin22a/martin22a.pdf">[Paper]</a>
+<a class="label label-info" href="https://github.com/criteo-research/Nested-Exponential-Weights">[Code]</a></h4>
+
+<dt>Efficient Kernelized UCB for Contextual Bandits </dt>
+<dd>Houssam Zenati, Alberto Bietti, Eustache Diemert, Julien Mairal, Matthieu Martin, Pierre Gaillard</dd>
+<dd>International Conference on Artificial Intelligence and Statistics, 2022</dd>
+<h4>
+<a class="label label-info" href="https://proceedings.mlr.press/v151/zenati22a.html">[Paper]</a>
+<a class="label label-info" href="https://github.com/criteo-research/Efficient-Kernel-UCB">[Code]</a></h4>
+
+
 </dl>
 
