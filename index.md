@@ -80,7 +80,7 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 <dd>International Conference on Medical Image
 Computing and Computer Assisted Intervention Workshop, 2019</dd>
 <h4>
-<a class="label label-info" href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[Paper]</a>
+<a class="label label-info" href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[Paper]</a></h4>
 
 
 <dt>Semi-Supervised Deep Learning for Abnormality Classification in Retinal Images</dt>
@@ -88,6 +88,7 @@ Computing and Computer Assisted Intervention Workshop, 2019</dd>
 <dd>Neural Information Processing Systems, ML4H Workshop 2018</dd>
 <h4>
 <a class="label label-info" href="https://arxiv.org/pdf/1812.07832.pdf">[Paper]</a>
+</h4>
 
 <dt>Semi-Supervised Learning With GANs: Revisiting Manifold Regularization</dt>
 <dd>Bruno Lecouat, Chuan Sheng Foo, Houssam Zenati, Vijay Chandrasekhar</dd>
@@ -100,8 +101,6 @@ Computing and Computer Assisted Intervention Workshop, 2019</dd>
 <dd>Houssam Zenati, Bruno Lecouat, Chuan Sheng Foo, Gaurav Manek, Vijay Chandrasekhar</dd>
 <h4>
 <a class="label label-info" href="https://arxiv.org/pdf/1802.06222.pdf">[Paper]</a>
-<a class="label label-info" href="https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection">[Code]</a></h4>
-
-
-
+<a class="label label-info" href="https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection">[Code]</a>
+</h4>
 </dl>
