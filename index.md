@@ -24,6 +24,9 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 <dl>
 <dt>Sequential Counterfactual Risk Minimization</dt>
 <dd>Houssam Zenati, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard</dd>
+<h4>
+<a class="label label-info" href="https://arxiv.org/pdf/2302.12120.pdf">[Paper]</a>
+<a class="label label-info" href="https://github.com/criteo-research/sequential-conterfactual-risk-minimization">[Code]</a></h4>
 
 <dt>Nested Bandits</dt>
 <dd>Matthieu Martin, Panagiotis Mertikopoulos, Thibaud Rahier, Houssam Zenati</dd>
