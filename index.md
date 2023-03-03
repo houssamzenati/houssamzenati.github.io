@@ -10,16 +10,16 @@ Previously, I also worked at the [Institute for Infocomm Research](https://www.a
 
 I also like hiking, traveling and learning Japanese, [as you may see here](./another-page.html).
 
-## News
+# News
 
 * July 2022: I am attending **ICML22** and will be presenting a poster, see you in _Baltimore_!
 * July 2022: I am attending the **EEML** summer school in Lithuania, see you in _Vilnius_!
 
 
-## Publications
+# Publications
 
 
-### Conference papers
+## _Conference papers_
 
 <dl>
 <dt>Sequential Counterfactual Risk Minimization</dt>
@@ -65,7 +65,7 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 
 </dl>
 
-### Workshop papers
+## _Workshop papers_
 
 
 <dl>
