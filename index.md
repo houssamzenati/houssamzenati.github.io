@@ -14,6 +14,7 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 
 # News
 
+* May 2023: SCRM paper is accepted to ICML23!
 * July 2022: I am attending **ICML22** and will be presenting a poster, see you in _Baltimore_!
 * July 2022: I am attending the **EEML** summer school in Lithuania, see you in _Vilnius_!
 
