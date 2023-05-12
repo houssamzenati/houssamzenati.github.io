@@ -8,6 +8,8 @@ Prior to that, I received a M.Eng. degree in applied mathematics and computer sc
 
 Previously, I also worked at the [Institute for Infocomm Research](https://www.a-star.edu.sg/i2r) under the supervision of [Chuan-Sheng Foo](http://ai.stanford.edu/~csfoo/) and [Vijay Chandrasekhar](https://scholar.google.com/citations?user=KUt4JCAAAAAJ&hl=en).
 
+You can find my CV [here](https://github.com/houssamzenati/houssamzenati.github.io/CV_Houssam_Zenati.pdf).
+
 I also like hiking, traveling and learning Japanese, [as you may see here](./another-page.html).
 
 # News
