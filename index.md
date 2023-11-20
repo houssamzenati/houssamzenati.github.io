@@ -2,7 +2,11 @@
 layout: default
 ---
 
-I am a final year PhD student at [INRIA Thoth](https://team.inria.fr/thoth/) under the supervision of [Julien Mairal](https://lear.inrialpes.fr/people/mairal/) and [Pierre Gaillard](http://pierre.gaillard.me/). I also belong to the causal inference research group in the [Criteo AI Lab](https://ailab.criteo.com/research-team/). My research interests lie in the interface of counterfactual reasoning and online learning algorithms. 
+I am postdoc at the [INRIA Mind](https://team.inria.fr/mind/) and [INRIA Soda](https://team.inria.fr/soda/) teams working with [Bertrand Thirion](https://pages.saclay.inria.fr/bertrand.thirion/), [Judith Abecassis](https://judithabk6.github.io/) and [Julie Josse](https://juliejosse.com/) at the [INRIA PreMedical](https://team.inria.fr/premedical/) team.
+
+My thesis manuscript was on [Efficient methods in counterfactual policy learning and sequential decision making]({{site.baseurl}}{% link phd_manuscript.pdf %}).
+
+I did my PhD at [INRIA Thoth](https://team.inria.fr/thoth/) under the supervision of [Julien Mairal](https://lear.inrialpes.fr/people/mairal/) and [Pierre Gaillard](http://pierre.gaillard.me/) in collaboration with the causal inference research group at the [Criteo AI Lab](https://ailab.criteo.com/research-team/). My research interests lie in the interface of counterfactual reasoning and online learning algorithms.
 
 Prior to that, I received a M.Eng. degree in applied mathematics and computer science from [CentraleSupelec](https://www.centralesupelec.fr/) as well as the [MVA](https://www.master-mva.com/) M.Sc. degree from [ENS Paris-Saclay](https://ens-paris-saclay.fr/).
 
