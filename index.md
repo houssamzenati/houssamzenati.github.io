@@ -34,7 +34,7 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 <dd> Houssam Zenati, Judith Abecassis, Julie Josse, and Bertrand Thirion.</dd>
 <dd> International Conference on Artificial Intelligence and Statistics, 2025</dd>
 <h4>
-<a class="label label-info" href="https://arxiv.org/pdf/2402.15171">[Paper]</a>
+<a class="label label-info" href="https://arxiv.org/pdf/2402.15171">[Paper]</a></h4>
 
 
 <dl>
@@ -43,7 +43,7 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 <dd> Julien Zhou, Thibaud Rahier, Julyan Arbel, Houssam Zenati, and Pierre Gaillard.</dd>
 <dd> Neural Information Processing Systems, 2024</dd>
 <h4>
-<a class="label label-info" href="https://arxiv.org/pdf/2402.15171">[Paper]</a>
+<a class="label label-info" href="https://arxiv.org/pdf/2402.15171">[Paper]</a></h4>
 
 <dl>
 <dt>Sequential Counterfactual Risk Minimization</dt>
