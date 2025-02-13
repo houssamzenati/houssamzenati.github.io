@@ -2,7 +2,9 @@
 layout: default
 ---
 
-I am postdoc at the [INRIA Mind](https://team.inria.fr/mind/) and [INRIA Soda](https://team.inria.fr/soda/) teams working with [Bertrand Thirion](https://pages.saclay.inria.fr/bertrand.thirion/), [Judith Abecassis](https://judithabk6.github.io/) and [Julie Josse](https://juliejosse.com/) at the [INRIA PreMedical](https://team.inria.fr/premedical/) team.
+I am a Research Fellow at the [Gatbsy Computationaly Neuroscience Unit](https://www.ucl.ac.uk/gatsby/) at the [Univeristy College of London](https://www.ucl.ac.uk/) working under the supervision of [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/).
+
+Prior to that, I was postdoc at the [INRIA Mind](https://team.inria.fr/mind/) working with [Bertrand Thirion](https://pages.saclay.inria.fr/bertrand.thirion/), [Judith Abecassis](https://judithabk6.github.io/) and [Julie Josse](https://juliejosse.com/) at the [INRIA PreMedical](https://team.inria.fr/premedical/) team.
 
 My thesis manuscript was on [Efficient methods in counterfactual policy learning and sequential decision making]({{site.baseurl}}{% link phd_manuscript.pdf %}).
 
@@ -18,16 +20,30 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 
 # News
 
-* Nov 2023: I started to work at the INRIA Mind team with Bertrand and Judith!
-* May 2023: SCRM paper is accepted to ICML23!
-* July 2022: I am attending **ICML22** and will be presenting a poster, see you in _Baltimore_!
-* July 2022: I am attending the **EEML** summer school in Lithuania, see you in _Vilnius_!
+* Janv 2025: My work on mediation analysis with continuous treatment has been accepted at AISTATS2025!
+* Janv 2025: I have to work at Gatbsy with Arthur!
 
 
 # Publications
 
 
 ## _Conference papers_
+
+<dl>
+<dt>Double Debiased Machine Learning for Mediation Analysis with Continuous Treatments</dt>
+<dd> Houssam Zenati, Judith Abecassis, Julie Josse, and Bertrand Thirion.</dd>
+<dd> International Conference on Artificial Intelligence and Statistics, 2025</dd>
+<h4>
+<a class="label label-info" href="https://arxiv.org/pdf/2402.15171">[Paper]</a>
+
+
+<dl>
+<dt>Towards Efficient and Optimal Covariance-Adaptive
+Algorithms for Combinatorial Semi-Bandits</dt>
+<dd> Julien Zhou, Thibaud Rahier, Julyan Arbel, Houssam Zenati, and Pierre Gaillard.</dd>
+<dd> Neural Information Processing Systems, 2024</dd>
+<h4>
+<a class="label label-info" href="https://arxiv.org/pdf/2402.15171">[Paper]</a>
 
 <dl>
 <dt>Sequential Counterfactual Risk Minimization</dt>
