@@ -2,7 +2,7 @@
 layout: default
 ---
 
-I am a Research Fellow at the [Gatbsy Computationaly Neuroscience Unit](https://www.ucl.ac.uk/gatsby/) at the [Univeristy College of London](https://www.ucl.ac.uk/) working under the supervision of [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/).
+I am a Research Fellow at the [Gatbsy Computationaly Neuroscience Unit](https://www.ucl.ac.uk/gatsby/) at the [University College of London](https://www.ucl.ac.uk/) working under the supervision of [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/).
 
 Prior to that, I was postdoc at the [INRIA Mind](https://team.inria.fr/mind/) working with [Bertrand Thirion](https://pages.saclay.inria.fr/bertrand.thirion/), [Judith Abecassis](https://judithabk6.github.io/) and [Julie Josse](https://juliejosse.com/) at the [INRIA PreMedical](https://team.inria.fr/premedical/) team.
 
