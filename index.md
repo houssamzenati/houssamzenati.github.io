@@ -30,6 +30,7 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 
 ## _Journal papers_
 
+<dl>
 <dt>Counterfactual Learning of Stochastic Policies with Continuous Actions </dt>
 <dd>Houssam Zenati, Alberto Bietti, Matthieu Martin, Eustache Diemert, Pierre Gaillard, Julien Mairal</dd>
 <dd> Transactions on Machine Learning Research, 2025</dd>
@@ -45,7 +46,6 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 <dd> International Conference on Artificial Intelligence and Statistics, 2025</dd>
 <h4>
 <a class="label label-info" href="https://arxiv.org/pdf/2402.15171">[Paper]</a></h4>
-
 
 <dl>
 <dt>Towards Efficient and Optimal Covariance-Adaptive
@@ -63,6 +63,7 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 <a class="label label-info" href="https://arxiv.org/pdf/2302.12120.pdf">[Paper]</a>
 <a class="label label-info" href="https://github.com/criteo-research/sequential-conterfactual-risk-minimization">[Code]</a></h4>
 
+<dl>
 <dt>Nested Bandits</dt>
 <dd>Matthieu Martin, Panagiotis Mertikopoulos, Thibaud Rahier, Houssam Zenati</dd>
 <dd>International Conference on Machine Learning, 2022</dd>
@@ -70,6 +71,7 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 <a class="label label-info" href="https://proceedings.mlr.press/v162/martin22a/martin22a.pdf">[Paper]</a>
 <a class="label label-info" href="https://github.com/criteo-research/Nested-Exponential-Weights">[Code]</a></h4>
 
+<dl>
 <dt>Efficient Kernelized UCB for Contextual Bandits </dt>
 <dd>Houssam Zenati, Alberto Bietti, Eustache Diemert, Julien Mairal, Matthieu Martin, Pierre Gaillard</dd>
 <dd>International Conference on Artificial Intelligence and Statistics, 2022</dd>
@@ -77,7 +79,7 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 <a class="label label-info" href="https://proceedings.mlr.press/v151/zenati22a.html">[Paper]</a>
 <a class="label label-info" href="https://github.com/criteo-research/Efficient-Kernel-UCB">[Code]</a></h4>
 
-
+<dl>
 <dt>Optimistic mirror descent in saddle-point problems: Going the extra (gradient) mile </dt>
 <dd>Panagiotis Mertikopoulos, Bruno Lecouat, Houssam Zenati, Chuan-Sheng Foo, Vijay Chandrasekhar and Georgios Piliouras</dd>
 <dd>International Conference on Learning Representation, 2019</dd>
@@ -85,6 +87,7 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 <a class="label label-info" href="https://openreview.net/pdf?id=Bkg8jjC9KQ">[Paper]</a>
 </h4>
 
+<dl>
 <dt>Adversarially Learned Anomaly Detection </dt>
 <dd>Houssam Zenati, Manon Romain, Chuan-Sheng Foo, Bruno Lecouat, Vijay Chandrasekhar</dd>
 <dd>International Conference on Data Mining, 2019</dd>
@@ -96,7 +99,6 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 ## _Workshop papers_
 
 <dl>
-
 <dt>Optimization approaches for counterfactual risk minimization with continuous actions</dt>
 <dd>Houssam Zenati, Alberto Bietti, Matthieu Martin, Eustache Diemert, Julien Mairal</dd>
 <dd>International Conference on Learning Representation, Causal Learning for Decision Making Workshop, 2020</dd>
