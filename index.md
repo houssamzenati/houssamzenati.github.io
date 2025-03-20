@@ -20,12 +20,22 @@ I also like hiking, traveling and learning Japanese, [as you may see here](./ano
 
 # News
 
-* Janv 2025: My work on mediation analysis with continuous treatment has been accepted at AISTATS2025!
-* Janv 2025: I have to work at Gatbsy with Arthur!
+* Feb 2025: My work on counterfactual policy learning with continuous actions has been accepted at TMLR!
+* Janv 2025: My work on mediation analysis with continuous treatments has been accepted at AISTATS2025!
+* Janv 2025: I have been given the opportunity to work at Gatbsy!
 
 
 # Publications
 
+
+## _Journal papers_
+
+<dt>Counterfactual Learning of Stochastic Policies with Continuous Actions </dt>
+<dd>Houssam Zenati, Alberto Bietti, Matthieu Martin, Eustache Diemert, Pierre Gaillard, Julien Mairal</dd>
+<dd> Transactions on Machine Learning Research, 2025</dd>
+<h4>
+<a class="label label-info" href="https://arxiv.org/pdf/2004.11722.pdf">[Paper]</a>
+<a class="label label-info" href="https://github.com/criteo-research/optimization-continuous-action-crm">[Code]</a></h4>
 
 ## _Conference papers_
 
@@ -67,11 +77,6 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 <a class="label label-info" href="https://proceedings.mlr.press/v151/zenati22a.html">[Paper]</a>
 <a class="label label-info" href="https://github.com/criteo-research/Efficient-Kernel-UCB">[Code]</a></h4>
 
-<dt>Counterfactual Learning of Stochastic Policies with Continuous Actions: from Models to Offline Evaluation </dt>
-<dd>Houssam Zenati, Alberto Bietti, Matthieu Martin, Eustache Diemert, Pierre Gaillard, Julien Mairal</dd>
-<h4>
-<a class="label label-info" href="https://arxiv.org/pdf/2004.11722.pdf">[Paper]</a>
-<a class="label label-info" href="https://github.com/criteo-research/optimization-continuous-action-crm">[Code]</a></h4>
 
 <dt>Optimistic mirror descent in saddle-point problems: Going the extra (gradient) mile </dt>
 <dd>Panagiotis Mertikopoulos, Bruno Lecouat, Houssam Zenati, Chuan-Sheng Foo, Vijay Chandrasekhar and Georgios Piliouras</dd>
@@ -88,10 +93,7 @@ Algorithms for Combinatorial Semi-Bandits</dt>
 <a class="label label-info" href="https://github.com/houssamzenati/Adversarially-Learned-Anomaly-Detection">[Code]</a></h4>
 
 
-</dl>
-
 ## _Workshop papers_
-
 
 <dl>
 
