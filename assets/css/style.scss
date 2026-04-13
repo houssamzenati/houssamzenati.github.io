@@ -19,29 +19,25 @@ body {
 }
 
 .wrapper {
+  align-items: start;
+  column-gap: 40px;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
   width: min(1100px, calc(100% - 48px));
   margin: 36px auto 48px;
-  overflow: auto;
 }
 
 header {
   box-sizing: border-box;
-  float: left;
-  padding-right: 40px;
   position: static;
-  width: 260px;
+  width: auto;
 }
 
 section {
   box-sizing: border-box;
-  float: right;
   margin-top: 0;
   padding: 0;
-  width: calc(100% - 300px);
-}
-
-footer {
-  display: none;
+  width: auto;
 }
 
 .profile-photo {
@@ -202,14 +198,13 @@ blockquote {
 
 @media screen and (max-width: 960px) {
   .wrapper {
+    display: block;
     width: min(100% - 28px, 760px);
     margin: 22px auto 40px;
-    overflow: visible;
   }
 
   header,
   section {
-    float: none;
     position: static;
     width: 100%;
   }
