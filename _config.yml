@@ -1,7 +1,7 @@
 title: Houssam Zenati
 logo: /assets/img/houssam.jpg
-description: Personal webpage.
-show_downloads: true
+description: Research Fellow.
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
 remote_theme: pages-themes/minimal@v0.2.0
