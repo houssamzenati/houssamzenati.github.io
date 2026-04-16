@@ -26,7 +26,8 @@ My thesis manuscript is available <a href="{{ site.baseurl }}{% link phd_manuscr
 
 - **Fast Best-in-Class Regret for Contextual Bandits**  
   S. Girard, A. Bibaut, A. Gretton, N. Kallus, H. Zenati.  
-  *Preprint*, 2026.
+  *Preprint*, 2026.  
+  [[arXiv]](https://arxiv.org/pdf/2510.15483)
 
 - **Efficient Inference after Directionally Stable Adaptive Experiments**  
   Z. Shen, H. Zenati, N. Kallus, A. Gretton, K. Khamaru, A. Bibaut.  
