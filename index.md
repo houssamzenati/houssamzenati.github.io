@@ -16,7 +16,7 @@ Before joining UCL, I was a postdoctoral researcher at <a href="https://team.inr
 
 Prior to that, I received an M.Eng. degree in applied mathematics and computer science from <a href="https://www.centralesupelec.fr/">CentraleSupelec</a> and an M.Sc. degree from the <a href="https://www.master-mva.com/">MVA</a> program at <a href="https://ens-paris-saclay.fr/">ENS Paris-Saclay</a>. I also worked at the <a href="https://www.a-star.edu.sg/i2r">Institute for Infocomm Research</a> under the supervision of <a href="http://ai.stanford.edu/~csfoo/">Chuan-Sheng Foo</a> and <a href="https://scholar.google.com/citations?user=KUt4JCAAAAAJ&hl=en">Vijay Chandrasekhar</a>.
 
-My thesis manuscript is available <a href="{{ site.baseurl }}{% link phd_manuscript.pdf %}">here</a>, and my CV is available <a href="{{ site.baseurl }}{% link CV_Houssam_Zenati.pdf %}">here</a>.
+My thesis manuscript is available <a href="{{ site.baseurl }}{% link phd_manuscript.pdf %}">here</a>, and my CV is available <a href="{{ "/CV_site/main.pdf" | relative_url }}">here</a>.
 
 ## News
 
