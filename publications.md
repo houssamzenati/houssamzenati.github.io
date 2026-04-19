@@ -72,6 +72,11 @@ permalink: /publications/
 
 ## Policy Learning from Logged and Redeployed Data
 
+- **Functional Natural Policy Gradients**  
+  Aurelien Bibaut, Houssam Zenati, Thibaud Rahier, Nathan Kallus.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2603.28681)
+
 - **Counterfactual Learning of Stochastic Policies with Continuous Actions**  
   Houssam Zenati, Alberto Bietti, Matthieu Martin, Eustache Diemert, Pierre Gaillard, Julien Mairal.  
   *Transactions on Machine Learning Research*, 2025.  
