@@ -38,6 +38,11 @@ permalink: /publications/
 
 ## Causal Inference
 
+- **Instrumental Variable Analysis Without Structural Equations**  
+  Zikai Shen, Dimitri Meunier, Houssam Zenati, Arthur Gretton, Nathan Kallus, Aurelien Bibaut.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2604.24660)
+
 - **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**  
   Houssam Zenati, Bariscan Bozkurt, Arthur Gretton.  
   *NeurIPS*, 2025.  
