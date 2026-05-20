@@ -38,6 +38,20 @@ permalink: /publications/
 
 ## Causal Inference
 
+- **Semiparametric Efficient Bilevel Gradient Estimation**  
+  Fares El Khoury*, Houssam Zenati*, Nathan Kallus, Michael Arbel, Aurelien Bibaut.  
+  *Preprint*, 2026.
+
+- **Doubly Robust Proxy Causal Learning with Neural Mean Embeddings**  
+  Bariscan Bozkurt, Alexandre Galashov, Dimitri Meunier, Zikai Shen, Arthur Gretton, Houssam Zenati.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2605.09514)
+
+- **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
+  Houssam Zenati, Arthur Gretton.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2605.08034)
+
 - **Instrumental Variable Analysis Without Structural Equations**  
   Zikai Shen, Dimitri Meunier, Houssam Zenati, Arthur Gretton, Nathan Kallus, Aurelien Bibaut.  
   *Preprint*, 2026.  
