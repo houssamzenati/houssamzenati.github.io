@@ -8,7 +8,7 @@ permalink: /publications/
 
 - **Fast Best-in-Class Regret for Contextual Bandits**  
   Samuel Girard, Aurelien Bibaut, Arthur Gretton, Nathan Kallus, Houssam Zenati.  
-  *Preprint*, 2026.  
+  *UAI*, 2026.  
   [[Paper]](https://arxiv.org/abs/2510.15483)
 
 - **Sequential Counterfactual Risk Minimization**  
