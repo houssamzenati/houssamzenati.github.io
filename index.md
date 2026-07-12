@@ -20,7 +20,8 @@ My thesis manuscript is available <a href="{{ site.baseurl }}{% link phd_manuscr
 
 ## News
 
-- **Jan 2026:** One paper accepted at AISTATS 2026!
+- **June 2026:** Organized the Advances on Adaptive Experimentation (AAE) Workshop at the Gatsby Unit, UCL.
+- **June 2026:** Our paper **Fast Best-in-Class Regret for Contextual Bandits** was accepted at UAI 2026.
 
 ## Selected Publications
 
