@@ -166,15 +166,15 @@ My research develops statistical theory and algorithms for these interfaces. I s
 
   <div class="research-block-content">
     <p>
-      I develop statistical and algorithmic foundations for policy learning across fully online, batched-online, and offline contextual-bandit settings. In online contextual bandits, I study both value-based methods, which model conditional rewards, and policy-based methods, which compete directly with the best policy in a class without reward-model realizability. I made nonparametric kernel value-based learning computationally scalable through incremental Nystr&ouml;m approximations <a href="https://proceedings.mlr.press/v151/zenati22a.html">[PL2]</a>. On the policy-based side, I introduced in Sequential CRM a H&ouml;lderian error-bound principle linking policy suboptimality to importance-weight variance. Combined with variance-sensitive updates and limited redeployment, this yields fast excess-risk and regret rates for parametric policy classes <a href="https://arxiv.org/pdf/2302.12120.pdf">[PL4]</a>. I then extended this principle to fully online, agnostic learning over rich nonparametric classes: O2PL establishes the first fast best-in-class regret rates, including nonparametric classes <a href="https://arxiv.org/abs/2510.15483">[PL7]</a>.
+      I develop statistical and algorithmic foundations for policy learning across fully online, batched-online, and offline contextual-bandit settings. From fixed logged data, I first studied direct policy optimization with continuous actions, using smooth importance-weighted objectives and proximal methods to stabilize a nonconvex learning problem <a href="https://causalrlworkshop.github.io/program/cldm_6.html">[PL1]</a>. In online contextual bandits, I then made nonparametric value-based learning computationally scalable through incremental Nystr&ouml;m approximations <a href="https://proceedings.mlr.press/v151/zenati22a.html">[PL2]</a>, and studied how hierarchical similarities between actions can reduce the effective complexity of exploration <a href="https://proceedings.mlr.press/v162/martin22a/martin22a.pdf">[PL3]</a>.
     </p>
 
     <p>
-      From fixed logged data, I developed methods for learning stochastic policies with continuous actions. I first addressed the resulting nonconvex optimization problem through smooth importance weighting and proximal methods <a href="https://causalrlworkshop.github.io/program/cldm_6.html">[PL1]</a>, then completed the pipeline with joint context&ndash;action kernel models and principled offline model selection and evaluation <a href="https://arxiv.org/pdf/2004.11722.pdf">[PL6]</a>. My recent work introduces a semiparametric natural-gradient construction that debiases the learned policy itself, rather than merely estimating or optimizing a debiased policy value <a href="https://arxiv.org/pdf/2603.28681">[PL8]</a>.
+      On the policy-based side, I introduced in Sequential CRM a H&ouml;lderian error-bound principle linking policy suboptimality to importance-weight variance. Combined with variance-sensitive updates and limited redeployment, this yields fast excess-risk and regret rates for parametric policy classes <a href="https://arxiv.org/pdf/2302.12120.pdf">[PL4]</a>. I also studied how covariance information revealed by semi-bandit observations can improve online exploration <a href="https://arxiv.org/pdf/2402.15171">[PL5]</a>. Returning to offline continuous-action learning, I completed the pipeline with joint context&ndash;action kernel models and principled offline model selection and evaluation <a href="https://arxiv.org/pdf/2004.11722.pdf">[PL6]</a>.
     </p>
 
     <p>
-      Complementing this contextual-bandit programme, I studied how structure in the decision space can reduce the effective complexity of online exploration: through hierarchical similarities between actions <a href="https://proceedings.mlr.press/v162/martin22a/martin22a.pdf">[PL3]</a> and covariance information revealed by semi-bandit observations <a href="https://arxiv.org/pdf/2402.15171">[PL5]</a>. Building on these foundations, my recent work asks:
+      Building on these foundations, my recent work extends the fast-rate principle to fully online, agnostic learning over rich nonparametric policy classes: O2PL establishes the first fast best-in-class regret rates in this setting <a href="https://arxiv.org/abs/2510.15483">[PL7]</a>. I also introduce a semiparametric natural-gradient construction that debiases the learned policy itself, rather than merely estimating or optimizing a debiased policy value <a href="https://arxiv.org/pdf/2603.28681">[PL8]</a>. This recent work asks:
     </p>
 
     <div class="research-questions">
@@ -226,15 +226,15 @@ My research develops statistical theory and algorithms for these interfaces. I s
 
   <div class="research-block-content">
     <p>
-      My earlier work in adversarial learning first focused on generative representation learning for anomaly detection and semi-supervised prediction. I initiated and led a line of work that made GAN-based anomaly detection practical at test time. I introduced an amortized detector that replaced the costly per-example latent optimization used by earlier GAN methods with direct encoder-based inference, achieving state-of-the-art results while reducing test-time computation by several hundred-fold <a href="https://arxiv.org/pdf/1802.06222.pdf">[AR1]</a>. I then developed ALAD, strengthening bidirectional adversarial learning with data- and latent-space cycle consistency, spectral normalization, and discriminator-based representations to improve anomaly detection across image and tabular benchmarks <a href="https://arxiv.org/pdf/1812.02288.pdf">[AR4]</a>. This line of work became a widely cited reference point in generative anomaly detection, and ALAD was subsequently used beyond the original benchmarks.
+      My earlier work in adversarial learning first focused on generative representation learning for anomaly detection and semi-supervised prediction. I initiated and led a line of work that made GAN-based anomaly detection practical at test time. I introduced an amortized detector that replaced the costly per-example latent optimization used by earlier GAN methods with direct encoder-based inference, achieving state-of-the-art results while reducing test-time computation by several hundred-fold <a href="https://arxiv.org/pdf/1802.06222.pdf">[AR1]</a>. I also contributed to work showing how GANs can encode data-manifold geometry through a Monte Carlo approximation of Laplacian regularization for semi-supervised learning <a href="https://arxiv.org/pdf/1805.08957.pdf">[AR2]</a>, <a href="https://arxiv.org/abs/1807.04307">[AR3]</a>.
     </p>
 
     <p>
-      I also contributed to work showing how GANs can encode data-manifold geometry through a Monte Carlo approximation of Laplacian regularization for semi-supervised learning <a href="https://arxiv.org/pdf/1805.08957.pdf">[AR2]</a>, <a href="https://arxiv.org/abs/1807.04307">[AR3]</a>, and to studies using semi-supervised and unsupervised representation learning to reduce reliance on expert annotations in retinal imaging <a href="https://arxiv.org/pdf/1812.07832.pdf">[AR5]</a>, <a href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[AR7]</a>.
+      I then developed ALAD, strengthening bidirectional adversarial learning with data- and latent-space cycle consistency, spectral normalization, and discriminator-based representations to improve anomaly detection across image and tabular benchmarks <a href="https://arxiv.org/pdf/1812.02288.pdf">[AR4]</a>. In retinal imaging, I applied semi-supervised representation learning to reduce reliance on expert annotations for abnormality classification <a href="https://arxiv.org/pdf/1812.07832.pdf">[AR5]</a>. This line of work became a widely cited reference point in generative anomaly detection, and ALAD was subsequently used beyond the original benchmarks.
     </p>
 
     <p>
-      A complementary line of work examined optimization in adversarial min&ndash;max problems. It characterized the last-iterate dynamics of mirror descent under coherence, showed why standard updates can cycle even in bilinear games, and established convergence of optimistic corrections across the broader class of coherent problems <a href="https://openreview.net/pdf?id=Bkg8jjC9KQ">[AR6]</a>.
+      A complementary line of work examined optimization in adversarial min&ndash;max problems. It characterized the last-iterate dynamics of mirror descent under coherence, showed why standard updates can cycle even in bilinear games, and established convergence of optimistic corrections across the broader class of coherent problems <a href="https://openreview.net/pdf?id=Bkg8jjC9KQ">[AR6]</a>. I also studied practical unsupervised anomaly detection for retinal images, where clinically relevant abnormalities may be sparse or localized <a href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[AR7]</a>.
     </p>
 
     <p>
@@ -243,7 +243,7 @@ My research develops statistical theory and algorithms for these interfaces. I s
 
     <div class="research-questions">
       <p>
-        How can adversarial generative models make anomaly detection both accurate and computationally practical, avoiding per-example latent optimization at inference time? <a href="https://arxiv.org/pdf/1802.06222.pdf">[AR1]</a>, <a href="https://arxiv.org/pdf/1812.02288.pdf">[AR4]</a>
+        How can adversarial generative models make anomaly detection computationally practical, avoiding per-example latent optimization at inference time? <a href="https://arxiv.org/pdf/1802.06222.pdf">[AR1]</a>
       </p>
 
       <p>
@@ -251,11 +251,19 @@ My research develops statistical theory and algorithms for these interfaces. I s
       </p>
 
       <p>
-        How can representation learning reduce expert-annotation requirements in medical imaging? <a href="https://arxiv.org/pdf/1812.07832.pdf">[AR5]</a>, <a href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[AR7]</a>
+        How can bidirectional adversarial representations improve anomaly detection across image and tabular data? <a href="https://arxiv.org/pdf/1812.02288.pdf">[AR4]</a>
+      </p>
+
+      <p>
+        How can semi-supervised representation learning reduce expert-annotation requirements in medical imaging? <a href="https://arxiv.org/pdf/1812.07832.pdf">[AR5]</a>
       </p>
 
       <p>
         Under what structural conditions do optimistic first-order methods achieve last-iterate convergence in adversarial min&ndash;max problems? <a href="https://openreview.net/pdf?id=Bkg8jjC9KQ">[AR6]</a>
+      </p>
+
+      <p>
+        How can unsupervised representation learning support practical detection and localization of abnormalities in retinal images? <a href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[AR7]</a>
       </p>
     </div>
 
