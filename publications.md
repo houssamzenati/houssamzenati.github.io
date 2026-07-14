@@ -67,7 +67,7 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 ## Offline Policy Learning/Sequential Learning
 
 - **Fast Best-in-Class Regret for Contextual Bandits**  
-  Samuel Girard, Aurelien Bibaut, Arthur Gretton, Nathan Kallus, ***Houssam Zenati***.  
+  Girard, Samuel, Nathan Kallus, Jill-Jênn Vie, Arthur Gretton, Aurélien Bibaut, and ***Houssam Zenati***.  
   *UAI*, 2026.  
   [[Paper]](https://arxiv.org/abs/2510.15483)
 

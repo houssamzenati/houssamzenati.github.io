@@ -49,7 +49,7 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
   [[Paper]](https://arxiv.org/pdf/2605.08034)
 
 - **Fast Best-in-Class Regret for Contextual Bandits**  
-  Samuel Girard, Aurelien Bibaut, Jill-Jen Vie, Arthur Gretton, Nathan Kallus, ***Houssam Zenati***.  
+  Girard, Samuel, Nathan Kallus, Jill-Jênn Vie, Arthur Gretton, Aurélien Bibaut, and ***Houssam Zenati***.  
   *UAI*, 2026.  
   [[arXiv]](https://arxiv.org/pdf/2510.15483)
 

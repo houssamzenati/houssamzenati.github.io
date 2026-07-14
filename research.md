@@ -198,7 +198,7 @@ My research develops statistical theory and algorithms for these interfaces. I s
       </li>
       <li>
         <strong>[PL7] Fast Best-in-Class Regret for Contextual Bandits</strong><br>
-        Samuel Girard, Aurelien Bibaut, Arthur Gretton, Nathan Kallus, <strong><em>Houssam Zenati</em></strong>.<br>
+        Girard, Samuel, Nathan Kallus, Jill-Jênn Vie, Arthur Gretton, Aurélien Bibaut, and <strong><em>Houssam Zenati</em></strong>.<br>
         <em>UAI</em>, 2026.<br>
         <a href="https://arxiv.org/abs/2510.15483">[Paper]</a>
       </li>
