@@ -1,0 +1,251 @@
+\documentclass[tikz,border=6pt,multi]{standalone}
+
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% ------------------------------------------------------------
+% One animation frame
+% ------------------------------------------------------------
+\newcommand{\adaptiveframe}[1]{%
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,font=\small]
+
+% Fixed canvas for perfectly aligned GIF frames
+\path[use as bounding box] (0,0) rectangle (18,6.2);
+
+\tikzset{
+  panel/.style={
+    rounded corners=9pt,
+    fill=gray!9,
+    draw=black!22,
+    line width=0.8pt
+  },
+  flow/.style={
+    green!45!black,
+    line width=2.2pt,
+    -{Latex[length=2.5mm]}
+  }
+}
+
+% ------------------------------------------------------------
+% Frame 1: adaptive experiment
+% ------------------------------------------------------------
+\ifnum#1>0
+
+  \draw[panel] (0.45,0.65) rectangle (5.75,5.55);
+
+  \node[font=\bfseries] at (3.10,5.15)
+  {Adaptive experiment};
+
+  % Assignment probability over time
+  \draw[->,black!45] (1.00,3.55) -- (5.25,3.55);
+  \node[anchor=west,black!55] at (5.28,3.55) {$t$};
+
+  \node[anchor=east,green!35!black] at (0.90,4.52)
+  {$\pi_t(1)$};
+
+  \draw[
+    green!45!black,
+    line width=1.6pt
+  ]
+    (1.15,4.05) --
+    (1.68,4.35) --
+    (2.21,3.88) --
+    (2.74,4.48) --
+    (3.27,4.62) --
+    (3.80,4.22) --
+    (4.33,4.70) --
+    (4.86,4.86);
+
+  % Realized actions
+  \node[anchor=east,black!60] at (0.95,2.35) {$A_t=1$};
+  \node[anchor=east,black!60] at (0.95,1.55) {$A_t=0$};
+
+  \draw[black!18] (1.10,2.35) -- (5.00,2.35);
+  \draw[black!18] (1.10,1.55) -- (5.00,1.55);
+
+  \foreach \x/\sel in {
+    1.15/1,
+    1.68/1,
+    2.21/0,
+    2.74/1,
+    3.27/1,
+    3.80/0,
+    4.33/1,
+    4.86/1
+  }{
+    % Potential actions
+    \draw[black!25] (\x,2.35) circle (2.5pt);
+    \draw[black!25] (\x,1.55) circle (2.5pt);
+
+    % Realized action
+    \ifnum\sel=1
+      \fill[blue!75] (\x,2.35) circle (2.5pt);
+    \else
+      \fill[orange!75] (\x,1.55) circle (2.5pt);
+    \fi
+  }
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 2: orthogonal score increments
+% ------------------------------------------------------------
+\ifnum#1>1
+
+  \draw[flow] (5.78,3.10) -- (6.45,3.10);
+
+  \draw[panel] (6.45,0.65) rectangle (11.75,5.55);
+
+  \node[font=\bfseries] at (9.10,5.15)
+  {Orthogonal scores};
+
+  \draw[black!40] (7.05,2.85) -- (11.15,2.85);
+
+  \node[anchor=east,blue!70!black] at (6.92,4.40)
+  {$\widehat\varphi_t$};
+
+  \foreach \x/\h in {
+    7.20/0.85,
+    7.70/-0.55,
+    8.20/0.38,
+    8.70/-0.78,
+    9.20/0.63,
+    9.70/-0.34,
+    10.20/0.47,
+    10.70/-0.27
+  }{
+    \draw[
+      blue!65,
+      line width=1.4pt
+    ]
+    (\x,2.85) -- (\x,{2.85+\h});
+
+    \fill[blue!80]
+    (\x,{2.85+\h}) circle (2.2pt);
+  }
+
+  \node[
+    black!55,
+    font=\footnotesize
+  ] at (9.10,1.25)
+  {$\mathbb E[
+      \widehat\varphi_t
+      \mid
+      \mathcal F_{t-1}
+    ]\approx0$};
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 3: variance stabilization
+% ------------------------------------------------------------
+\ifnum#1>2
+
+  \draw[flow] (11.78,3.10) -- (12.45,3.10);
+
+  \draw[panel] (12.45,0.65) rectangle (17.55,5.55);
+
+  \node[font=\bfseries] at (15.00,5.15)
+  {Gaussian inference};
+
+  \node[font=\large] at (15.00,4.16)
+  {$\displaystyle
+    Z_n
+    =
+    \frac{
+      \sum_{t=1}^{n}\widehat\varphi_t
+    }{
+      \sqrt{
+        \sum_{t=1}^{n}\widehat v_t
+      }
+    }
+  $};
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 4: Gaussian limit
+% ------------------------------------------------------------
+\ifnum#1>3
+
+  \draw[->,black!45]
+  (13.05,1.54) -- (16.95,1.54);
+
+  \draw[
+    black!30,
+    densely dashed
+  ]
+  (15.00,1.54) -- (15.00,3.23);
+
+  \draw[
+    blue!70,
+    line width=1.8pt
+  ]
+  plot[
+    domain=-3:3,
+    samples=120
+  ]
+  (
+    {15.00+0.60*\x},
+    {1.54+1.38*exp(-\x*\x/2)}
+  );
+
+  \node[blue!70!black] at (15.00,3.18)
+  {$\mathcal N(0,1)$};
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 5: confidence interval
+% ------------------------------------------------------------
+\ifnum#1>4
+
+  \draw[
+    green!45!black,
+    line width=2.6pt
+  ]
+  (13.85,1.08) -- (16.15,1.08);
+
+  \draw[
+    green!45!black,
+    line width=1.2pt
+  ]
+  (13.85,0.96) -- (13.85,1.20);
+
+  \draw[
+    green!45!black,
+    line width=1.2pt
+  ]
+  (16.15,0.96) -- (16.15,1.20);
+
+  \fill[blue!80]
+  (15.00,1.08) circle (2.4pt);
+
+  \node[
+    font=\footnotesize,
+    black!65
+  ] at (15.00,0.80)
+  {$\widehat\theta_n
+    \pm
+    z_{1-\alpha/2}\,
+    \widehat{\mathrm{se}}(\widehat\theta_n)$};
+
+\fi
+
+\end{tikzpicture}
+}
+
+% ------------------------------------------------------------
+% One PDF page per GIF frame
+% ------------------------------------------------------------
+\begin{document}
+
+\foreach \t in {1,...,5}{
+  \adaptiveframe{\t}
+  \newpage
+}
+
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass[tikz,border=0pt,multi]{standalone}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,shapes.geometric}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\colorlet{trajblue}{blue!70!black}
+\colorlet{rootred}{red!80!black}
+\colorlet{panelbg}{gray!8}
+\colorlet{contourcol}{orange!75!black}
+\colorlet{labcol}{black!65}
+
+\tikzset{
+  traj/.style={trajblue,line width=1.45pt},
+  paneltitle/.style={font=\bfseries},
+  axisline/.style={black!55,line width=0.45pt},
+  contour/.style={contourcol,line width=0.75pt,opacity=0.85},
+}
+
+% ------------------------------------------------------------
+% Unit-square panel with a hand-drawn saddle-like landscape.
+% ------------------------------------------------------------
+\newcommand{\basepanel}[3]{%
+  \begin{scope}[shift={(#1,#2)}, x=#3, y=#3]
+    \fill[panelbg] (0,0) rectangle (1,1);
+    \draw[black!45,line width=0.45pt] (0,0) rectangle (1,1);
+
+    \draw[axisline,-{Latex[length=1.45mm]}] (0,0) -- (1.05,0);
+    \draw[axisline,-{Latex[length=1.45mm]}] (0,0) -- (0,1.05);
+
+    \foreach \v in {0,0.5,1}{
+      \draw[black!40,line width=0.35pt] (\v,0) -- (\v,-0.015);
+      \draw[black!40,line width=0.35pt] (0,\v) -- (-0.015,\v);
+    }
+
+    \node[font=\scriptsize,anchor=north] at (0,-0.035) {$0$};
+    \node[font=\scriptsize,anchor=north] at (0.5,-0.035) {$0.5$};
+    \node[font=\scriptsize,anchor=north] at (1,-0.035) {$1$};
+    \node[font=\scriptsize,anchor=east] at (-0.035,0) {$0$};
+    \node[font=\scriptsize,anchor=east] at (-0.035,0.5) {$0.5$};
+    \node[font=\scriptsize,anchor=east] at (-0.035,1) {$1$};
+
+    \node[font=\small,anchor=north] at (0.5,-0.115) {$x_1$};
+    \node[font=\small,rotate=90,anchor=south] at (-0.125,0.5) {$x_2$};
+
+    % Global saddle contours.
+    \draw[contour] (0.04,0.91) .. controls (0.23,0.79) and (0.38,0.62) .. (0.52,0.50)
+                   .. controls (0.65,0.38) and (0.78,0.24) .. (0.96,0.10);
+    \draw[contour] (0.02,0.77) .. controls (0.20,0.68) and (0.36,0.56) .. (0.51,0.47)
+                   .. controls (0.66,0.37) and (0.82,0.25) .. (0.98,0.18);
+    \draw[contour] (0.08,0.05) .. controls (0.24,0.21) and (0.36,0.36) .. (0.49,0.50)
+                   .. controls (0.62,0.65) and (0.77,0.82) .. (0.94,0.96);
+    \draw[contour] (0.19,0.02) .. controls (0.31,0.19) and (0.40,0.35) .. (0.50,0.50)
+                   .. controls (0.60,0.66) and (0.71,0.82) .. (0.84,0.99);
+
+    % Local coherent saddle/root geometry.
+    \foreach \rx/\ry in {0.33/0.20,0.25/0.15,0.17/0.10,0.09/0.055}{
+      \draw[contour,rotate around={23:(0.403,0.597)}]
+        (0.403,0.597) ellipse [x radius=\rx, y radius=\ry];
+    }
+
+    \draw[black!20] (0.18,0.82) -- (0.88,0.12);
+    \draw[black!20] (0.14,0.18) -- (0.86,0.90);
+
+    \node[
+      star,
+      star points=5,
+      star point ratio=2.15,
+      fill=rootred,
+      draw=black,
+      line width=0.25pt,
+      minimum size=5.8pt,
+      inner sep=0pt
+    ] at (0.4028,0.5972) {};
+    \node[anchor=south west,text=rootred,font=\scriptsize] at (0.42,0.605) {$x^\star$};
+
+    \draw[trajblue,line width=0.8pt] (0.2800,0.5500) circle (3.0pt/#3);
+    \node[anchor=west,text=trajblue,font=\scriptsize] at (0.295,0.550) {$x_0$};
+  \end{scope}
+}
+
+\newcommand{\drawseg}[4]{%
+  \draw[traj] (#1,#2) -- (#3,#4);
+  \fill[trajblue] (#3,#4) circle (1.25pt);
+}
+
+\newcommand{\MDpath}[1]{%
+\begin{scope}[x=5.2cm,y=5.2cm]
+\ifnum#1>0 \drawseg{0.2800}{0.5500}{0.3000}{0.5000}\fi
+\ifnum#1>1 \drawseg{0.3000}{0.5000}{0.3500}{0.4700}\fi
+\ifnum#1>2 \drawseg{0.3500}{0.4700}{0.4200}{0.4900}\fi
+\ifnum#1>3 \drawseg{0.4200}{0.4900}{0.4800}{0.5600}\fi
+\ifnum#1>4 \drawseg{0.4800}{0.5600}{0.5000}{0.6600}\fi
+\ifnum#1>5 \drawseg{0.5000}{0.6600}{0.4500}{0.7600}\fi
+\ifnum#1>6 \drawseg{0.4500}{0.7600}{0.3400}{0.8000}\fi
+\ifnum#1>7 \drawseg{0.3400}{0.8000}{0.2200}{0.7300}\fi
+\ifnum#1>8 \drawseg{0.2200}{0.7300}{0.1400}{0.5800}\fi
+\ifnum#1>9 \drawseg{0.1400}{0.5800}{0.1400}{0.3800}\fi
+\ifnum#1>10 \drawseg{0.1400}{0.3800}{0.2400}{0.2200}\fi
+\ifnum#1>11 \drawseg{0.2400}{0.2200}{0.4200}{0.1500}\fi
+\ifnum#1>12 \drawseg{0.4200}{0.1500}{0.6500}{0.2000}\fi
+\ifnum#1>13 \drawseg{0.6500}{0.2000}{0.8400}{0.3800}\fi
+\ifnum#1>14 \drawseg{0.8400}{0.3800}{0.9200}{0.6200}\fi
+\ifnum#1>15 \drawseg{0.9200}{0.6200}{0.8800}{0.8400}\fi
+\end{scope}
+}
+
+\newcommand{\OMDpath}[1]{%
+\begin{scope}[x=5.2cm,y=5.2cm]
+\ifnum#1>0 \drawseg{0.2800}{0.5500}{0.3000}{0.5000}\fi
+\ifnum#1>1 \drawseg{0.3000}{0.5000}{0.3600}{0.4800}\fi
+\ifnum#1>2 \drawseg{0.3600}{0.4800}{0.4300}{0.5000}\fi
+\ifnum#1>3 \drawseg{0.4300}{0.5000}{0.4800}{0.5600}\fi
+\ifnum#1>4 \drawseg{0.4800}{0.5600}{0.4900}{0.6400}\fi
+\ifnum#1>5 \drawseg{0.4900}{0.6400}{0.4500}{0.6900}\fi
+\ifnum#1>6 \drawseg{0.4500}{0.6900}{0.3800}{0.7000}\fi
+\ifnum#1>7 \drawseg{0.3800}{0.7000}{0.3300}{0.6600}\fi
+\ifnum#1>8 \drawseg{0.3300}{0.6600}{0.3100}{0.6000}\fi
+\ifnum#1>9 \drawseg{0.3100}{0.6000}{0.3300}{0.5500}\fi
+\ifnum#1>10 \drawseg{0.3300}{0.5500}{0.3800}{0.5300}\fi
+\ifnum#1>11 \drawseg{0.3800}{0.5300}{0.4300}{0.5400}\fi
+\ifnum#1>12 \drawseg{0.4300}{0.5400}{0.4600}{0.5800}\fi
+\ifnum#1>13 \drawseg{0.4600}{0.5800}{0.4500}{0.6200}\fi
+\ifnum#1>14 \drawseg{0.4500}{0.6200}{0.4100}{0.6400}\fi
+\ifnum#1>15 \drawseg{0.4100}{0.6400}{0.3900}{0.6100}\fi
+\end{scope}
+}
+
+\newcommand{\twopanels}[1]{%
+\begin{tikzpicture}[>=Latex,font=\small]
+\path[use as bounding box] (0,0) rectangle (14.6,7.25);
+\fill[white] (0,0) rectangle (14.6,7.25);
+
+\node[font=\bfseries\large] at (7.3,6.95)
+{Optimization dynamics in adversarial learning};
+
+\node[paneltitle] at (3.35,6.12) {Mirror descent};
+\node[paneltitle] at (10.25,6.12) {Optimistic mirror descent};
+
+\basepanel{0.75}{0.70}{5.2cm}
+\basepanel{7.65}{0.70}{5.2cm}
+
+\begin{scope}[shift={(0.75,0.70)}]
+  \MDpath{#1}
+\end{scope}
+
+\begin{scope}[shift={(7.65,0.70)}]
+  \OMDpath{#1}
+\end{scope}
+
+\end{tikzpicture}%
+}
+
+\begin{document}
+\pagecolor{white}
+\foreach \t in {0,...,16}{%
+  \twopanels{\t}
+  \newpage
+}
+\end{document}

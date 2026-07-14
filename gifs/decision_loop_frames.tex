@@ -1,0 +1,83 @@
+\documentclass[tikz,border=6pt,multi]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ------------------------------------------------------------
+% One frame
+% ------------------------------------------------------------
+\newcommand{\progressframe}[1]{%
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,font=\small]
+
+    % --------------------------------------------------------
+    % Fixed canvas for ALL frames
+    % This is the important part: it creates the same right
+    % padding in every image, so the GIF stays aligned.
+    % --------------------------------------------------------
+    \path[use as bounding box] (-2.0,-1.15) rectangle (20.2,1.15);
+
+    \tikzset{
+        stepblock/.style={
+            draw,
+            rounded corners=3pt,
+            fill=green!12,
+            minimum width=3.40cm,
+            minimum height=1.05cm,
+            align=center
+        },
+        steparrow/.style={
+            -{Latex[length=2.2mm]},
+            line width=0.9pt
+        }
+    }
+
+    % Fixed positions
+    \coordinate (c1) at (0,0);
+    \coordinate (c2) at (4.5,0);
+    \coordinate (c3) at (9.0,0);
+    \coordinate (c4) at (13.5,0);
+    \coordinate (c5) at (18.0,0);
+
+    % Frame 1
+    \ifnum#1>0
+        \node[stepblock] (b1) at (c1) {Deploy\\decisions};
+    \fi
+
+    % Frame 2
+    \ifnum#1>1
+        \node[stepblock] (b2) at (c2) {Observe\\partial feedback};
+        \draw[steparrow] (b1.east) -- (b2.west);
+    \fi
+
+    % Frame 3
+    \ifnum#1>2
+        \node[stepblock] (b3) at (c3) {Evaluate alternative\\decisions};
+        \draw[steparrow] (b2.east) -- (b3.west);
+    \fi
+
+    % Frame 4
+    \ifnum#1>3
+        \node[stepblock] (b4) at (c4) {Draw valid\\conclusions};
+        \draw[steparrow] (b3.east) -- (b4.west);
+    \fi
+
+    % Frame 5
+    \ifnum#1>4
+        \node[stepblock] (b5) at (c5) {Improve\\decisions};
+        \draw[steparrow] (b4.east) -- (b5.west);
+    \fi
+
+\end{tikzpicture}
+}
+
+% ------------------------------------------------------------
+% One page = one frame
+% ------------------------------------------------------------
+\begin{document}
+
+\foreach \t in {1,...,5}{
+    \progressframe{\t}
+    \newpage
+}
+
+\end{document}

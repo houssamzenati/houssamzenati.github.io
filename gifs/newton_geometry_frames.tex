@@ -1,0 +1,346 @@
+\documentclass[tikz,border=6pt,multi]{standalone}
+
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+
+\usetikzlibrary{
+  arrows.meta,
+  calc,
+  positioning,
+  shapes.geometric,
+  decorations.pathreplacing
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% ------------------------------------------------------------
+% One frame
+% ------------------------------------------------------------
+\newcommand{\newtonframe}[1]{%
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,font=\small]
+
+% Fixed wide canvas: every PDF page has exactly the same size.
+\path[use as bounding box] (0,0) rectangle (16,7.75);
+
+% ------------------------------------------------------------
+% Top functionals
+% ------------------------------------------------------------
+\node[anchor=west] at (0.55,7.18)
+{$\displaystyle
+  \Psi(P)=F_P(h_P),
+  \qquad
+  h_P\in \arg\min_{h}\,L_P(h).
+$};
+
+\draw[
+  decorate,
+  decoration={brace,mirror,amplitude=4pt},
+  line width=0.8pt
+]
+(0.57,6.60) -- (7.02,6.60);
+
+\node[text=black!65] at (3.80,6.28)
+{\small nested problem};
+
+\node[anchor=west] at (8.18,7.18)
+{$\displaystyle
+  \Psi(P)=\ell_P(h_P),
+  \qquad
+  h_P\in \arg\min_{h}\,\|T_P h-r_P\|^2.
+$};
+
+\draw[
+  decorate,
+  decoration={brace,mirror,amplitude=4pt},
+  line width=0.8pt
+]
+(8.20,6.60) -- (15.20,6.60);
+
+\node[text=black!65] at (11.70,6.28)
+{\small inverse problem};
+
+% ------------------------------------------------------------
+% Geometry shared by all frames
+% ------------------------------------------------------------
+\coordinate (C)     at (6.10,3.08);
+\coordinate (Phat)  at (3.00,2.34);
+\coordinate (Proot) at (7.58,3.42);
+
+% Enlarged tangent chart.
+\draw[
+  fill=gray!9,
+  draw=black!25,
+  line width=0.8pt
+]
+(C) ellipse [x radius=6.14cm, y radius=2.72cm];
+
+% ------------------------------------------------------------
+% Frame 1 onward: local contour landscape
+% ------------------------------------------------------------
+\ifnum#1>0
+
+  \foreach \rx/\ry in {
+    2.52/0.96,
+    2.08/0.79,
+    1.65/0.63,
+    1.22/0.47,
+    0.78/0.30,
+    0.40/0.17
+  }{
+    \draw[
+      orange!60,
+      line width=0.95pt,
+      rotate around={25:(Proot)}
+    ]
+    (Proot) ellipse [
+      x radius=\rx cm,
+      y radius=\ry cm
+    ];
+  }
+
+\fi
+
+\node[
+  anchor=north west,
+  font=\bfseries,
+  align=left
+] at (2.28,4.92)
+{Local Newton geometry\\[-1pt] in $T_{\widehat P}\mathcal P$};
+
+\node[
+  anchor=north west,
+  text=black!55
+] at (2.28,4.25)
+{$T_{\widehat P}\mathcal P$: tangent space at $\widehat P$};
+
+% ------------------------------------------------------------
+% Frame 4 onward: Newton step drawn in the back layer
+% ------------------------------------------------------------
+\ifnum#1>3
+
+  \draw[
+    green!45!black,
+    line width=3.0pt,
+    -{Latex[length=2.8mm]}
+  ]
+  (Phat)
+    .. controls (4.56,2.78) and (6.10,3.20) ..
+  (Proot)
+  node[
+    pos=0.56,
+    sloped,
+    above=5pt,
+    green!35!black
+  ]
+  {Newton step};
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 2 onward: plug-in and least-favourable submodel
+% ------------------------------------------------------------
+\ifnum#1>1
+
+  % Least-favourable submodel:
+  % a one-dimensional path passing through \widehat P.
+  \draw[
+    gray!65,
+    dashed,
+    line width=1.25pt
+  ]
+  (1.78,1.98)
+    .. controls (2.32,2.10) and (2.68,2.23) ..
+  (Phat)
+    .. controls (4.56,2.78) and (6.10,3.20) ..
+  (Proot)
+    .. controls (8.35,3.64) and (9.18,3.98) ..
+  (10.35,4.54);
+
+  \node[
+    gray!65,
+    rotate=19
+  ] at (9.32,4.18)
+  {\scriptsize $\{\widehat P_{\varepsilon}\}$};
+
+  % Plug-in distribution; v=0 in the local tangent chart.
+  \fill[blue!15] (Phat) circle (7pt);
+  \fill[blue!80] (Phat) circle (2.8pt);
+
+  \node[
+    anchor=north west,
+    blue!80!black
+  ] at ($(Phat)+(-0.12,-0.10)$)
+  {$\widehat P$};
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 3 onward: score direction
+% ------------------------------------------------------------
+\ifnum#1>2
+
+  % Score of the least-favourable submodel:
+  % tangent to the path at epsilon=0.
+  \draw[
+    blue!65!black,
+    line width=1.7pt,
+    -{Latex[length=2.2mm]}
+  ]
+  (Phat) -- ($(Phat)+(1.00,0.30)$);
+
+  \node[
+    anchor=south west,
+    blue!65!black
+  ] at ($(Phat)+(0.92,0.34)$)
+  {$D^\star(\widehat P)$};
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 4 onward: curvature-adjusted Newton step
+% ------------------------------------------------------------
+\ifnum#1>3
+
+  % Empirical root / targeted model update
+  \node[
+    star,
+    star points=5,
+    star point ratio=2.2,
+    fill=red!80,
+    draw=red!75!black,
+    minimum size=11pt,
+    inner sep=0.35pt
+  ] (rootstar) at (Proot) {};
+
+  \node[
+    anchor=south west
+  ] at ($(Proot)+(0.18,0.18)$)
+  {$\widehat P_{\widehat\varepsilon}$};
+
+\fi
+
+% ------------------------------------------------------------
+% Frame 5: induced update of the target functional
+% ------------------------------------------------------------
+\ifnum#1>4
+
+  \draw[
+    rounded corners=8pt,
+    fill=gray!9,
+    draw=black!22,
+    line width=0.8pt
+  ]
+  (12.48,0.65) rectangle (15.58,5.92);
+
+  \node[
+    font=\bfseries,
+    align=center
+  ] at (14.03,5.58)
+  {Target functional};
+
+  \coordinate (PsiPlug)   at (13.92,1.55);
+  \coordinate (PsiOne)    at (13.92,3.77);
+  \coordinate (PsiTarget) at (13.92,4.30);
+
+  \draw[
+    ->,
+    black!55,
+    line width=0.9pt
+  ]
+  (13.92,1.05) -- (13.92,5.05);
+
+  % Map the model points to the parameter scale.
+  \draw[
+    gray!50,
+    densely dashed,
+    -{Latex[length=1.8mm]}
+  ]
+  (Phat) to[out=-18,in=180] ($(PsiPlug)+(-0.05,0)$);
+
+  \draw[
+    gray!50,
+    densely dashed,
+    -{Latex[length=1.8mm]}
+  ]
+  (Proot) to[out=8,in=180] ($(PsiTarget)+(-0.05,0)$);
+
+  % Plug-in value.
+  \fill[blue!15] (PsiPlug) circle (6.5pt);
+  \fill[blue!80] (PsiPlug) circle (2.6pt);
+
+  \node[
+    anchor=west,
+    blue!80!black,
+    font=\scriptsize
+  ] at ($(PsiPlug)+(0.18,-0.01)$)
+  {$\Psi(\widehat P)$};
+
+  % Scalar one-step correction.
+  \draw[
+    green!45!black,
+    line width=2.5pt,
+    -{Latex[length=2.5mm]}
+  ]
+  ($(PsiPlug)+(-0.34,0.12)$)
+  --
+  ($(PsiOne)+(-0.34,-0.12)$);
+
+  \node[
+    green!35!black,
+    font=\scriptsize,
+    rotate=90
+  ] at ($(PsiPlug)!0.5!(PsiOne)+(-0.72,0)$)
+  {$+\,\mathbb P_nD^\star(\widehat P)$};
+
+  % One-step estimator.
+  \fill[blue!15] (PsiOne) circle (6.5pt);
+  \fill[blue!80] (PsiOne) circle (2.6pt);
+
+  \node[
+    anchor=west,
+    blue!80!black,
+    font=\scriptsize
+  ] at ($(PsiOne)+(0.18,-0.01)$)
+  {$\widehat\Psi_{\mathrm{1step}}$};
+
+  % Targeted update.
+  \node[
+    star,
+    star points=5,
+    star point ratio=2.2,
+    fill=red!80,
+    draw=red!75!black,
+    minimum size=10pt,
+    inner sep=0.3pt
+  ] (psitarget) at (PsiTarget) {};
+
+  \node[
+    anchor=west,
+    font=\scriptsize
+  ] at ($(PsiTarget)+(0.18,0.04)$)
+  {$\Psi(\widehat P_{\widehat\varepsilon})$};
+
+  % First-order equivalence, leaving a small higher-order gap.
+  \draw[
+    gray!55,
+    densely dotted,
+    line width=1.0pt
+  ]
+  (PsiOne) -- (PsiTarget);
+
+\fi
+
+\end{tikzpicture}
+}
+
+% ------------------------------------------------------------
+% One PDF page per animation frame
+% ------------------------------------------------------------
+\begin{document}
+
+\foreach \t in {1,...,5}{
+  \newtonframe{\t}
+  \newpage
+}
+
+\end{document}

@@ -20,6 +20,7 @@ When teaching, I like to emphasize conceptual clarity, mathematical rigor, and a
 ## Supervision
 
 I have been fortunate to co-supervise and mentor students on research projects:
-- [Julien Zhou](https://jlnzhou.github.io/) (Master's student, 2023)
-- Samuel Girard (PhD student, 2025--2026)
-- Robin Leman (Master's student, 2026)
+- [Julien Zhou](https://jlnzhou.github.io/) (Master's student, with [Pierre Gaillard](https://pierre-gaillard.github.io/), 2023)
+- Samuel Girard (PhD student, with [Aurelien Bibaut](https://scholar.google.com/citations?user=N_8WC5oAAAAJ&hl=en), 2025--2026)
+- Robin Leman (Master's student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
+- [Bariscan Bozkurt](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)

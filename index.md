@@ -2,53 +2,61 @@
 layout: default
 ---
 
-<p class="lead">
-I am a Research Fellow at the <a href="https://www.ucl.ac.uk/gatsby/">Gatsby Computational Neuroscience Unit</a> at <a href="https://www.ucl.ac.uk/">University College London</a>, where I work with <a href="https://www.gatsby.ucl.ac.uk/~gretton/">Arthur Gretton</a>. 
-</p>
-
-<p class="lead">
-My research focuses on <em>statistical</em> and <em>algorithmic</em> questions in <em>machine learning systems</em>, especially in <em>sequential decision-making</em>, <em>policy learning</em>, and <em>causal inference</em>, with a particular interest in <em>nuisance-robust methods</em> and <em>inference under adaptive data collection</em>.
+<p class="research-overview">
+My research focuses on <strong>statistical machine-learning methods</strong> for systems whose decisions shape the data they subsequently learn from, especially when <strong>valid estimation</strong> of the target requires accounting for latent variables or auxiliary functions that must themselves be estimated. In these settings, <strong>inference and optimization are coupled</strong>: the mechanism producing the data determines both which <strong>outcomes</strong> are observed and what can be learned about <strong>alternative interventions</strong>. I study how to learn <strong>policies</strong>, characterize <strong>intervention effects</strong>&mdash;including <strong>structured and distributional effects</strong>&mdash;and <strong>quantify uncertainty</strong> under this dependence. A central theme in my inference work is <strong>nuisance robustness</strong>: I design procedures whose leading statistical behavior is insensitive to estimation errors in outcome models, propensities, bridge functions, or learned representations. This enables the use of <strong>flexible machine-learning</strong> components to improve <strong>practical performance</strong> without compromising <strong>inferential validity</strong>. My work combines <strong>semiparametric</strong> and <strong>high-dimensional statistics</strong> with <strong>causal inference</strong>, <strong>online learning</strong>, <strong>kernel methods</strong>, and <strong>representation learning</strong>.
 </p>
 
 ## About Me
 
-Before joining UCL, I was a postdoctoral researcher at <a href="https://team.inria.fr/mind/">INRIA MIND</a>, collaborating with <a href="https://pages.saclay.inria.fr/bertrand.thirion/">Bertrand Thirion</a>, <a href="https://judithabk6.github.io/">Judith Abecassis</a>, and <a href="https://juliejosse.com/">Julie Josse</a>. I completed my PhD at <a href="https://team.inria.fr/thoth/">INRIA Thoth</a> under the supervision of <a href="https://lear.inrialpes.fr/people/mairal/">Julien Mairal</a>, <a href="http://pierre.gaillard.me/">Pierre Gaillard</a> and <a href="https://scholar.google.com/citations?user=33C_LQ0AAAAJ&hl=en">Eustache Diemert</a> in collaboration with the causal inference group at the <a href="https://ailab.criteo.com/research-team/">Criteo AI Lab</a>.
+<p class="lead about-lead">
+I am a Research Fellow at the <a href="https://www.ucl.ac.uk/gatsby/">Gatsby Computational Neuroscience Unit</a> at <a href="https://www.ucl.ac.uk/">University College London</a>, where I work with <a href="https://www.gatsby.ucl.ac.uk/~gretton/">Arthur Gretton</a>.
+</p>
 
-Prior to that, I received an M.Eng. degree in applied mathematics and computer science from <a href="https://www.centralesupelec.fr/">CentraleSupelec</a> and an M.Sc. degree from the <a href="https://www.master-mva.com/">MVA</a> program at <a href="https://ens-paris-saclay.fr/">ENS Paris-Saclay</a>. I also worked at the <a href="https://www.a-star.edu.sg/i2r">Institute for Infocomm Research</a> under the supervision of <a href="http://ai.stanford.edu/~csfoo/">Chuan-Sheng Foo</a> and <a href="https://scholar.google.com/citations?user=KUt4JCAAAAAJ&hl=en">Vijay Chandrasekhar</a>.
+<p class="about-history">
+Before joining UCL, I was a postdoctoral researcher in the <a href="https://team.inria.fr/mind/">MIND team at Inria</a>, where I worked on nuisance-robust causal inference and mediation analysis for biomedical applications. I completed my PhD jointly with <a href="https://team.inria.fr/thoth/">Inria Thoth</a> and the <a href="https://ailab.criteo.com/research-team/">Criteo AI Lab</a>, focusing on offline policy learning and sequential learning. Earlier, at the <a href="https://www.a-star.edu.sg/i2r">Institute for Infocomm Research</a>, I worked on deep generative models, anomaly detection, and medical imaging.
+</p>
 
-My thesis manuscript is available <a href="{{ site.baseurl }}{% link phd_manuscript.pdf %}">here</a>, and my CV is available <a href="{{ "/CV_site/main.pdf" | relative_url }}">here</a>.
+<p class="document-links">
+  <a href="{{ "/CV_site/main.pdf" | relative_url }}">CV</a>
+  <span aria-hidden="true">·</span>
+  <a href="{{ "/phd_manuscript.pdf" | relative_url }}">PhD thesis</a>
+</p>
+
+<p id="contact" class="contact-note">
+Feel free to reach out if you wish to collaborate, exchange ideas, or seek Master's thesis supervision. Contact: (first initial).(last name) [at] ucl.ac.uk.
+</p>
 
 ## News
 
-- **June 2026:** Organized the Advances on Adaptive Experimentation (AAE) Workshop at the Gatsby Unit, UCL.
+- **June 2026:** Organized the [Advances on Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/) at the Gatsby Unit, UCL.
 - **June 2026:** Our paper **Fast Best-in-Class Regret for Contextual Bandits** was accepted at UAI 2026.
 
 ## Selected Publications
 
-- **Fast Best-in-Class Regret for Contextual Bandits**  
-  S. Girard, A. Bibaut, A. Gretton, N. Kallus, H. Zenati.  
-  *UAI*, 2026.  
-  [[arXiv]](https://arxiv.org/pdf/2510.15483)
-
 - **Efficient Inference after Directionally Stable Adaptive Experiments**  
-  Z. Shen, H. Zenati, N. Kallus, A. Gretton, K. Khamaru, A. Bibaut.  
+  Z. Shen\*, ***H. Zenati***\*, N. Kallus, A. Gretton, K. Khamaru, A. Bibaut.  
   *Preprint*, 2026.  
   [[arXiv]](https://arxiv.org/abs/2602.21478)
 
-- **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**  
-  Houssam Zenati, Bariscan Bozkurt, Arthur Gretton.  
-  *NeurIPS*, 2025.  
-  [[Paper]](https://arxiv.org/pdf/2506.02793) · [[Code]](https://github.com/houssamzenati/counterfactual-policy-mean-embedding)
+- **Kernel Treatment Effects from Adaptively Collected Data**  
+  ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  
+  *AISTATS*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2510.10245) · [[Code]](https://github.com/houssamzenati/adaptive-KTE)
+
+- **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
+  ***Houssam Zenati***, Arthur Gretton.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2605.08034)
+
+- **Fast Best-in-Class Regret for Contextual Bandits**  
+  Samuel Girard, Aurelien Bibaut, Jill-Jen Vie, Arthur Gretton, Nathan Kallus, ***Houssam Zenati***.  
+  *UAI*, 2026.  
+  [[arXiv]](https://arxiv.org/pdf/2510.15483)
 
 - **Sequential Counterfactual Risk Minimization**  
-  Houssam Zenati, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard.  
+  ***Houssam Zenati***, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard.  
   *ICML*, 2023.  
   [[Paper]](https://arxiv.org/pdf/2302.12120.pdf) · [[Code]](https://github.com/criteo-research/sequential-counterfactual-risk-minimization)
-
-- **Efficient Kernelized UCB for Contextual Bandits**  
-  Houssam Zenati, Alberto Bietti, Eustache Diemert, Julien Mairal, Matthieu Martin, Pierre Gaillard.  
-  *AISTATS*, 2022.  
-  [[Paper]](https://proceedings.mlr.press/v151/zenati22a.html) · [[Code]](https://github.com/criteo-research/Efficient-Kernel-UCB)
 
 <!-- ## Explore
 

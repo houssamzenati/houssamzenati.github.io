@@ -15,5 +15,5 @@ NeurIPS, ICML, ICLR, AISTATS, TMLR
 
 ## Workshop and Seminar Organization
 
-- **2026:** Organizer, Advances on Adaptive Experimentation (AAE) Workshop, Gatsby Unit.
+- **2026:** Organizer, [Advances on Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/), Gatsby Unit.
 - **Since Sept 2025:** Organizer of the external machine learning seminars at Gatsby Unit, UCL.

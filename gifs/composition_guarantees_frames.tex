@@ -1,0 +1,208 @@
+\documentclass[tikz,border=5pt,multi]{standalone}
+
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\renewcommand{\familydefault}{\sfdefault}
+
+\colorlet{ink}{black!78}
+\colorlet{linecol}{blue!52!black}
+\colorlet{issuecol}{red!72!black}
+\colorlet{repaircol}{green!42!black}
+
+\tikzset{
+  block/.style={
+    draw=linecol!72,
+    fill=blue!3,
+    rounded corners=7pt,
+    line width=0.9pt,
+    minimum width=3.35cm,
+    minimum height=1.16cm,
+    align=center,
+    inner sep=6pt,
+    text=ink
+  },
+  ghostblock/.style={
+    draw=black!15,
+    fill=black!2,
+    rounded corners=7pt,
+    line width=0.75pt,
+    minimum width=3.35cm,
+    minimum height=1.16cm,
+    align=center,
+    inner sep=6pt,
+    text=black!32
+  },
+  flow/.style={
+    -{Latex[length=2.25mm]},
+    line width=1.15pt,
+    draw=ink!62
+  },
+  ghostflow/.style={
+    -{Latex[length=2.0mm]},
+    line width=0.85pt,
+    draw=black!18
+  },
+  feedback/.style={
+    -{Latex[length=2.15mm]},
+    line width=1.0pt,
+    draw=ink!48
+  },
+  issueflow/.style={
+    -{Latex[length=2.15mm]},
+    line width=1.35pt,
+    draw=issuecol!78
+  },
+  repairflow/.style={
+    -{Latex[length=2.3mm]},
+    line width=1.75pt,
+    draw=repaircol!82
+  },
+  badge/.style={
+    circle,
+    minimum size=5.2mm,
+    inner sep=0pt,
+    line width=0.7pt,
+    font=\bfseries\scriptsize
+  },
+  issuebox/.style={
+    rounded corners=4pt,
+    fill=red!5,
+    draw=issuecol!58,
+    text=issuecol,
+    font=\bfseries\scriptsize,
+    inner sep=4pt,
+    align=center
+  },
+  repairbox/.style={
+    rounded corners=4pt,
+    fill=green!6,
+    draw=repaircol!68,
+    text=repaircol,
+    font=\bfseries\scriptsize,
+    inner sep=4pt,
+    align=center
+  }
+}
+
+\newcommand{\smallcheck}[1]{%
+  \node[
+    circle,
+    fill=green!9,
+    draw=repaircol!65,
+    text=repaircol,
+    font=\bfseries\scriptsize,
+    minimum size=4.6mm,
+    inner sep=0pt
+  ] at ($(#1.north east)+(-0.10,-0.09)$) {$\checkmark$};
+}
+
+\newcommand{\ghostpipeline}{%
+  \node[ghostblock] (gmodel) at (1.95,3.05)
+    {\textbf{Learn models}\\[-0.5mm]$\eta$};
+  \node[ghostblock] (gpolicy) at (6.15,3.05)
+    {\textbf{Make decisions}\\[-0.5mm]$\pi_t$};
+  \node[ghostblock] (gdata) at (10.35,3.05)
+    {\textbf{Observe data}\\[-0.5mm]$O_t$};
+  \node[ghostblock] (ginfer) at (14.55,3.05)
+    {\textbf{Infer}\\[-0.5mm]$\psi,\ \mathrm{CI}$};
+  \draw[ghostflow] (gmodel.east) -- (gpolicy.west);
+  \draw[ghostflow] (gpolicy.east) -- (gdata.west);
+  \draw[ghostflow] (gdata.east) -- (ginfer.west);
+}
+
+\newcommand{\activepipeline}[1]{%
+  \ifnum#1>0
+    \node[block] (model) at (1.95,3.05)
+      {\textbf{Learn models}\\[-0.5mm]\textcolor{linecol}{$\eta$}};
+  \fi
+  \ifnum#1>1
+    \node[block] (policy) at (6.15,3.05)
+      {\textbf{Make decisions}\\[-0.5mm]\textcolor{linecol}{$\pi_t$}};
+    \draw[flow] (model.east) -- (policy.west);
+  \fi
+  \ifnum#1>2
+    \node[block] (data) at (10.35,3.05)
+      {\textbf{Observe data}\\[-0.5mm]\textcolor{linecol}{$O_t$}};
+    \draw[flow] (policy.east) -- (data.west);
+  \fi
+  \ifnum#1>3
+    \node[block] (infer) at (14.55,3.05)
+      {\textbf{Infer}\\[-0.5mm]\textcolor{linecol}{$\psi,\ \mathrm{CI}$}};
+    \draw[flow] (data.east) -- (infer.west);
+  \fi
+}
+
+\newcommand{\systemlinks}{%
+  \draw[feedback]
+    (model.north) .. controls (4.8,5.05) and (11.7,5.05) .. (infer.north);
+  \draw[feedback]
+    (infer.south) .. controls (12.3,1.05) and (8.0,1.05) .. (policy.south);
+  \smallcheck{model}
+  \smallcheck{policy}
+  \smallcheck{data}
+  \smallcheck{infer}
+}
+
+\newcommand{\simpleframe}[1]{%
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,font=\small]
+
+  \path[use as bounding box] (0.10,0.55) rectangle (16.35,5.82);
+
+  \ghostpipeline
+  \activepipeline{#1}
+
+  \ifnum#1>4
+    \systemlinks
+  \fi
+
+  \ifnum#1=6
+    \draw[issueflow]
+      (model.north) .. controls (4.8,5.05) and (11.7,5.05) .. (infer.north);
+    \node[badge,fill=red!8,draw=issuecol,text=issuecol] at (8.20,5.04) {!};
+    \node[issuebox] at (8.20,5.47) {Estimation errors propagate};
+
+    \draw[issueflow] (policy.east) -- (data.west);
+    \node[badge,fill=red!8,draw=issuecol,text=issuecol] at (8.25,3.05) {!};
+    \node[issuebox] at (8.25,2.26) {Information depends\\on the path};
+
+    \draw[issueflow] (data.east) -- (infer.west);
+    \node[badge,fill=red!8,draw=issuecol,text=issuecol] at (12.45,3.05) {!};
+    \node[issuebox] at (12.45,2.26) {Indirect estimation\\amplifies error};
+  \fi
+
+  \ifnum#1=7
+    \draw[repairflow]
+      (model.north) .. controls (4.8,5.05) and (11.7,5.05) .. (infer.north);
+    \node[repairbox] at (8.20,5.35) {Orthogonalize};
+
+    \draw[repairflow] (policy.east) -- (data.west);
+    \node[repairbox] at (8.25,2.24) {Calibrate};
+
+    \draw[repairflow] (data.east) -- (infer.west);
+    \node[repairbox] at (12.45,2.24) {Regularize};
+  \fi
+
+  \ifnum#1>7
+    \draw[repairflow] (model.east) -- (policy.west);
+    \draw[repairflow] (policy.east) -- (data.west);
+    \draw[repairflow] (data.east) -- (infer.west);
+    \draw[repairflow]
+      (model.north) .. controls (4.8,5.05) and (11.7,5.05) .. (infer.north);
+    \draw[repairflow]
+      (infer.south) .. controls (12.3,1.05) and (8.0,1.05) .. (policy.south);
+
+    \node[repairbox] at (8.20,5.35) {Orthogonalize};
+    \node[repairbox] at (8.25,2.24) {Calibrate};
+    \node[repairbox] at (12.45,2.24) {Regularize};
+  \fi
+
+\end{tikzpicture}
+}
+
+\begin{document}
+\foreach \t in {1,...,8}{
+  \simpleframe{\t}
+  \newpage
+}
+\end{document}

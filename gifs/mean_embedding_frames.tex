@@ -1,0 +1,125 @@
+\documentclass[tikz,border=5pt,multi]{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{amsmath,amssymb}
+
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cHcY}{\mathcal{H}_{\mathcal{Y}}}
+
+% ------------------------------------------------------------
+% One animation frame
+% ------------------------------------------------------------
+\newcommand{\embeddingframe}[1]{%
+\begin{tikzpicture}[>=Latex, font=\small]
+
+% Fixed bounding box so all frames align perfectly in the GIF
+\path[use as bounding box] (-0.8,-0.7) rectangle (15.8,5.0);
+
+% ------------------------------------------------------------
+% Left panel: two distributions
+% ------------------------------------------------------------
+\begin{axis}[
+  name=pdfax,
+  at={(0,0)}, anchor=south west,
+  width=6.6cm, height=4.4cm,
+  xmin=-3, xmax=3,
+  ymin=0, ymax=0.75,
+  axis lines=left,
+  xlabel={$y$}, ylabel={$p(y)$},
+  xtick=\empty, ytick=\empty,
+  axis line style={black},
+  every axis y label/.style={at={(axis description cs:-0.09,0.5)}, rotate=90},
+  every axis x label/.style={at={(axis description cs:0.5,-0.11)}},
+]
+  % Blue distribution
+  \addplot[domain=-3:3, samples=400, very thick, blue]
+    {1/(0.6*sqrt(2*pi))*exp(-0.5*(x/0.6)^2)};
+  \node[blue] at (axis cs:-1.9,0.32) {\(P_{Y(\pi)}\)};
+
+  % Red distribution
+  \addplot[domain=-3:3, samples=400, very thick, red]
+    {1/(sqrt(2*pi))*exp(-0.5*((x-0.6))^2)};
+  \node[red] at (axis cs:-0.15,0.13) {\(P_{Y(\pi')}\)};
+
+  % Peaks for dashed arrows
+  \coordinate (Ppeak) at (axis cs:0,{1/(0.6*sqrt(2*pi))});
+  \coordinate (Qpeak) at (axis cs:0.6,{1/(sqrt(2*pi))});
+\end{axis}
+
+% ------------------------------------------------------------
+% Right panel coordinates
+% ------------------------------------------------------------
+\coordinate (rkhsC) at (11.0,2.15);
+\coordinate (etaA)  at (9.80,2.95);
+\coordinate (etaAp) at (12.50,1.55);
+
+% ------------------------------------------------------------
+% Frame 2 onward: RKHS region
+% ------------------------------------------------------------
+\ifnum#1>1
+  \filldraw[
+    fill=green!20,
+    draw=green!50!black,
+    thick,
+    rotate around={-10:(rkhsC)}
+  ]
+  (rkhsC) ellipse [x radius=3.2cm, y radius=2.1cm];
+
+  \node at (12.1,0.75) {\small \textsf{RKHS}};
+\fi
+
+% ------------------------------------------------------------
+% Frame 3 onward: mean embeddings
+% ------------------------------------------------------------
+\ifnum#1>2
+  \fill[blue] (etaA) circle (2.1pt);
+  \node[anchor=south west, blue] at ($(etaA)+(0.08,0.02)$) {\(\chi(\pi)\)};
+
+  \fill[red] (etaAp) circle (2.1pt);
+  \node[anchor=north west, red] at ($(etaAp)+(0.08,-0.18)$) {\(\chi(\pi')\)};
+\fi
+
+% ------------------------------------------------------------
+% Frame 3 onward: dashed embedding arrows
+% ------------------------------------------------------------
+\ifnum#1>2
+  \draw[dashed, thick, gray!65, opacity=0.8, ->]
+    (Ppeak) to[out=15, in=180]
+    node[pos=0.38, sloped, above, text=gray!75, font=\scriptsize]
+    {\(\chi(\pi)=\mathbb{E}[k_{\cY}(\cdot,Y(\pi))]\)}
+    ($(etaA)+(-0.05,0.08)$);
+
+  \draw[dashed, thick, gray!65, opacity=0.8, ->]
+    (Qpeak) to[out=10, in=200]
+    node[pos=0.67, sloped, below, text=gray!75, font=\scriptsize]
+    {\(\chi(\pi')=\mathbb{E}[k_{\cY}(\cdot,Y(\pi'))]\)}
+    ($(etaAp)+(0.05,-0.08)$);
+\fi
+
+% ------------------------------------------------------------
+% Frame 4 onward: RKHS comparison
+% ------------------------------------------------------------
+\ifnum#1>3
+  \draw[->, very thick]
+    (etaA) -- (etaAp)
+    node[midway, xshift=2pt, yshift=-3pt, anchor=south west]
+    {\(\|\chi(\pi)-\chi(\pi')\|_{\cHcY}\)};
+\fi
+
+\end{tikzpicture}
+}
+
+% ------------------------------------------------------------
+% Document: one page = one frame
+% ------------------------------------------------------------
+\begin{document}
+
+\foreach \t in {1,...,4}{
+    \embeddingframe{\t}
+    \newpage
+}
+
+\end{document}
