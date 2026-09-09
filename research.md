@@ -1,25 +1,31 @@
 ---
 layout: default
-title: "Nuisance-Robust Learning and Inference"
+title: "Statistical Guarantees for Flexible Machine Learning"
 permalink: /research/
 hide_title: true
 ---
 
 <div class="research-identity">
-  <h1 class="research-identity-title">Nuisance-Robust Learning and&nbsp;Inference</h1>
-  <p class="research-identity-subtitle">Methods for imperfect, adaptive and structured feedback</p>
+  <h1 class="research-identity-title">Statistical Guarantees for Flexible Machine Learning</h1>
+  <p class="research-identity-subtitle">Nuisance-Robust Learning and Inference</p>
 </div>
 
 <p class="research-overview">
-Modern machine learning increasingly relies on pipelines in which learned models guide decisions, decisions determine which data are observed, and those data are reused for inference and further optimization. The same mechanisms that make these systems effective&mdash;adaptive collection, flexible prediction, learned representations, and optimization through estimated components&mdash;can invalidate classical guarantees. Component-wise guarantees need not survive composition: deployment changes the sampling law, optimization amplifies estimation error, and plug-in procedures propagate bias downstream.
+<strong>Learned models increasingly serve as measurements, objectives, and inputs to further decisions—not just as predictors.</strong> For example, a model trained on human judgments can become an evaluator or a reward for training language models; a predictor trained on laboratory measurements can guide which experiments are performed next. These uses help overcome a practical bottleneck: measurements and experiments are expensive, whereas predictions can be produced at scale. The statistical challenge is therefore to use limited observations to support evaluations and decisions at scale while controlling the errors introduced by learned models.
 </p>
 
+{% comment %}
 <figure class="research-overview-gif">
   <img src="{{ "/gifs/composition_guarantees.gif" | relative_url }}?v={{ site.time | date: "%s" }}" alt="Animated pipeline showing learned models, decisions, observed data, inference, failure mechanisms, and repair principles">
 </figure>
+{% endcomment %}
 
 <p class="research-overview">
-My research develops statistical theory and algorithms for these interfaces. I study where guarantees fail when learning, optimization, and inference interact; identify conditions and constructions&mdash;such as directional stability and orthogonality&mdash;that preserve validity and efficiency; and design principled corrections when they do not. The broader goal is to enable expressive learning systems to improve decisions while preserving the validity of the conclusions drawn from them, particularly in biology and biomedicine, where experimental decisions, confounded measurements, and structured outcomes often enter the same pipeline. This programme spans inference after adaptive experiments, nuisance-robust distributional causal inference for structured outcomes, nuisance-robust methods for functionals of solutions to inverse and nested problems, policy learning, and earlier work in representation learning and medical imaging.
+<strong>Good prediction does not guarantee good decisions or valid inference—and good decisions and valid inference do not always require highly accurate predictions.</strong> What matters is how model errors affect the final task. An optimizer can favor precisely the candidates a model overestimates, while plugging learned functions into an estimator can introduce bias that overwhelms its sampling uncertainty, even when average prediction errors are small. Conversely, some errors have little effect on the final target or can be corrected, relaxing the accuracy required of individual components. The relevant accuracy requirements must therefore be determined by how estimation errors affect the final task. This reasoning becomes even more important under adaptivity, where decisions also shape the data from which later conclusions are drawn. Early estimation errors and random outcomes can influence what is observed next, changing the sampling process itself. Consequently, correcting model error alone need not restore valid confidence intervals: one must also establish which features of the evolving sampling process matter for the final estimates and decisions, and how to control them.
+</p>
+
+<p class="research-overview">
+<strong>My research develops the statistical foundations of machine learning for reliable inference and effective decision-making.</strong> I characterize how estimation errors propagate through inference and optimization, establish when adaptive sampling preserves inferential efficiency, and design corrections when familiar procedures fail. An important possibility is that the final procedure can perform well under weaker requirements than its individual components might suggest: a bias-corrected estimator can converge faster than its learned nuisance functions, and efficient inference can survive without the entire adaptive design stabilizing. My work identifies and exploits these distinctions in new estimation and learning problems. The broader aim is to extract more benefit from flexible models and available data without demanding more accuracy, stability, or fresh measurements than the task requires.
 </p>
 
 <details class="research-block research-collapsible">
