@@ -15,5 +15,5 @@ NeurIPS, ICML, ICLR, AISTATS, TMLR
 
 ## Workshop and Seminar Organization
 
-- **2026:** Organizer, [Advances on Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/), Gatsby Unit.
-- **Since Sept 2025:** Organizer of the external machine learning seminars at Gatsby Unit, UCL.
+- **18–19 June 2026:** Lead Organiser, [Advances in Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/), Gatsby Computational Neuroscience Unit, UCL, with Bariscan Bozkurt, I-Chun Lin and Arthur Gretton. The two-day programme included seven invited speakers, posters and an open-problems session. I secured a US$5,000 workshop grant from Netflix to support the event.
+- **September 2025–August 2026:** Organiser of the external machine learning seminars at Gatsby Unit, UCL.

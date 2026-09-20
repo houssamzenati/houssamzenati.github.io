@@ -32,17 +32,19 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
 
 ## News
 
-- **June 2026:** Organized the [Advances on Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/) at the Gatsby Unit, UCL.
+- **June 2026:** Lead organiser of the [Advances in Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/) at the Gatsby Unit, UCL.
 - **June 2026:** Our paper **Fast Best-in-Class Regret for Contextual Bandits** was accepted at UAI 2026.
 
 ## Selected Publications
+
+\* Marks authors who contributed equally to the paper.
 
 - **Efficient Inference after Directionally Stable Adaptive Experiments**  
   Z. Shen\*, ***H. Zenati***\*, N. Kallus, A. Gretton, K. Khamaru, A. Bibaut.  
   *Preprint*, 2026.  
   [[arXiv]](https://arxiv.org/abs/2602.21478)
 
-- **Kernel Treatment Effects from Adaptively Collected Data**  
+- **Kernel Treatment Effects with Adaptively Collected Data**  
   ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  
   *AISTATS*, 2026.  
   [[Paper]](https://arxiv.org/pdf/2510.10245) · [[Code]](https://github.com/houssamzenati/adaptive-KTE)
@@ -53,9 +55,9 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
   [[Paper]](https://arxiv.org/pdf/2605.08034)
 
 - **Fast Best-in-Class Regret for Contextual Bandits**  
-  Girard, Samuel, Nathan Kallus, Jill-Jênn Vie, Arthur Gretton, Aurélien Bibaut, and ***Houssam Zenati***.  
+  Samuel Girard, Aurélien Bibaut, Jill-Jênn Vie, Arthur Gretton, Nathan Kallus, and ***Houssam Zenati***.  
   *UAI*, 2026.  
-  [[arXiv]](https://arxiv.org/pdf/2510.15483)
+  [[Proceedings]](https://proceedings.mlr.press/v337/girard26a.html)
 
 - **Sequential Counterfactual Risk Minimization**  
   ***Houssam Zenati***, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard.  

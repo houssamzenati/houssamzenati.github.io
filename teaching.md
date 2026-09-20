@@ -24,3 +24,4 @@ I have been fortunate to co-supervise and mentor students on research projects:
 - Samuel Girard (PhD student, with [Aurelien Bibaut](https://scholar.google.com/citations?user=N_8WC5oAAAAJ&hl=en), 2025--2026)
 - Robin Leman (Master's student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
 - [Bariscan Bozkurt](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
+- Sofiane Tanji (PhD student, UCLouvain; co-supervised with Yassine Laguel, 2026)

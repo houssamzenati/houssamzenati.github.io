@@ -151,6 +151,7 @@ hide_title: true
       <li>
         <strong>[N6] Semiparametric Efficient Bilevel Gradient Estimation</strong><br>
         Fares El Khoury*, <strong><em>Houssam Zenati</em></strong>*, Nathan Kallus, Michael Arbel, Aurelien Bibaut.<br>
+        <small>* Marks authors who contributed equally to the paper.</small><br>
         <em>Preprint</em>, 2026.<br>
         <a href="https://arxiv.org/abs/2605.21341">[Paper]</a>
       </li>
@@ -204,9 +205,9 @@ hide_title: true
       </li>
       <li>
         <strong>[PL7] Fast Best-in-Class Regret for Contextual Bandits</strong><br>
-        Girard, Samuel, Nathan Kallus, Jill-Jênn Vie, Arthur Gretton, Aurélien Bibaut, and <strong><em>Houssam Zenati</em></strong>.<br>
+        Samuel Girard, Aurélien Bibaut, Jill-Jênn Vie, Arthur Gretton, Nathan Kallus, and <strong><em>Houssam Zenati</em></strong>.<br>
         <em>UAI</em>, 2026.<br>
-        <a href="https://arxiv.org/abs/2510.15483">[Paper]</a>
+        <a href="https://proceedings.mlr.press/v337/girard26a.html">[Proceedings]</a>
       </li>
       <li>
         <strong>[PL8] Functional Natural Policy Gradients</strong><br>

@@ -6,7 +6,7 @@ permalink: /publications/
 
 An up-to-date list is available on [Google Scholar](https://scholar.google.com/citations?user=LBqNPp4AAAAJ&hl=en).
 
-\* Equal contribution.
+\* Marks authors who contributed equally to the paper.
 
 ## Inference after Adaptive Experiments
 
@@ -67,9 +67,9 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 ## Offline Policy Learning/Sequential Learning
 
 - **Fast Best-in-Class Regret for Contextual Bandits**  
-  Girard, Samuel, Nathan Kallus, Jill-Jênn Vie, Arthur Gretton, Aurélien Bibaut, and ***Houssam Zenati***.  
+  Samuel Girard, Aurélien Bibaut, Jill-Jênn Vie, Arthur Gretton, Nathan Kallus, and ***Houssam Zenati***.  
   *UAI*, 2026.  
-  [[Paper]](https://arxiv.org/abs/2510.15483)
+  [[Proceedings]](https://proceedings.mlr.press/v337/girard26a.html)
 
 - **Functional Natural Policy Gradients**  
   Aurelien Bibaut, ***Houssam Zenati***, Thibaud Rahier, Nathan Kallus.  
