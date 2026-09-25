@@ -88,7 +88,7 @@ hide_title: true
     </p>
 
     <p>
-      I first introduced a global, doubly robust representation and test for determining whether two interventions induce the same outcome distribution <a href="https://arxiv.org/pdf/2506.02793">[SO1]</a>. An omnibus rejection, however, establishes that the distributions differ without revealing how. I therefore developed a second procedure that learns informative outcome prototypes and evaluates the discrepancy at those locations, yielding an interpretable and semiparametrically efficient test that localizes the effect while remaining valid after data-driven prototype selection <a href="https://arxiv.org/pdf/2605.08034">[SO2]</a>.
+      I first introduced a global, doubly robust representation and test for determining whether two interventions induce the same outcome distribution <a href="https://arxiv.org/pdf/2506.02793">[SO1]</a>. An omnibus rejection, however, establishes that the distributions differ without revealing how. I therefore developed a second procedure that learns informative outcome prototypes and evaluates the discrepancy at those locations, yielding an interpretable and semiparametrically efficient test that localizes the effect while remaining valid after data-driven prototype selection <a href="https://arxiv.org/pdf/2605.08034">[SO2]</a> (NeurIPS 2026).
     </p>
 
     <div class="research-questions">
