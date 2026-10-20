@@ -1,300 +1,194 @@
 ---
 layout: default
-title: "Statistical Guarantees for Flexible Machine Learning"
+title: "Statistical Learning for Inference and Decision-Making"
 permalink: /research/
 hide_title: true
+math: true
 ---
 
 <div class="research-identity">
-  <h1 class="research-identity-title">Statistical Guarantees for Flexible Machine Learning</h1>
-  <p class="research-identity-subtitle">Nuisance-Robust Learning and Inference</p>
+  <h1 class="research-identity-title">Statistical Learning for Inference and Decision-Making</h1>
 </div>
 
 <p class="research-overview">
-<strong>Learned models increasingly serve as measurements, objectives, and inputs to further decisions—not just as predictors.</strong> For example, a model trained on human judgments can become an evaluator or a reward for training language models; a predictor trained on laboratory measurements can guide which experiments are performed next. These uses help overcome a practical bottleneck: measurements and experiments are expensive, whereas predictions can be produced at scale. The statistical challenge is therefore to use limited observations to support evaluations and decisions at scale while controlling the errors introduced by learned models.
+The evidence needed to improve a decision rule can differ from the evidence needed to quantify its effects. My research examines how risk geometry, the structure of inferential targets, and experimental design determine what can be learned from limited feedback. Across these problems, I seek guarantees that reflect <strong>the accuracy and information required by the final task</strong>.
 </p>
 
-{% comment %}
-<figure class="research-overview-gif">
-  <img src="{{ "/gifs/composition_guarantees.gif" | relative_url }}?v={{ site.time | date: "%s" }}" alt="Animated pipeline showing learned models, decisions, observed data, inference, failure mechanisms, and repair principles">
-</figure>
-{% endcomment %}
-
-<p class="research-overview">
-<strong>Good prediction does not guarantee good decisions or valid inference—and good decisions and valid inference do not always require highly accurate predictions.</strong> What matters is how model errors affect the final task. An optimizer can favor precisely the candidates a model overestimates, while plugging learned functions into an estimator can introduce bias that overwhelms its sampling uncertainty, even when average prediction errors are small. Conversely, some errors have little effect on the final target or can be corrected, relaxing the accuracy required of individual components. The relevant accuracy requirements must therefore be determined by how estimation errors affect the final task. This reasoning becomes even more important under adaptivity, where decisions also shape the data from which later conclusions are drawn. Early estimation errors and random outcomes can influence what is observed next, changing the sampling process itself. Consequently, correcting model error alone need not restore valid confidence intervals: one must also establish which features of the evolving sampling process matter for the final estimates and decisions, and how to control them.
-</p>
-
-<p class="research-overview">
-<strong>My research develops the statistical foundations of machine learning for reliable inference and effective decision-making.</strong> I characterize how estimation errors propagate through inference and optimization, establish when adaptive sampling preserves inferential efficiency, and design corrections when familiar procedures fail. An important possibility is that the final procedure can perform well under weaker requirements than its individual components might suggest: a bias-corrected estimator can converge faster than its learned nuisance functions, and efficient inference can survive without the entire adaptive design stabilizing. My work identifies and exploits these distinctions in new estimation and learning problems. The broader aim is to extract more benefit from flexible models and available data without demanding more accuracy, stability, or fresh measurements than the task requires.
-</p>
-
-<details class="research-block research-collapsible">
+<details id="learning-to-intervene" class="research-block research-collapsible">
   <summary class="research-block-summary">
     <div class="research-block-header">
-      <h2>Statistical Foundations of Inference after Adaptive Experiments</h2>
+      <h2>Learning to Intervene</h2>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
+    <p class="research-block-intro">
+      Learning to intervene means using selective feedback from past actions to <strong>improve an intervention rule</strong> \(\pi\). I study how much feedback is needed to approach the performance of the best rule \(\pi^\star\) in a chosen class \(\Pi\), and how much regret accumulates during sequential learning.
+    </p>
+    {% include research-figure.html
+      name="policy_learning"
+      title="Learning to intervene"
+      width="1800"
+      height="901"
+      alt="A policy pi improves from pi-zero toward the best-in-class rule pi-star within the class Pi. Orange contours show illustrative risk levels. Logged actions and outcomes support learning; a dashed deployment loop adds new feedback in the sequential setting."
+      caption="Starting from \(\pi_0\), the illustration follows an improving policy through risk contours. The path can represent continuous improvement or successive updates; the dashed loop adds feedback from deployment."
+    %}
+  </summary>
 
-    <figure class="research-gif">
-      <img src="{{ "/gifs/adaptive_inference.gif" | relative_url }}?v={{ site.time | date: "%s" }}" alt="Animated adaptive experiment, orthogonal score, and Gaussian inference pipeline">
-    </figure>
+  <div class="research-block-content">
+    <p>For an expected loss \(R(\pi)\), the best-in-class objective is</p>
+    <div class="research-equation">
+      \[
+        \pi^\star\in\operatorname*{arg\,min}_{\pi\in\Pi}R(\pi).
+      \]
+    </div>
+    <p>Learning reduces the <em>excess risk</em> \(R(\pi)-R(\pi^\star)\).</p>
+
+    <h3>What determines how quickly we can approach the best policy in a chosen class?</h3>
+    <p>
+      My <a href="https://arxiv.org/abs/2004.11722">continuous-action CRM work</a> develops representations, optimization methods and evaluation procedures for learning stochastic policies from logged feedback. The statistical difficulty depends in part on how differences in policy performance compare with the uncertainty in estimating them.
+    </p>
+    <p>
+      In <a href="https://arxiv.org/abs/2302.12120">Sequential CRM</a>, I identify geometric conditions linking policy suboptimality to importance-weight variance. Algorithms can exploit this relationship to achieve faster learning: <strong>fewer observations for a given policy performance, or less regret during deployment</strong>. <a href="https://arxiv.org/abs/2510.15483">O2PL</a> develops this fast-rate principle for rich policy classes under fully online updating, without assuming that a reward model is correctly specified.
+    </p>
+
+    <h3>Can structure in the environment reduce the statistical cost of learning a rich policy class?</h3>
+    <p>
+      Risk geometry is one source of favorable learning rates. Another is the interaction between policy-class complexity and how accurately the environment can be learned. In <a href="https://arxiv.org/abs/2603.28681">Functional Natural Policy Gradients</a>, we construct a correction of the learned policy through a cross-fitted natural-gradient flow. The resulting guarantees <strong>couple policy and environment-estimation errors</strong>, allowing sufficiently learnable environmental structure to compensate for a rich policy class.
+    </p>
+    <p>
+      An ongoing question connects learning to inference: <em>how can we learn policies whose improvement over a reference rule can also be statistically established?</em>
+    </p>
+  </div>
+</details>
+
+<details id="inference-on-intervention-effects" class="research-block research-collapsible">
+  <summary class="research-block-summary">
+    <div class="research-block-header">
+      <h2>Inference on Intervention Effects</h2>
+      <span class="research-toggle" aria-hidden="true"></span>
+    </div>
+    <p class="research-block-intro">
+      Learning which interventions perform well leaves further questions about <strong>what they change and how precisely their effects can be established</strong>. I study distributional effects and targets defined through nested or inverse problems, including mediated effects and inference under unobserved confounding.
+    </p>
+    {% include research-figure.html
+      name="nuisance_robust_inference"
+      title="Inference on intervention effects"
+      width="1800"
+      height="600"
+      alt="Nearby nuisance estimates eta-hat, such as outcome or treatment models, vary in blue while the data remain fixed. Orthogonal bias correction maps them to corrected estimates theta-hat with reduced local sensitivity. The red star marks the true target, distinct from the estimate."
+      caption="With the observations held fixed, nearby nuisance fits \(\widehat\eta\) produce corrected estimates \(\widehat\theta\) with reduced local sensitivity. Sampling uncertainty remains."
+    %}
   </summary>
 
   <div class="research-block-content">
     <p>
-      Adaptive experiments use past outcomes to choose future assignments, then reuse the resulting trajectory for inference. For estimators whose leading term is a martingale sum, a Gaussian limit typically requires two ingredients: no individual increment is asymptotically influential, and the normalized quadratic variation&mdash;or, under mild conditions, the accumulated conditional variance&mdash;stabilizes. Adaptive allocation can violate the second requirement because the realized assignment path may preserve non-negligible information about earlier outcome fluctuations; in fixed-horizon examples, an inverse-propensity estimator with known assignment probabilities then converges to a non-Gaussian mixture of normals. It can also violate the first requirement when some assignment probabilities are of order $1/T$, allowing a few inverse-propensity-weighted observations to retain non-vanishing influence. Consequently, naive Wald intervals based on the standard martingale Gaussian approximation can be miscalibrated.
+      Effect estimators often incorporate functions learned through prediction tasks, such as outcome or treatment-assignment models. In the illustration, these fitted functions are denoted by \(\widehat\eta\), and the final target estimate by \(\widehat\theta\). <strong>Good prediction does not guarantee good decisions or valid inference—and good decisions and valid inference do not always require highly accurate predictions.</strong> I characterize which estimation errors affect the target and develop corrections that reduce their influence.
     </p>
 
+    <h3>What changes beyond the mean, and how can those changes be understood?</h3>
     <p>
-      I develop procedures that restore validity while preserving the information accumulated by the adaptive design. For structured outcomes, I construct a learn-then-test procedure that estimates an informative witness direction, projects a doubly robust RKHS score onto it, and applies predictable variance normalization, yielding calibrated distributional tests under adaptive assignment <a href="https://arxiv.org/pdf/2510.10245">[AI1]</a>. In my recent work, I introduce directional stability, a target-specific condition requiring only the design information relevant to the parameter of interest&mdash;formalized through its Riesz representer&mdash;to stabilize, rather than the entire information matrix. To characterize efficiency in this setting, I develop local asymptotic normality and convolution theory for sequences of experiments whose adaptive sampling laws change with the horizon. Within this theory, I show that directional stability is sufficient for classical one-step estimators to remain asymptotically normal and attain the semiparametric efficiency bound, without generic adaptive reweighting <a href="https://arxiv.org/abs/2602.21478">[AI2]</a>.
+      Interventions can have similar average outcomes while changing variability, tails or other features of the outcome distribution. My <a href="https://arxiv.org/abs/2506.02793">counterfactual policy mean-embedding work</a> represents and compares interventional outcome distributions, including for structured outcomes such as images and sequences.
     </p>
-
     <p>
-      Questions:
+      A global test can establish that distributions differ without explaining which features distinguish them. My <a href="https://arxiv.org/abs/2605.08034">interpretable distributional test</a> learns informative outcome locations and evaluates discrepancies there, while accounting for their data-driven selection. A complementary ongoing direction develops scalable sampling from estimated interventional distributions, making those distributions easier to explore through representative outcomes.
     </p>
 
-    <div class="research-questions">
-      <p>
-        How can distributional tests remain calibrated when adaptive assignment changes the covariance geometry of the outcome representation? <a href="https://arxiv.org/pdf/2510.10245">[AI1]</a>
-      </p>
-
-      <p>
-        What target-specific stability is sufficient for classical one-step inference to remain valid and efficient under adaptive sampling? <a href="https://arxiv.org/abs/2602.21478">[AI2]</a>
-      </p>
-
-      <p>
-        How should semiparametric efficiency be defined when the sampling law itself changes with the experiment? <a href="https://arxiv.org/abs/2602.21478">[AI2]</a>
-      </p>
-    </div>
-
+    <h3>How can we infer functionals defined through nested regressions or inverse equations?</h3>
+    <p>
+      <strong>In nested problems, estimation errors propagate across layers.</strong> Mediated effects depend on nested conditional expectations; my <a href="https://arxiv.org/abs/2503.06156">continuous-treatment mediation work</a> develops corrected estimation and uncertainty quantification for mediated-response curves. These questions also motivate longitudinal extensions, where later decisions and outcomes depend on evolving histories. A related problem arises in optimization: my <a href="https://arxiv.org/abs/2605.21341">bilevel-gradient work</a> corrects the bias introduced when a population gradient depends on a learned lower-level optimizer.
+    </p>
+    <p>
+      <strong>In inverse problems, recovering an entire function can be unstable or ambiguous.</strong> Proxies and instrumental variables provide indirect information about effects under unobserved confounding. The relevant question is whether a particular functional can be estimated accurately even when the bridge or structural function is difficult to recover. Our proxy work develops <a href="https://arxiv.org/abs/2505.19807">kernel</a> and <a href="https://arxiv.org/abs/2605.09514">neural</a> estimators that combine complementary bridge functions and control the errors relevant to the final target.
+    </p>
+    <p>
+      <strong>What should inference target when the inverse equations have no exact solution?</strong> Our <a href="https://arxiv.org/abs/2604.24660">NPIV preprint</a> addresses this further difficulty through a projected functional. It remains well defined without an exact solution and recovers the conventional estimand under exact specification.
+    </p>
   </div>
 </details>
 
-<details class="research-block research-collapsible">
+<details id="adaptive-experimentation" class="research-block research-collapsible">
   <summary class="research-block-summary">
     <div class="research-block-header">
-      <h2>Distributional Causal Inference for Structured Outcomes</h2>
+      <h2>Adaptive Experimentation</h2>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
-
-    <figure class="research-gif">
-      <img src="{{ "/gifs/mean_embedding.gif" | relative_url }}?v={{ site.time | date: "%s" }}" alt="Animated kernel mean embedding comparison for interventional outcome distributions">
-    </figure>
+    <p class="research-block-intro">
+      Learning and inference meet in deciding what to try next. <strong>The interventions that appear best for performance need not be those that are most informative about the effects we want to estimate.</strong> Adaptive experimentation asks how to pursue both aims as outcomes arrive and guide subsequent choices. Each choice affects the outcomes we obtain and the evidence on which later decisions and conclusions depend. I develop exploration algorithms that exploit structure, establish conditions for valid and efficient inference as assignments adapt, and investigate how inferential goals should guide further experimentation.
+    </p>
+    {% include research-figure.html
+      name="adaptive_inference"
+      title="Adaptive experimentation"
+      width="1800"
+      height="700"
+      alt="An adaptive experiment with assigned actions on the horizontal axis and observed outcomes on the vertical axis. The observation law separates history-dependent assignment from a fixed outcome law. An orange ring marks the next assignment; new outcomes update the blue estimated mean and green model uncertainty."
+      caption="New observations update the estimated mean outcome \(\widehat m_t(a)\). Orange marks the next assignment; green illustrates uncertainty in the fitted model."
+    %}
   </summary>
 
   <div class="research-block-content">
-    <p>
-      Most causal inference reduces intervention effects to means, quantiles, or other scalar summaries. This can miss changes in dispersion, modes, tails, or rare configurations, while the field still lacks a general statistical theory and broadly applicable machine-learning methods for causal inference with images, sequences, graphs, and other structured outcomes. I address this gap by developing kernel-based procedures that represent entire interventional outcome distributions while remaining robust to estimation errors in propensity and conditional outcome models.
-    </p>
-
-    <p>
-      I first introduced a global, doubly robust representation and test for determining whether two interventions induce the same outcome distribution <a href="https://arxiv.org/pdf/2506.02793">[SO1]</a>. An omnibus rejection, however, establishes that the distributions differ without revealing how. I therefore developed a second procedure that learns informative outcome prototypes and evaluates the discrepancy at those locations, yielding an interpretable and semiparametrically efficient test that localizes the effect while remaining valid after data-driven prototype selection <a href="https://arxiv.org/pdf/2605.08034">[SO2]</a> (NeurIPS 2026).
-    </p>
-
-    <div class="research-questions">
-      <p>
-        How can entire interventional outcome distributions be represented, estimated, and compared for structured outcomes? <a href="https://arxiv.org/pdf/2506.02793">[SO1]</a>
-      </p>
-
-      <p>
-        How can a global distributional difference be localized and interpreted without sacrificing statistical efficiency or validity after data-driven selection? <a href="https://arxiv.org/pdf/2605.08034">[SO2]</a>
-      </p>
+    <p>With context held fixed, the observation model in the illustration is</p>
+    <div class="research-equation">
+      \[
+        p_{t+1}(a,y\mid\mathcal H_t)
+        =
+        g_{t+1}(a\mid\mathcal H_t)\,q_0(y\mid a).
+      \]
     </div>
+    <p>
+      The assignment rule \(g_{t+1}\) depends on the observed history \(\mathcal H_t\), while the conditional outcome law \(q_0\) stays fixed. <strong>Changing assignments therefore changes where information accumulates</strong>, even though the underlying outcome mechanism remains the same.
+    </p>
 
+    <h3>How can structure reduce the cost of exploration?</h3>
+    <p>
+      My work exploits complementary forms of structure: <a href="https://proceedings.mlr.press/v151/zenati22a.html">kernel approximations</a> make contextual exploration computationally scalable, <a href="https://proceedings.mlr.press/v162/martin22a.html">nested action similarities</a> allow information to be shared across related actions, and <a href="https://arxiv.org/abs/2402.15171">covariance information</a> improves learning from semi-bandit feedback.
+    </p>
+
+    <h3>What can we conclude from data collected by an adaptive decision rule?</h3>
+    <p>
+      Concentrating observations on promising actions can reduce information about alternative interventions. Dependence on earlier outcomes can also invalidate familiar inferential procedures, even when assignment probabilities are known.
+    </p>
+    <p>
+      I study two complementary responses. <a href="https://arxiv.org/abs/2510.10245">Adaptive kernel treatment effects</a> combine learned witness directions with sequential normalization to obtain calibrated distributional tests. <a href="https://arxiv.org/abs/2602.21478">Directional stability</a> identifies conditions under which <strong>the information relevant to a scalar target stabilizes</strong> sufficiently for classical one-step estimators to remain valid and efficient, without requiring the entire design to stabilize.
+    </p>
+
+    <h3>How much exploration does a particular inferential target require?</h3>
+    <p>
+      An ongoing question is how to connect inferential precision to the assignments needed to obtain it: <em>which experiments improve estimation of a specified effect, and what do they cost in policy performance?</em> This brings the learning and inference questions back into the design of data collection.
+    </p>
   </div>
 </details>
 
-<details class="research-block research-collapsible">
+<details id="adversarial-optimization" class="research-block research-collapsible">
   <summary class="research-block-summary">
     <div class="research-block-header">
-      <h2>Nuisance-Robust Learning and Inference for Nested and Inverse Problems</h2>
+      <h2>Generative Models and Representation Learning</h2>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
-
-    <figure class="research-gif">
-      <img src="{{ "/gifs/newton_geometry.gif" | relative_url }}?v={{ site.time | date: "%s" }}" alt="Animated local Newton geometry for nuisance-robust nested and inverse problems">
-    </figure>
+    <p class="research-block-intro">
+      My work on generative models studies how <strong>learned representations support anomaly detection and prediction with limited labels</strong>, alongside the optimization dynamics used to train adversarial models.
+    </p>
+    {% include research-figure.html
+      name="adversarial_optimization"
+      title="Adversarial optimization"
+      width="1800"
+      height="900"
+      alt="Mirror descent and optimistic mirror descent start at the same x-zero. Blue trajectories show the first method spiraling outward while optimistic corrections keep the updates near the red equilibrium x-star."
+      caption="Two illustrative trajectories begin at the same \(x_0\). Optimistic corrections alter the dynamics around the equilibrium \(x^\star\)."
+    %}
   </summary>
 
   <div class="research-block-content">
+    <h3>How can generative representations make learning with limited labels practical?</h3>
     <p>
-      I develop nuisance-robust methods for finite-dimensional functionals of solutions to nested and inverse problems. In mediation and bilevel optimization, these functionals are built from iterated regressions or a lower-level population optimizer and its derivative; in proxy and instrumental-variable analysis, they are built from bridge or least-squares solutions to conditional moment equations. Plug-in estimation is fragile: errors propagate through nested layers, while inverse operators discard information, making exact solutions unstable, non-unique, or potentially nonexistent. I therefore target the final functional directly using orthogonal scores, Riesz corrections, complementary bridge equations, and cross-fitting.
+      My <a href="https://arxiv.org/abs/1802.06222">encoder-based anomaly detection</a> and <a href="https://arxiv.org/abs/1812.02288">ALAD</a> work replaces costly per-example latent optimization with direct inference and develops representations for detecting anomalies in image and tabular data. Related work uses <a href="https://arxiv.org/abs/1805.08957">generative models to capture data-manifold geometry</a>, allowing unlabeled observations to support semi-supervised prediction.
     </p>
 
+    <h3>Under what conditions can adversarial optimization be stabilized?</h3>
     <p>
-      For mediation, I developed a kernel-localized orthogonal estimator for continuous-treatment mediated response curves <a href="https://arxiv.org/abs/2503.06156">[N1]</a>. A companion comparative mediation study benchmarks classical, multiply robust, and double-machine-learning estimators across binary, continuous, and multidimensional mediators, including under model misspecification, weak overlap, and in a UK Biobank application <a href="https://arxiv.org/pdf/2505.07323">[N2]</a>. For latent confounding, in joint work we developed density-ratio-free doubly robust bridge estimators based on kernel mean embeddings <a href="https://arxiv.org/pdf/2505.19807">[N3]</a>. In more recent joint work on instrumental variables, we introduced a projected parameter defined through primal and dual population least-squares problems. It remains well defined when the exact moment equations have no solution, is invariant to non-unique least-squares minimizers, and coincides with the usual structural estimand under exact specification <a href="https://arxiv.org/pdf/2604.24660">[N4]</a>. We subsequently extended the bridge approach to neural representations and continuous or structured treatments <a href="https://arxiv.org/pdf/2605.09514">[N5]</a>. I also developed the first semiparametric efficiency theory for the unregularized population bilevel gradient, together with an orthogonal estimator controlled uniformly over the outer parameter so that it can serve as a statistical gradient oracle <a href="https://arxiv.org/abs/2605.21341">[N6]</a>.
+      Adversarial training couples interacting optimization variables, represented by \(x=(x_1,x_2)\) in the illustration. Standard updates can cycle around an equilibrium \(x^\star\). Our work on <a href="https://openreview.net/forum?id=Bkg8jjC9KQ">optimistic mirror descent</a> characterizes these dynamics and establishes convergence under coherence and suitable step-size conditions.
     </p>
-
-    <p>
-      <strong>Recent questions</strong>
-    </p>
-
-    <div class="research-questions">
-      <p>
-        What should nonparametric IV analysis estimate when its moment equations are only approximate? Can a projected least-squares parameter recover the usual estimand under exact specification and still support debiased inference otherwise? <a href="https://arxiv.org/pdf/2604.24660">[N4]</a>
-      </p>
-
-      <p>
-        How can the unregularized population hypergradient be estimated without the first-order bias of differentiating fitted lower-level models, and controlled uniformly enough to guide optimization? <a href="https://arxiv.org/abs/2605.21341">[N6]</a>
-      </p>
-    </div>
-
-    <h3>Selected Papers</h3>
-
-    <ul class="selected-papers">
-      <li>
-        <strong>[N4] Nonparametric Instrumental Variable Analysis Without Structural Equations: Debiased Inference on Functionals of Inverse Problems with No Solutions</strong><br>
-        Zikai Shen, Nathan Kallus, Dimitri Meunier, <strong><em>Houssam Zenati</em></strong>, Arthur Gretton, Aur&eacute;lien Bibaut.<br>
-        <em>Preprint</em>, 2026.<br>
-        <a href="https://arxiv.org/pdf/2604.24660">[Paper]</a>
-      </li>
-      <li>
-        <strong>[N6] Semiparametric Efficient Bilevel Gradient Estimation</strong><br>
-        Fares El Khoury*, <strong><em>Houssam Zenati</em></strong>*, Nathan Kallus, Michael Arbel, Aurelien Bibaut.<br>
-        <small>* Marks authors who contributed equally to the paper.</small><br>
-        <em>Preprint</em>, 2026.<br>
-        <a href="https://arxiv.org/abs/2605.21341">[Paper]</a>
-      </li>
-    </ul>
   </div>
 </details>
 
-<details class="research-block research-collapsible">
-  <summary class="research-block-summary">
-    <div class="research-block-header">
-      <h2>Statistical and Algorithmic Foundations of Policy Learning</h2>
-      <span class="research-toggle" aria-hidden="true"></span>
-    </div>
+<p class="document-links"><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
 
-    <figure class="research-gif">
-      <img src="{{ "/gifs/policy_learning.gif" | relative_url }}?v={{ site.time | date: "%s" }}" alt="Animated policy-learning trajectory and deployment loop">
-    </figure>
-  </summary>
-
-  <div class="research-block-content">
-    <p>
-      I develop statistical and algorithmic foundations for policy learning across fully online, batched-online, and offline contextual-bandit settings. From fixed logged data, I first studied direct policy optimization with continuous actions, using smooth importance-weighted objectives and proximal methods to stabilize a nonconvex learning problem <a href="https://causalrlworkshop.github.io/program/cldm_6.html">[PL1]</a>. In online contextual bandits, I then made nonparametric value-based learning computationally scalable through incremental Nystr&ouml;m approximations <a href="https://proceedings.mlr.press/v151/zenati22a.html">[PL2]</a>, and studied how hierarchical similarities between actions can reduce the effective complexity of exploration <a href="https://proceedings.mlr.press/v162/martin22a/martin22a.pdf">[PL3]</a>.
-    </p>
-
-    <p>
-      On the policy-based side, I introduced in Sequential CRM a H&ouml;lderian error-bound principle linking policy suboptimality to importance-weight variance. Combined with variance-sensitive updates and limited redeployment, this yields fast excess-risk and regret rates for parametric policy classes <a href="https://arxiv.org/pdf/2302.12120.pdf">[PL4]</a>. I also studied how covariance information revealed by semi-bandit observations can improve online exploration <a href="https://arxiv.org/pdf/2402.15171">[PL5]</a>. Returning to offline continuous-action learning, I completed the pipeline with joint context&ndash;action kernel models and principled offline model selection and evaluation <a href="https://arxiv.org/pdf/2004.11722.pdf">[PL6]</a>.
-    </p>
-
-    <p>
-      Building on these foundations, my recent work extends the fast-rate principle to fully online, agnostic learning over rich nonparametric policy classes: O2PL establishes the first fast best-in-class regret rates in this setting <a href="https://arxiv.org/abs/2510.15483">[PL7]</a>. I also introduce a semiparametric natural-gradient construction that debiases the learned policy itself, rather than merely estimating or optimizing a debiased policy value <a href="https://arxiv.org/pdf/2603.28681">[PL8]</a>. This recent work asks:
-    </p>
-
-    <div class="research-questions">
-      <p>
-        What structural conditions allow fully online, agnostic contextual bandits to attain fast regret against the best policy in a rich nonparametric class, without reward-model realizability? <a href="https://arxiv.org/abs/2510.15483">[PL7]</a>
-      </p>
-
-      <p>
-        Can policy learning itself, not merely the evaluation of a fixed policy, be semiparametrically targeted through a functional natural-gradient flow, so that rich policy classes attain root-N regret while policy approximation and environment-estimation errors interact only through second-order product remainders? <a href="https://arxiv.org/pdf/2603.28681">[PL8]</a>
-      </p>
-    </div>
-
-    <h3>Selected Papers</h3>
-
-    <ul class="selected-papers">
-      <li>
-        <strong>[PL4] Sequential Counterfactual Risk Minimization</strong><br>
-        <strong><em>Houssam Zenati</em></strong>, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard.<br>
-        <em>ICML</em>, 2023.<br>
-        <a href="https://arxiv.org/pdf/2302.12120.pdf">[Paper]</a> &middot; <a href="https://github.com/criteo-research/sequential-counterfactual-risk-minimization">[Code]</a>
-      </li>
-      <li>
-        <strong>[PL7] Fast Best-in-Class Regret for Contextual Bandits</strong><br>
-        Samuel Girard, Aurélien Bibaut, Jill-Jênn Vie, Arthur Gretton, Nathan Kallus, and <strong><em>Houssam Zenati</em></strong>.<br>
-        <em>UAI</em>, 2026.<br>
-        <a href="https://proceedings.mlr.press/v337/girard26a.html">[Proceedings]</a>
-      </li>
-      <li>
-        <strong>[PL8] Functional Natural Policy Gradients</strong><br>
-        Aurelien Bibaut, <strong><em>Houssam Zenati</em></strong>, Thibaud Rahier, Nathan Kallus.<br>
-        <em>Preprint</em>, 2026.<br>
-        <a href="https://arxiv.org/pdf/2603.28681">[Paper]</a>
-      </li>
-    </ul>
-  </div>
-</details>
-
-<details class="research-block research-collapsible">
-  <summary class="research-block-summary">
-    <div class="research-block-header">
-      <h2>Generative Representation Learning and Adversarial Optimization</h2>
-      <span class="research-toggle" aria-hidden="true"></span>
-    </div>
-
-    <figure class="research-gif">
-      <img src="{{ "/gifs/adversarial_optimization.gif" | relative_url }}?v={{ site.time | date: "%s" }}" alt="Animated optimization dynamics for adversarial learning, comparing mirror descent and optimistic mirror descent">
-    </figure>
-  </summary>
-
-  <div class="research-block-content">
-    <p>
-      My earlier work in adversarial learning first focused on generative representation learning for anomaly detection and semi-supervised prediction. I initiated and led a line of work that made GAN-based anomaly detection practical at test time. I introduced an amortized detector that replaced the costly per-example latent optimization used by earlier GAN methods with direct encoder-based inference, achieving state-of-the-art results while reducing test-time computation by several hundred-fold <a href="https://arxiv.org/pdf/1802.06222.pdf">[AR1]</a>. I also contributed to work showing how GANs can encode data-manifold geometry through a Monte Carlo approximation of Laplacian regularization for semi-supervised learning <a href="https://arxiv.org/pdf/1805.08957.pdf">[AR2]</a>, <a href="https://arxiv.org/abs/1807.04307">[AR3]</a>.
-    </p>
-
-    <p>
-      I then developed ALAD, strengthening bidirectional adversarial learning with data- and latent-space cycle consistency, spectral normalization, and discriminator-based representations to improve anomaly detection across image and tabular benchmarks <a href="https://arxiv.org/pdf/1812.02288.pdf">[AR4]</a>. In retinal imaging, I applied semi-supervised representation learning to reduce reliance on expert annotations for abnormality classification <a href="https://arxiv.org/pdf/1812.07832.pdf">[AR5]</a>. This line of work became a widely cited reference point in generative anomaly detection, and ALAD was subsequently used beyond the original benchmarks.
-    </p>
-
-    <p>
-      A complementary line of work examined optimization in adversarial min&ndash;max problems. It characterized the last-iterate dynamics of mirror descent under coherence, showed why standard updates can cycle even in bilinear games, and established convergence of optimistic corrections across the broader class of coherent problems <a href="https://openreview.net/pdf?id=Bkg8jjC9KQ">[AR6]</a>. I also studied practical unsupervised anomaly detection for retinal images, where clinically relevant abnormalities may be sparse or localized <a href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[AR7]</a>.
-    </p>
-
-    <p>
-      Questions:
-    </p>
-
-    <div class="research-questions">
-      <p>
-        How can adversarial generative models make anomaly detection computationally practical, avoiding per-example latent optimization at inference time? <a href="https://arxiv.org/pdf/1802.06222.pdf">[AR1]</a>
-      </p>
-
-      <p>
-        How can generators encode data-manifold geometry and exploit unlabeled observations for semi-supervised learning? <a href="https://arxiv.org/pdf/1805.08957.pdf">[AR2]</a>, <a href="https://arxiv.org/abs/1807.04307">[AR3]</a>
-      </p>
-
-      <p>
-        How can bidirectional adversarial representations improve anomaly detection across image and tabular data? <a href="https://arxiv.org/pdf/1812.02288.pdf">[AR4]</a>
-      </p>
-
-      <p>
-        How can semi-supervised representation learning reduce expert-annotation requirements in medical imaging? <a href="https://arxiv.org/pdf/1812.07832.pdf">[AR5]</a>
-      </p>
-
-      <p>
-        Under what structural conditions do optimistic first-order methods achieve last-iterate convergence in adversarial min&ndash;max problems? <a href="https://openreview.net/pdf?id=Bkg8jjC9KQ">[AR6]</a>
-      </p>
-
-      <p>
-        How can unsupervised representation learning support practical detection and localization of abnormalities in retinal images? <a href="https://link.springer.com/chapter/10.1007/978-3-030-33391-1_26">[AR7]</a>
-      </p>
-    </div>
-
-    <h3>Selected Papers</h3>
-
-    <ul class="selected-papers">
-      <li>
-        <strong>[AR1] Efficient GAN-Based Anomaly Detection</strong><br>
-        <strong><em>Houssam Zenati</em></strong>, Chuan-Sheng Foo, Bruno Lecouat, Gaurav Manek, Vijay Ramaseshan Chandrasekhar.<br>
-        <em>ICLR Workshop</em>, 2018.<br>
-        <a href="https://arxiv.org/pdf/1802.06222.pdf">[Paper]</a> &middot; <a href="https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection">[Code]</a>
-      </li>
-      <li>
-        <strong>[AR4] Adversarially Learned Anomaly Detection</strong><br>
-        <strong><em>Houssam Zenati</em></strong>, Manon Romain, Chuan-Sheng Foo, Bruno Lecouat, Vijay Chandrasekhar.<br>
-        <em>ICDM</em>, 2018.<br>
-        <a href="https://arxiv.org/pdf/1812.02288.pdf">[Paper]</a> &middot; <a href="https://github.com/houssamzenati/Adversarially-Learned-Anomaly-Detection">[Code]</a>
-      </li>
-      <li>
-        <strong>[AR6] Optimistic Mirror Descent in Saddle-Point Problems: Going the Extra (Gradient) Mile</strong><br>
-        Panagiotis Mertikopoulos, Bruno Lecouat, <strong><em>Houssam Zenati</em></strong>, Chuan-Sheng Foo, Vijay Chandrasekhar, Georgios Piliouras.<br>
-        <em>ICLR</em>, 2019.<br>
-        <a href="https://openreview.net/pdf?id=Bkg8jjC9KQ">[Paper]</a> &middot; <a href="https://github.com/bruno-31/gan_optim">[Code]</a>
-      </li>
-    </ul>
-  </div>
-</details>
+<script src="{{ '/assets/js/research.js' | relative_url }}" defer></script>

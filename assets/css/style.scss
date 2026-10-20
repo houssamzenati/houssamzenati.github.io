@@ -294,6 +294,15 @@ section {
   margin-bottom: 15px;
 }
 
+.research-block-summary .research-block-intro {
+  margin: 0;
+}
+
+.research-block-content h3 {
+  font-size: 17px;
+  line-height: 1.45;
+}
+
 .research-block a {
   font-weight: 700;
 }
@@ -338,6 +347,102 @@ section {
   height: auto;
   object-fit: contain;
   width: 100%;
+}
+
+.policy-learning-figure img {
+  aspect-ratio: auto;
+}
+
+.inference-figure img {
+  aspect-ratio: auto;
+}
+
+.inference-animation > summary {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  display: list-item;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  width: fit-content;
+}
+
+.inference-animation > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.inference-animation .inference-static-label,
+.inference-animation[open] .inference-play-label,
+.inference-animation[open] + .inference-poster {
+  display: none;
+}
+
+.inference-animation[open] .inference-static-label {
+  display: inline;
+}
+
+.adaptive-experimentation-figure img {
+  aspect-ratio: auto;
+}
+
+.adaptive-animation > summary {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  display: list-item;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  width: fit-content;
+}
+
+.adaptive-animation > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.adaptive-animation .adaptive-static-label,
+.adaptive-animation[open] .adaptive-play-label,
+.adaptive-animation[open] + .adaptive-poster {
+  display: none;
+}
+
+.adaptive-animation[open] .adaptive-static-label {
+  display: inline;
+}
+
+.adaptive-experimentation-figure figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.research-gif.research-figure img {
+  aspect-ratio: auto;
+}
+
+.research-block-summary .research-figure {
+  margin: 18px 0 0;
+}
+
+.research-figure > .research-poster {
+  display: none;
+}
+
+.research-figure figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-top: 10px;
+}
+
+.research-equation {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px 0;
 }
 
 .research-block-content {
@@ -611,6 +716,15 @@ blockquote {
   .research-block h2 {
     font-size: 20px;
   }
+
+  .research-block-content h3 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .research-equation {
+    font-size: clamp(0.7rem, 3.6vw, 1rem);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -732,5 +846,15 @@ blockquote {
 
   blockquote {
     border-left-color: var(--border);
+  }
+}
+
+@media print {
+  .research-figure > .research-animation {
+    display: none !important;
+  }
+
+  .research-figure > .research-poster {
+    display: block !important;
   }
 }

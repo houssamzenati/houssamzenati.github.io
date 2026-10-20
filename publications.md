@@ -8,36 +8,38 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 
 \* Marks authors who contributed equally to the paper.
 
-## Inference after Adaptive Experiments
+† Marks papers whose authors are listed in alphabetical order.
 
-- **Efficient Inference after Directionally Stable Adaptive Experiments**  
-  Zikai Shen\*, ***Houssam Zenati***\*, Nathan Kallus, Arthur Gretton, Koulik Khamaru, Aurelien Bibaut.  
+[Learning to Intervene](#learning-to-intervene) · [Inference on Intervention Effects](#inference-on-intervention-effects) · [Adaptive Experimentation](#adaptive-experimentation) · [Generative Models and Representation Learning](#generative-models-and-representation-learning)
+
+## Learning to Intervene
+
+- **Functional Natural Policy Gradients**  
+  Aurelien Bibaut, ***Houssam Zenati***, Thibaud Rahier, Nathan Kallus.  
   *Preprint*, 2026.  
-  [[Paper]](https://arxiv.org/abs/2602.21478)
+  [[Paper]](https://arxiv.org/pdf/2603.28681)
 
-- **Kernel Treatment Effects with Adaptively Collected Data**  
-  ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  
-  *AISTATS*, 2026.  
-  [[Paper]](https://arxiv.org/pdf/2510.10245) · [[Code]](https://github.com/houssamzenati/adaptive-KTE)
+- **Fast Best-in-Class Regret for Contextual Bandits**  
+  Samuel Girard, Aurélien Bibaut, Jill-Jênn Vie, Arthur Gretton, Nathan Kallus, and ***Houssam Zenati***.  
+  *UAI*, 2026.  
+  [[Proceedings]](https://proceedings.mlr.press/v337/girard26a.html)
 
-## Causal Inference for Structured Outcomes
+- **Sequential Counterfactual Risk Minimization**  
+  ***Houssam Zenati***, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard.  
+  *ICML*, 2023.  
+  [[Paper]](https://arxiv.org/pdf/2302.12120.pdf) · [[Code]](https://github.com/criteo-research/sequential-counterfactual-risk-minimization)
 
-- **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
-  ***Houssam Zenati***, Arthur Gretton.  
-  *NeurIPS*, 2026.  
-  [[Paper]](https://arxiv.org/pdf/2605.08034)
+- **Counterfactual Learning of Stochastic Policies with Continuous Actions**  
+  ***Houssam Zenati***, Alberto Bietti, Matthieu Martin, Eustache Diemert, Pierre Gaillard, Julien Mairal.  
+  *Transactions on Machine Learning Research*, 2025.  
+  [[Paper]](https://arxiv.org/pdf/2004.11722.pdf) · [[Code]](https://github.com/criteo-research/optimization-continuous-action-crm)
 
-- **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**  
-  ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  
-  *NeurIPS*, 2025.  
-  [[Paper]](https://arxiv.org/pdf/2506.02793) · [[Code]](https://github.com/houssamzenati/counterfactual-policy-mean-embedding)
+- **Optimization Approaches for Counterfactual Risk Minimization with Continuous Actions**  
+  ***Houssam Zenati***, Alberto Bietti, Matthieu Martin, Eustache Diemert, Julien Mairal.  
+  *ICLR Workshop on Causal Learning for Decision Making*, 2020.  
+  [[Paper]](https://causalrlworkshop.github.io/program/cldm_6.html) · [[Code]](https://github.com/criteo-research/optimization-continuous-action-crm)
 
-## Inference on Linear Functionals of solutions to Nested and Inverse Problems
-
-- **Semiparametric Efficient Bilevel Gradient Estimation**  
-  Fares El Khoury\*, ***Houssam Zenati***\*, Nathan Kallus, Michael Arbel, Aurelien Bibaut.  
-  *Preprint*, 2026.  
-  [[Paper]](https://arxiv.org/abs/2605.21341)
+## Inference on Intervention Effects
 
 - **Doubly Robust Proxy Causal Learning with Neural Mean Embeddings**  
   Bariscan Bozkurt, Alexandre Galashov, Dimitri Meunier, Zikai Shen, Arthur Gretton, ***Houssam Zenati***.  
@@ -48,6 +50,21 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
   Zikai Shen, Nathan Kallus, Dimitri Meunier, ***Houssam Zenati***, Arthur Gretton, Aur&eacute;lien Bibaut.  
   *Preprint*, 2026.  
   [[Paper]](https://arxiv.org/pdf/2604.24660)
+
+- **Semiparametric Efficient Bilevel Gradient Estimation**  
+  Fares El Khoury\*, ***Houssam Zenati***\*, Nathan Kallus, Michael Arbel, Aurelien Bibaut.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/abs/2605.21341)
+
+- **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
+  ***Houssam Zenati***, Arthur Gretton.  
+  *NeurIPS*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2605.08034)
+
+- **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**  
+  ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  
+  *NeurIPS*, 2025.  
+  [[Paper]](https://arxiv.org/pdf/2506.02793) · [[Code]](https://github.com/houssamzenati/counterfactual-policy-mean-embedding)
 
 - **Density Ratio-Free Doubly Robust Proxy Causal Learning**  
   Bariscan Bozkurt, ***Houssam Zenati***, Dimitri Meunier, Liyuan Xu, Arthur Gretton.  
@@ -64,35 +81,25 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
   *Psychological Methods*, 2025.  
   [[Paper]](https://arxiv.org/pdf/2505.07323)
 
-## Offline Policy Learning/Sequential Learning
+## Adaptive Experimentation
 
-- **Fast Best-in-Class Regret for Contextual Bandits**  
-  Samuel Girard, Aurélien Bibaut, Jill-Jênn Vie, Arthur Gretton, Nathan Kallus, and ***Houssam Zenati***.  
-  *UAI*, 2026.  
-  [[Proceedings]](https://proceedings.mlr.press/v337/girard26a.html)
-
-- **Functional Natural Policy Gradients**  
-  Aurelien Bibaut, ***Houssam Zenati***, Thibaud Rahier, Nathan Kallus.  
+- **Efficient Inference after Directionally Stable Adaptive Experiments**  
+  Zikai Shen\*, ***Houssam Zenati***\*, Nathan Kallus, Arthur Gretton, Koulik Khamaru, Aurelien Bibaut.  
   *Preprint*, 2026.  
-  [[Paper]](https://arxiv.org/pdf/2603.28681)
+  [[Paper]](https://arxiv.org/abs/2602.21478)
 
-- **Counterfactual Learning of Stochastic Policies with Continuous Actions**  
-  ***Houssam Zenati***, Alberto Bietti, Matthieu Martin, Eustache Diemert, Pierre Gaillard, Julien Mairal.  
-  *Transactions on Machine Learning Research*, 2025.  
-  [[Paper]](https://arxiv.org/pdf/2004.11722.pdf) · [[Code]](https://github.com/criteo-research/optimization-continuous-action-crm)
+- **Kernel Treatment Effects with Adaptively Collected Data**  
+  ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  
+  *AISTATS*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2510.10245) · [[Code]](https://github.com/houssamzenati/adaptive-KTE)
 
 - **Towards Efficient and Optimal Covariance-Adaptive Algorithms for Combinatorial Semi-Bandits**  
   Julien Zhou, Pierre Gaillard, Thibaud Rahier, ***Houssam Zenati***, Julyan Arbel.  
   *NeurIPS*, 2024.  
   [[Paper]](https://arxiv.org/pdf/2402.15171)
 
-- **Sequential Counterfactual Risk Minimization**  
-  ***Houssam Zenati***, Eustache Diemert, Matthieu Martin, Julien Mairal, Pierre Gaillard.  
-  *ICML*, 2023.  
-  [[Paper]](https://arxiv.org/pdf/2302.12120.pdf) · [[Code]](https://github.com/criteo-research/sequential-counterfactual-risk-minimization)
-
-- **Nested Bandits**  
-  Matthieu Martin, Panagiotis Mertikopoulos, Thibaud Rahier, ***Houssam Zenati***.  
+- **Nested Bandits**<sup>†</sup>  
+  Matthieu Martin, Panayotis Mertikopoulos, Thibaud Rahier, ***Houssam Zenati***.  
   *ICML*, 2022.  
   [[Paper]](https://proceedings.mlr.press/v162/martin22a/martin22a.pdf) · [[Code]](https://github.com/criteo-research/Nested-Exponential-Weights)
 
@@ -101,12 +108,7 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
   *AISTATS*, 2022.  
   [[Paper]](https://proceedings.mlr.press/v151/zenati22a.html) · [[Code]](https://github.com/criteo-research/Efficient-Kernel-UCB)
 
-- **Optimization Approaches for Counterfactual Risk Minimization with Continuous Actions**  
-  ***Houssam Zenati***, Alberto Bietti, Matthieu Martin, Eustache Diemert, Julien Mairal.  
-  *ICLR Workshop on Causal Learning for Decision Making*, 2020.  
-  [[Paper]](https://causalrlworkshop.github.io/program/cldm_6.html) · [[Code]](https://github.com/criteo-research/optimization-continuous-action-crm)
-
-## Adversarial Representation Learning
+## Generative Models and Representation Learning
 
 - **Optimistic Mirror Descent in Saddle-Point Problems: Going the Extra (Gradient) Mile**  
   Panagiotis Mertikopoulos, Bruno Lecouat, ***Houssam Zenati***, Chuan-Sheng Foo, Vijay Chandrasekhar, Georgios Piliouras.  
@@ -135,7 +137,7 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 
 - **Manifold Regularization with GANs for Semi-Supervised Learning**  
   Bruno Lecouat, Chuan-Sheng Foo, ***Houssam Zenati***, Vijay Chandrasekhar.  
-  *arXiv preprint*, 2018.  
+  *ICLR Workshop*, 2018.  
   [[Paper]](https://arxiv.org/abs/1807.04307)
 
 - **Semi-Supervised Deep Learning for Abnormality Classification in Retinal Images**  

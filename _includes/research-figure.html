@@ -1,0 +1,5 @@
+<figure class="research-gif research-figure">
+  <img class="research-animation" src="{{ '/gifs/' | append: include.name | append: '.gif' | relative_url }}?v={{ site.time | date: '%s' }}" width="{{ include.width }}" height="{{ include.height }}" loading="lazy" alt="{{ include.alt | escape }}">
+  <img class="research-poster" src="{{ '/gifs/' | append: include.name | append: '_final_slide.png' | relative_url }}?v={{ site.time | date: '%s' }}" width="{{ include.width }}" height="{{ include.height }}" loading="lazy" alt="{{ include.alt | escape }}">
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>
