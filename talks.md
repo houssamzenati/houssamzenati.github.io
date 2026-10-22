@@ -4,6 +4,8 @@ title: Talks
 permalink: /talks/
 ---
 
+- **Interventional Mean Embeddings for Distributional Causal Inference**, October 2026. [[Slides (handout)]]({{ "/assets/slides/ime-2026-handout.pdf" | relative_url }})
+
 - **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**, INRIA Thoth, Grenoble, France, October 2025.
 
 - **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**, [Symposium on Mathematical Foundations of Trustworthy Learning](https://ellis.eu/events/symposium-on-mathematical-foundations-of-trustworthy-learning), Monte Verita, Ascona, Switzerland, October 2025.
