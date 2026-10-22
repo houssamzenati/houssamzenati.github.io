@@ -24,17 +24,17 @@ When teaching, I like to emphasize conceptual clarity, mathematical rigor, and a
 
 I have been fortunate to co-supervise and mentor students on research projects:
 
-- [**Julien Zhou**](https://jlnzhou.github.io/) (Master's student, with [Pierre Gaillard](https://pierre-gaillard.github.io/), 2023)
+- [**Julien Zhou**](https://jlnzhou.github.io/) (Master's student, mentoring, with [Pierre Gaillard](https://pierre-gaillard.github.io/), 2023)
     - [Towards Efficient and Optimal Covariance-Adaptive Algorithms for Combinatorial Semi-Bandits](https://papers.nips.cc/paper_files/paper/2024/hash/3640a1997a4c9571cea9db2c82e1fc35-Abstract-Conference.html) — *NeurIPS 2024*.
 
-- [**Samuel Girard**](https://scholar.google.com/citations?hl=fr&user=n0TaKDsAAAAJ) (PhD student, with [Aurelien Bibaut](https://scholar.google.com/citations?user=N_8WC5oAAAAJ&hl=en), 2025--2026)
+- [**Samuel Girard**](https://scholar.google.com/citations?hl=fr&user=n0TaKDsAAAAJ) (PhD student, co-supervision, with [Aurelien Bibaut](https://scholar.google.com/citations?user=N_8WC5oAAAAJ&hl=en), 2025--2026)
     - [Fast Best-in-Class Regret for Contextual Bandits](https://proceedings.mlr.press/v337/girard26a.html) — *UAI 2026*.
 
-- [**Robin Leman**](https://robinleman.com/) (Master's student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
+- [**Robin Leman**](https://robinleman.com/) (Master's student, supervision, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
     - *Work in progress.*
 
-- [**Bariscan Bozkurt**](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
+- [**Bariscan Bozkurt**](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, co-supervision, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
     - [Doubly Robust Proxy Causal Learning with Neural Mean Embeddings](https://arxiv.org/abs/2605.09514) — *Preprint, 2026*.
 
-- [**Sofiane Tanji**](https://sofianetanji.com/) (PhD student, with [Yassine Laguel](https://yassine-laguel.github.io/), 2026)
+- [**Sofiane Tanji**](https://sofianetanji.com/) (PhD student, co-supervision, with [Yassine Laguel](https://yassine-laguel.github.io/), 2026)
     - *Work in progress.*
