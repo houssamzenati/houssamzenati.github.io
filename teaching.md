@@ -23,8 +23,21 @@ When teaching, I like to emphasize conceptual clarity, mathematical rigor, and a
 ## Supervision
 
 I have been fortunate to co-supervise and mentor students on research projects:
-- [Julien Zhou](https://jlnzhou.github.io/) (Master's student, with [Pierre Gaillard](https://pierre-gaillard.github.io/), 2023)
-- Samuel Girard (PhD student, with [Aurelien Bibaut](https://scholar.google.com/citations?user=N_8WC5oAAAAJ&hl=en), 2025--2026)
-- Robin Leman (Master's student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
-- [Bariscan Bozkurt](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
-- Sofiane Tanji (PhD student, UCLouvain; co-supervised with Yassine Laguel, 2026)
+
+- [**Julien Zhou**](https://jlnzhou.github.io/) (Master's student, with [Pierre Gaillard](https://pierre-gaillard.github.io/), 2023)
+    - [Towards Efficient and Optimal Covariance-Adaptive Algorithms for Combinatorial Semi-Bandits](https://papers.nips.cc/paper_files/paper/2024/hash/3640a1997a4c9571cea9db2c82e1fc35-Abstract-Conference.html) — *NeurIPS 2024*.
+
+- **Samuel Girard** (PhD student, with [Aurelien Bibaut](https://scholar.google.com/citations?user=N_8WC5oAAAAJ&hl=en), 2025--2026)
+    - [Fast Best-in-Class Regret for Contextual Bandits](https://proceedings.mlr.press/v337/girard26a.html) — *UAI 2026*.
+
+- **Robin Leman** (Master's student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
+    - *Work in progress.*
+
+- [**Bariscan Bozkurt**](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
+    - [Doubly Robust Proxy Causal Learning with Neural Mean Embeddings](https://arxiv.org/abs/2605.09514) — *Preprint, 2026*.
+    - [Kernel Treatment Effects with Adaptively Collected Data](https://proceedings.mlr.press/v300/zenati26a.html) — *AISTATS 2026*.
+    - [Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings](https://proceedings.neurips.cc/paper_files/paper/2025/hash/49a77f5557668b87a568c2d9468d4d6b-Abstract-Conference.html) — *NeurIPS 2025*.
+    - [Density Ratio-Free Doubly Robust Proxy Causal Learning](https://papers.neurips.cc/paper_files/paper/2025/hash/55f6ba76cc449c993d357e7ec2b58dca-Abstract-Conference.html) — *NeurIPS 2025*.
+
+- **Sofiane Tanji** (PhD student, UCLouvain; co-supervised with Yassine Laguel, 2026)
+    - *Work in progress.*
