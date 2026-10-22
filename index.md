@@ -69,7 +69,7 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
 
 <div class="section-links">
   <a href="{{ "/publications/" | relative_url }}"><strong>Publications</strong><span>Full list of journal, conference, and working papers.</span></a>
-  <a href="{{ "/talks/" | relative_url }}"><strong>Talks</strong><span>Invited talks, seminars, and conference presentations.</span></a>
+  <a href="{{ "/talks/" | relative_url }}"><strong>Selected Talks</strong><span>Invited talks, seminars, and conference presentations.</span></a>
   <a href="{{ "/teaching/" | relative_url }}"><strong>Teaching</strong><span>Courses, mentoring, tutorials, and supervision.</span></a>
   <a href="{{ "/software/" | relative_url }}"><strong>Software</strong><span>Research code, packages, and open-source projects.</span></a>
   <a href="{{ "/service/" | relative_url }}"><strong>Service</strong><span>Reviewing, community service, and professional activities.</span></a>
