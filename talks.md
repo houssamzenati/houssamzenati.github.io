@@ -4,7 +4,7 @@ title: Talks
 permalink: /talks/
 ---
 
-- **Interventional Mean Embeddings for Distributional Causal Inference**, October 2026. [[Slides (handout)]]({{ "/assets/slides/ime-2026-handout.pdf" | relative_url }})
+- **Interventional Mean Embeddings for Distributional Causal Inference**, Gatsby Unit, UCL, October 2026. [[Slides (handout)]]({{ "/assets/slides/ime-2026-handout.pdf" | relative_url }})
 
 - **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**, INRIA Thoth, Grenoble, France, October 2025.
 
