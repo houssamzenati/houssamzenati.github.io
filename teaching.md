@@ -36,5 +36,5 @@ I have been fortunate to co-supervise and mentor students on research projects:
 - [**Bariscan Bozkurt**](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
     - [Doubly Robust Proxy Causal Learning with Neural Mean Embeddings](https://arxiv.org/abs/2605.09514) — *Preprint, 2026*.
 
-- [**Sofiane Tanji**](https://sofianetanji.com/) (PhD student, UCLouvain; co-supervised with [Yassine Laguel](https://yassine-laguel.github.io/), 2026)
+- [**Sofiane Tanji**](https://sofianetanji.com/) (PhD student, with [Yassine Laguel](https://yassine-laguel.github.io/), 2026)
     - *Work in progress.*
