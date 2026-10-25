@@ -1,0 +1,139 @@
+{
+  "parameters": {
+    "outdir": "results/location_explainer",
+    "n": 2500,
+    "seed": 2,
+    "train_fraction": 0.55,
+    "kernel_scale": 0.8,
+    "ridge": 1e-06,
+    "grid_nx": 49,
+    "grid_ny": 34,
+    "prototype": [
+      1.8,
+      0.0
+    ],
+    "dpi": 180,
+    "gif": true
+  },
+  "source_sha256": {
+    "illustrate_dr_me_locations.py": "eab98e6990562792ffcb3f0f217f66e2a6a590da05460e7793ca8383ffe26cb4",
+    "contour_estimated_oracle.py": "fb741676ae2590f45b64a9886be19dcfbcc1e5365044cef0991a5a941e63615f"
+  },
+  "versions": {
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.2"
+  },
+  "train_n": 1375,
+  "mixture": {
+    "w0": [
+      0.44,
+      0.44,
+      0.12000000000000005
+    ],
+    "w1": [
+      0.08,
+      0.44,
+      0.48000000000000004
+    ],
+    "means": [
+      [
+        -1.8,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.8,
+        0.0
+      ]
+    ],
+    "sds": [
+      0.34,
+      0.25,
+      0.34
+    ]
+  },
+  "interventions": {
+    "q": {
+      "arm": 1,
+      "color": "#70469A"
+    },
+    "qprime": {
+      "arm": 0,
+      "color": "#AC527A"
+    }
+  },
+  "criterion": "mean.T @ solve(sample_covariance + ridge * I, mean); no sample-size factor",
+  "covariance_ddof": 1,
+  "kernel_scale_is_squared_bandwidth": true,
+  "colour_limits": [
+    0.003660382532414018,
+    0.19814744183515134
+  ],
+  "colour_clipping": false,
+  "original_score_divisor": 1375,
+  "max_reference_error": 2.609024107869118e-15,
+  "sampling_design": "Original two-fold cross-fitting inside learning split; no final test performed.",
+  "nuisance_settings": {
+    "folds": 2,
+    "basis_anchors": 16,
+    "interaction_dim": 3,
+    "propensity_l2": 0.01,
+    "regression_l2": 1.0
+  },
+  "interpretation": [
+    "Potential-outcome clouds and exact population bars are display-only.",
+    "Learning uses estimated nuisance functions and observed X,A,Y only.",
+    "This DGP has covariate-dependent assignment but no outcome confounding.",
+    "Grid selection with the other location fixed is not unrestricted joint optimisation.",
+    "Training criterion is not witness height, density, p-value, or exact power.",
+    "All reveal surfaces are recomputed, not interpolated images."
+  ],
+  "panels": [
+    {
+      "fixed": [
+        0.0,
+        -0.05
+      ],
+      "selected": [
+        -2.0250000000000004,
+        -0.11818181818181817
+      ],
+      "grid_index": 741,
+      "single_criterion": 0.003660290954801043,
+      "joint_criterion": 0.19814744183515134,
+      "gain": 0.1944871508803503
+    },
+    {
+      "fixed": [
+        -1.8,
+        -0.06
+      ],
+      "selected": [
+        0.44999999999999973,
+        0.11818181818181839
+      ],
+      "grid_index": 910,
+      "single_criterion": 0.14773277780652558,
+      "joint_criterion": 0.19800030636851873,
+      "gain": 0.05026752856199314
+    }
+  ],
+  "outputs": [
+    "prototype_similarity.png",
+    "prototype_similarity.pdf",
+    "location_learning.pdf",
+    "location_learning_reveals.pdf",
+    "learning_01_center.png",
+    "learning_02_center.png",
+    "learning_03_center.png",
+    "learning_04_left.png",
+    "learning_05_left.png",
+    "learning_06_left.png",
+    "location_learning.gif",
+    "figure_data.npz",
+    "metadata.json"
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {"name": "med-bench", "source": "_software_thumbnails/sources/mediation-graph.pdf", "trim": true},
+  {"name": "adaptive-kte", "source": "_software_thumbnails/sources/treatment-effects.tex", "trim": true},
+  {"name": "cpme", "source": "_software_thumbnails/sources/cpme.tex", "trim": true},
+  {"name": "continuous-mediation", "source": "_software_thumbnails/sources/continuous-mediation.pdf", "trim": true},
+  {"name": "sequential-crm", "source": "_software_thumbnails/sources/gaussian-sequential-crm.pdf"},
+  {"name": "kernel-ucb", "source": "assets/slides/T05-2022-01-inria-thoth-efficient-kernel-ucb.pdf", "page": 10, "crop": [119, 89, 241, 199]},
+  {"name": "nested-bandits", "source": "_software_thumbnails/sources/nested-bandits-tree.png"},
+  {"name": "continuous-crm", "source": "_software_thumbnails/sources/continuous-crm-proximal.pdf"},
+  {"name": "alad", "source": "assets/slides/T02-2018-11-icdm-adversarially-learned-anomaly-detection.pdf", "page": 8, "crop": [193, 144, 342, 221]},
+  {"name": "efficient-gan", "source": "assets/slides/T01-2018-04-dl2-efficient-gan-anomaly-detection.pdf", "page": 13, "crop": [79, 106, 284, 181]}
+]

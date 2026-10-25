@@ -1,0 +1,41 @@
+\input{style.tex}
+\input{interpretable-dte-contours.tex}
+\tikzset{
+  learned/.style={star,star points=5,star point ratio=2.2,fill=fitblue,
+    draw=white,line width=.45pt,minimum size=4.8mm,inner sep=0pt},
+  locationlabel/.style={font=\fontsize{10.5}{12}\selectfont,
+    fill=white,fill opacity=.92,text opacity=1,inner sep=1.3pt,rounded corners=1pt}
+}
+\newcommand{\locations}{%
+  \draw[warmorange,line width=1.55pt] ($(vone)+(-.095,0)$) -- ($(vone)+(.095,0)$)
+    ($(vone)+(0,-.095)$) -- ($(vone)+(0,.095)$);
+  \node[learned] at (vtwo) {};
+  \node[locationlabel,text=warmorange,anchor=south] at ($(vone)+(0,.14)$) {$v_1$};
+  \node[locationlabel,text=fitblue,anchor=north] at ($(vtwo)+(0,-.14)$) {$v_2$};
+}
+\begin{document}
+\beginmini
+  % Actual learning landscapes, exported from the saved paper experiment.
+  % v1 stays fixed; v2 is the grid maximizer of the joint estimated DR criterion.
+  % Oracle markers and synthetic outcome clouds are omitted for legibility.
+  \node[text=muted] at (1.88,3.60) {Central $v_1$};
+  \node[text=muted] at (5.32,3.60) {Left $v_1$};
+
+  \begin{scope}[shift={(.38,1.65)},rotate around={3:(1.5,.72222)}]
+    \centralfield
+    \draw[muted!35,line width=.5pt] (0,0) rectangle (3,1.44444);
+    \locations
+  \end{scope}
+  \begin{scope}[shift={(3.82,1.65)},rotate around={-3:(1.5,.72222)}]
+    \leftfield
+    \draw[muted!35,line width=.5pt] (0,0) rectangle (3,1.44444);
+    \locations
+  \end{scope}
+
+  \draw[warmorange,line width=1.3pt] (1.79,.89) -- (1.95,.89) (1.87,.81) -- (1.87,.97);
+  \node[note,anchor=west] at (2.04,.89) {fixed $v_1$};
+  \node[learned,minimum size=3.8mm] at (4.17,.89) {};
+  \node[note,anchor=west] at (4.35,.89) {learned $v_2$};
+  \node[note] at (3.6,.30) {Learn informative locations};
+\endmini
+\end{document}

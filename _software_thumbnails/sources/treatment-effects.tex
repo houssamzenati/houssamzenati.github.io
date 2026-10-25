@@ -1,0 +1,52 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{arrows.meta,calc}
+\definecolor{InterventionQ}{HTML}{70469A}
+\definecolor{InterventionQPrime}{HTML}{AC527A}
+
+% Matched population-level testing and sampling illustrations.
+% The first law P^q uses the same illustrative density and colour as sampling.
+% P^{q'} is an illustrative alternative, not an estimate or moving particle law.
+\newcommand{\testingfigure}{%
+\begin{tikzpicture}[>={Latex[length=3pt,width=2.6pt]},font=\small,
+  every node/.style={anchor=center,inner sep=2pt,outer sep=0pt},
+  target/.style={InterventionQ}, alternative/.style={InterventionQPrime},
+  particles/.style={red!90!black}]
+  \path[use as bounding box] (-0.12,-1.28) rectangle (13.85,3.70);
+  \node[font=\small\sffamily] at (3.0,3.45) {Compare laws};
+  \node[font=\small\sffamily] at (10.70,3.45) {Measure MMD};
+
+  % Outcome space, with a common target P^q across the two diagrams.
+  \draw[->,black!70,line width=.5pt] (0,1.05) -- (5.98,1.05)
+    node[anchor=north west] {$y$};
+  \draw[target,line width=1.25pt,domain=0:5.88,samples=140,smooth]
+    plot (\x,{1.05+1.93*exp(-0.5*((\x-3.55)/0.84)^2)});
+  \draw[alternative,line width=1.25pt,domain=0:5.88,samples=140,smooth]
+    plot (\x,{1.05+1.41*exp(-0.5*((\x-2.95)/1.15)^2)});
+  \node[target,anchor=west] at (.08,2.90) {$P^q$};
+  \node[alternative,anchor=west] at (.08,2.55) {$P^{q'}$};
+
+  % Shared embedding link. The preceding slide defines the IMEs.
+  \draw[->,gray!65,line width=.65pt] (6.33,1.05) -- (7.65,1.05);
+  \node[font=\scriptsize,text=black!60,align=center] at (6.99,1.55)
+    {mean\\embedding};
+
+  % Same RKHS region, exact green, marker sizes and undirected distance.
+  \filldraw[fill=green!20,draw=green!50!black,thick]
+    (10.75,1.22) ellipse [x radius=2.94cm,y radius=1.91cm];
+  \coordinate (muTarget) at (9.08000,2.12000);
+  \coordinate (muAlternative) at (12.25000,0.90000);
+  \draw[black,line width=.85pt] (muTarget) -- (muAlternative)
+    node[midway,above=4pt,font=\scriptsize] {MMD};
+  \fill[target] (muTarget) circle (2.15pt);
+  \node[target,above=5pt] at (muTarget) {$\mu_q$};
+  \fill[alternative] (muAlternative) circle (2.15pt);
+  \node[alternative,below=7pt] at (muAlternative) {$\mu_{q'}$};
+  \node[font=\scriptsize\sffamily,text=black] at (11.95,-.11)
+    {RKHS $\mathcal H$};
+\end{tikzpicture}%
+}
+
+\begin{document}
+\testingfigure
+\end{document}

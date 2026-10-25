@@ -1,0 +1,27 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+% Same four-node mediation DAG as mediation-graph.pdf. The blue direct path
+% and orange mediated path are emphasized; covariate adjustment stays visible.
+\begin{scope}[rotate around={3:(3.6,2.25)}]
+  \node[circle,draw=muted!50,fill=muted!5,minimum size=.67cm,
+    line width=.8pt,symbol] (X) at (3.5,3.5) {$X$};
+  \node[circle,draw=fitblue,fill=fitblue!8,minimum size=.78cm,
+    line width=1pt,symbol] (T) at (1.05,2.25) {$T$};
+  \node[circle,draw=warmorange,fill=warmorange!10,minimum size=.78cm,
+    line width=1pt,symbol] (M) at (3.6,1.05) {$M$};
+  \node[circle,draw=fitblue,fill=fitblue!8,minimum size=.78cm,
+    line width=1pt,symbol] (Y) at (6.15,2.25) {$Y$};
+  \draw[flow,muted!45,line width=.7pt] (X) -- (T);
+  \draw[flow,muted!45,line width=.7pt] (X) -- (Y);
+  \draw[flow,muted!45,line width=.7pt] (X) -- (M);
+  \draw[flow,fitblue,line width=1.25pt] (T) -- (Y);
+  \draw[flow,warmorange,line width=1.25pt] (T) -- (M);
+  \draw[flow,warmorange,line width=1.25pt] (M) -- (Y);
+  \node[note,text=fitblue,fill=white,inner sep=1pt] at (4.65,2.57) {Direct};
+  \node[note,text=warmorange] at (5.2,1.16) {Mediated};
+  \node[note] at (3.5,4.02) {Covariates};
+\end{scope}
+\node[note] at (3.6,.28) {Separate causal pathways};
+\endmini
+\end{document}

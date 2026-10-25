@@ -1,0 +1,39 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+% Conceptual redraw of talk T01 (2018), page 13. The two terminal
+% pairs are (z,G(z)) and (E(x),x). Dashed links denote the two joint
+% discriminator inputs; concatenation boxes and loss terms are omitted.
+% Rotation affects geometry only: all mathematical labels stay upright.
+\begin{scope}[rotate around={3:(3.6,2.3)}]
+  \node[circle,draw=fitblue!70,fill=fitblue!8,
+    minimum size=.73cm,inner sep=1pt,symbol] (z) at (1.0,3.25) {$z$};
+  \node[circle,draw=softgreen!85,fill=softgreen!12,
+    minimum size=.86cm,inner sep=1pt,symbol] (gx) at (6.15,3.25) {$G(z)$};
+  \node[circle,draw=fitblue!70,fill=fitblue!8,
+    minimum size=.86cm,inner sep=1pt,symbol] (ez) at (1.0,1.2) {$E(x)$};
+  \node[circle,draw=softgreen!85,fill=softgreen!12,
+    minimum size=.73cm,inner sep=1pt,symbol] (x) at (6.15,1.2) {$x$};
+  \node[module,draw=warmorange!80,fill=warmorange!12,
+    minimum width=1.18cm,symbol] (g) at (3.6,3.25) {$G$};
+  \node[module,draw=fitblue!75,fill=fitblue!10,
+    minimum width=1.18cm,symbol] (e) at (3.6,1.2) {$E$};
+  \node[diamond,draw=ink!60,fill=white,aspect=1.35,
+    minimum width=.94cm,minimum height=.64cm,inner sep=1pt,symbol]
+    (d) at (3.6,2.23) {$D$};
+  \draw[flow] (z) -- (g);
+  \draw[flow] (g) -- (gx);
+  \draw[flow] (x) -- (e);
+  \draw[flow] (e) -- (ez);
+  % Plain dashed links express membership of the discriminator's pairs,
+  % not extra forward mappings between the model's modules.
+  \draw[fitblue!60,densely dashed,line width=.7pt]
+    (z.south east) -- (d.north west)
+    (gx.south west) -- (d.north east);
+  \draw[softgreen!85,densely dashed,line width=.7pt]
+    (ez.north east) -- (d.south west)
+    (x.north west) -- (d.south east);
+\end{scope}
+\node[note] at (3.6,.30) {Joint encoder and generator};
+\endmini
+\end{document}

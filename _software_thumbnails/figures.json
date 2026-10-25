@@ -1,0 +1,57 @@
+[
+  {
+    "name": "med-bench",
+    "source": "_software_thumbnails/miniatures/med-bench.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "interpretable-dte",
+    "source": "_software_thumbnails/miniatures/interpretable-dte.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "adaptive-kte",
+    "source": "_software_thumbnails/miniatures/adaptive-kte.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "cpme",
+    "source": "_software_thumbnails/miniatures/cpme.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "continuous-mediation",
+    "source": "_software_thumbnails/miniatures/continuous-mediation.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "sequential-crm",
+    "source": "_software_thumbnails/miniatures/sequential-crm.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "kernel-ucb",
+    "source": "_software_thumbnails/miniatures/kernel-ucb.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "nested-bandits",
+    "source": "_software_thumbnails/miniatures/nested-bandits.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "continuous-crm",
+    "source": "_software_thumbnails/miniatures/continuous-crm.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "alad",
+    "source": "_software_thumbnails/miniatures/alad.tex",
+    "native_canvas": true
+  },
+  {
+    "name": "efficient-gan",
+    "source": "_software_thumbnails/miniatures/efficient-gan.tex",
+    "native_canvas": true
+  }
+]

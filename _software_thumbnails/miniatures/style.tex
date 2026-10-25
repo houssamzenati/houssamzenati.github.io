@@ -1,0 +1,31 @@
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
+\renewcommand{\familydefault}{\sfdefault}
+\definecolor{ink}{HTML}{283443}
+\definecolor{muted}{HTML}{728091}
+\definecolor{fitblue}{HTML}{3263B6}
+\definecolor{targetred}{HTML}{C65252}
+\definecolor{softgreen}{HTML}{609486}
+\definecolor{warmorange}{HTML}{C56C34}
+\tikzset{
+  axis/.style={muted!65,line width=.6pt,-{Latex[length=1.8mm,width=1.2mm]}},
+  flow/.style={ink!65,line width=.9pt,-{Latex[length=1.9mm,width=1.3mm]}},
+  fit/.style={fitblue,line width=1.35pt,line cap=round,line join=round},
+  target/.style={targetred,line width=1.15pt},
+  guide/.style={muted!45,line width=.6pt,dashed},
+  dot/.style={circle,fill=fitblue,inner sep=1.8pt},
+  module/.style={draw=fitblue!70,fill=fitblue!7,rounded corners=3pt,
+    minimum height=.55cm,inner xsep=7pt,inner ysep=3pt,line width=.8pt},
+  note/.style={text=muted,font=\fontsize{8.5}{10}\selectfont},
+  symbol/.style={font=\fontsize{10.5}{12}\selectfont},
+}
+\newcommand{\beginmini}{%
+\begin{tikzpicture}[x=1cm,y=1cm,text=ink,font=\fontsize{9.5}{11}\selectfont,
+  line cap=round,line join=round,>={Latex[length=1.9mm,width=1.3mm]}]
+  \path[use as bounding box] (0,0) rectangle (7.2,4.4);
+  \fill[white] (0,0) rectangle (7.2,4.4);
+}
+\def\endmini{\end{tikzpicture}}

@@ -1,0 +1,10 @@
+<li class="software-card">
+  <img class="software-thumbnail" src="{{ '/assets/img/software/' | append: include.image | append: '.png' | relative_url }}" alt="{{ include.alt | escape }}" width="720" height="440" loading="lazy" decoding="async">
+  <div class="software-details">
+    <div class="software-heading">
+      <h3 class="software-title"><a href="{{ include.url | escape }}">{{ include.title | escape }}</a></h3>
+    </div>
+    {% if include.venue or include.year %}<p class="software-publication">{% if include.venue %}{{ include.venue | escape }}{% endif %}{% if include.venue and include.year %} · {% endif %}{% if include.year %}{{ include.year | escape }}{% endif %}{% if include.related_publication %} · {{ include.related_publication | escape }}{% endif %}</p>{% endif %}
+    <p class="software-description">{{ include.description }}</p>
+  </div>
+</li>

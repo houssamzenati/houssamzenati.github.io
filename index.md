@@ -3,13 +3,11 @@ layout: default
 ---
 
 <p class="research-overview">
-I develop machine learning algorithms and statistical theory for <strong>learning from feedback</strong>, <strong>understanding intervention effects</strong>, and <strong>designing adaptive experiments</strong>. My research progresses from learning which interventions to choose, to establishing what they change, to deciding what to try next—when good decisions and informative experiments need not favor the same assignments.
+I develop machine learning algorithms and statistical theory for <strong>learning from partial feedback</strong>, <strong>understanding intervention effects</strong>, and <strong>designing adaptive experiments</strong>. My research progresses from <strong>learning which interventions to choose</strong>, to <strong>establishing what they change</strong>, to <strong>deciding what to try next</strong>—when good decisions and informative experiments need not favor the same assignments.
 </p>
 
 <p class="document-links">
-  <a href="{{ "/research/" | relative_url }}">Research overview</a>
-  <span aria-hidden="true">·</span>
-  <a href="{{ "/publications/" | relative_url }}">All publications</a>
+  I explore these ideas further in my <a href="{{ "/research/" | relative_url }}">Learn–Infer–Adapt research overview</a>.
 </p>
 
 ## About Me

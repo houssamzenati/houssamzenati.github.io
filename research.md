@@ -8,16 +8,17 @@ math: true
 
 <div class="research-identity">
   <h1 class="research-identity-title">Statistical Learning for Inference and Decision-Making</h1>
+  <p class="research-identity-subtitle">Learn–Infer–Adapt</p>
 </div>
 
 <p class="research-overview">
-The evidence needed to improve a decision rule can differ from the evidence needed to quantify its effects. My research examines how risk geometry, the structure of inferential targets, and experimental design determine what can be learned from limited feedback. Across these problems, I seek guarantees that reflect <strong>the accuracy and information required by the final task</strong>.
+How much feedback do we need to <strong>learn better intervention rules</strong>? What can we <strong>reliably conclude about their effects</strong>? And how should we <strong>choose the next experiment</strong> when the interventions that improve outcomes may not be those that tell us the most? These questions motivate my work on learning, inference, and adaptive experimentation. I develop algorithms and statistical theory to understand how these goals fit together, and where they call for different choices.
 </p>
 
 <details id="learning-to-intervene" class="research-block research-collapsible">
   <summary class="research-block-summary">
     <div class="research-block-header">
-      <h2>Learning to Intervene</h2>
+      <h2><span class="research-stage">Learning</span> to Intervene</h2>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
     <p class="research-block-intro">
@@ -63,7 +64,7 @@ The evidence needed to improve a decision rule can differ from the evidence need
 <details id="inference-on-intervention-effects" class="research-block research-collapsible">
   <summary class="research-block-summary">
     <div class="research-block-header">
-      <h2>Inference on Intervention Effects</h2>
+      <h2><span class="research-stage">Inference</span> on Intervention Effects</h2>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
     <p class="research-block-intro">
@@ -108,7 +109,7 @@ The evidence needed to improve a decision rule can differ from the evidence need
 <details id="adaptive-experimentation" class="research-block research-collapsible">
   <summary class="research-block-summary">
     <div class="research-block-header">
-      <h2>Adaptive Experimentation</h2>
+      <h2><span class="research-stage">Adaptive</span> Experimentation</h2>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
     <p class="research-block-intro">

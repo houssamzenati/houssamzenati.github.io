@@ -1,0 +1,62 @@
+% Adapted from gifs/mean_embedding_frames.tex: final diagram, without the equation.
+\documentclass[tikz,border=0pt,multi]{standalone}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usetikzlibrary{arrows.meta,calc}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{ink}{HTML}{283443}
+\definecolor{muted}{HTML}{728091}
+\definecolor{blue}{HTML}{3263B6}
+\definecolor{orange}{HTML}{C56C34}
+\definecolor{green}{HTML}{609486}
+
+% One conceptual operation: interventional law -> kernel mean embedding.
+% The RKHS outline and point positions are schematic, not a 2D projection.
+% Densities retain the original example: N(0,.6^2) and N(.6,1).
+\newcommand{\embeddingframe}[1]{%
+\begin{tikzpicture}[
+  x=1cm,y=1cm,text=ink,font=\fontsize{14}{17}\selectfont,
+  >={Latex[length=2.7mm,width=1.9mm]}
+]
+  \path[use as bounding box] (0,.45) rectangle (16.5,5.5);
+  \fill[white] (0,.45) rectangle (16.5,5.5);
+
+  % Interventional outcome distributions.
+  \draw[muted!75,line width=.8pt,->] (.75,1.1) -- (5.6,1.1);
+  \draw[muted!75,line width=.8pt,->] (.75,1.1) -- (.75,4.55);
+  \node[anchor=north,text=muted] at (5.5,1.04) {$y$};
+  \draw[blue,line width=1.9pt] plot[domain=-3:3,samples=121]
+    ({3+.75*\x},{1.1+4.3*exp(-.5*(\x/.6)^2)/(.6*sqrt(2*pi))});
+  \draw[orange,line width=1.9pt] plot[domain=-3:3,samples=121]
+    ({3+.75*\x},{1.1+4.3*exp(-.5*(\x-.6)^2)/sqrt(2*pi)});
+  \node[text=blue] at (1.7,4.85) {$P_{Y(\pi)}$};
+  \node[text=orange] at (4.6,4.85) {$P_{Y(\pi')}$};
+
+  % A single shared representation space.
+  \filldraw[fill=green!9,draw=green!65,line width=1pt,
+    rotate around={-8:(12,2.95)}]
+    (12,2.95) ellipse [x radius=3.25cm,y radius=1.9cm];
+  \node[text=green!55!black] at (10.95,1.65) {RKHS};
+
+  % Reveal the same embedding operation for each distribution.
+  \ifnum#1>1
+    \draw[blue!75,line width=1.2pt,dashed,->]
+      (3,3.96) to[out=12,in=170] (10.65,3.83);
+    \fill[blue] (10.7,3.8) circle (3.4pt);
+    \node[text=blue,anchor=south west] at (10.86,3.91) {$\chi(\pi)$};
+  \fi
+  \ifnum#1>2
+    \draw[orange!80,line width=1.2pt,dashed,->]
+      (3.45,2.82) to[out=-5,in=180] (13.03,2.15);
+    \fill[orange] (13.1,2.15) circle (3.4pt);
+    \node[text=orange,anchor=north west] at (13.25,2.05) {$\chi(\pi')$};
+  \fi
+
+\end{tikzpicture}%
+}
+
+\begin{document}
+\embeddingframe{3}
+\end{document}

@@ -1,0 +1,36 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+% Schematic Gaussian SCRM adaptation: target risk, estimated risk with
+% uncertainty, and policies moving to a minimum. No experimental values.
+\begin{scope}[shift={(.68,.95)},rotate=2.5]
+  \draw[axis] (0,.08) -- (5.55,.08);
+  \draw[axis] (0,.08) -- (0,2.85);
+  \path[fill=softgreen!17]
+    plot[domain=.10:5.15,samples=90] (\x,{.10*(\x-1.20)^2+.51+.15+.018*(\x-1.20)^2})
+    -- plot[domain=5.15:.10,samples=90] (\x,{.10*(\x-1.20)^2+.51-.15-.018*(\x-1.20)^2}) -- cycle;
+  \draw[target] plot[domain=.10:5.15,samples=90] (\x,{.115*(\x-1.05)^2+.44});
+  \draw[fit,densely dashed] plot[domain=.10:5.15,samples=90] (\x,{.10*(\x-1.20)^2+.51});
+  \foreach \xa/\xb in {4.85/3.65,3.65/2.60,2.60/1.55} {
+    \draw[warmorange,line width=1.05pt,-{Latex[length=1.6mm,width=1.15mm]}]
+      ({\xa-.12},{.10*(\xa-1.20)^2+.51+.12})
+      -- ({\xb+.13},{.10*(\xb-1.20)^2+.51+.12});
+  }
+  \foreach \x in {4.85,3.65,2.60,1.55} {
+    \filldraw[fill=white,draw=warmorange,line width=1pt]
+      (\x,{.10*(\x-1.20)^2+.51}) circle (1.7pt);
+  }
+  \fill[targetred] (1.05,.44) circle (1.9pt);
+  \draw[guide] (1.05,.12) -- (1.05,.44);
+  \node[below,note,text=targetred] at (1.05,.02) {$\theta_\star$};
+  \node[below right,note,text=warmorange] at (4.85,1.76) {$\theta_0$};
+  \node[note] at (.25,2.92) {Risk};
+  \node[below left,note] at (5.55,.02) {Policy};
+  \node[note,text=targetred,anchor=west] at (4.95,2.62) {Target};
+  \node[note,text=fitblue,anchor=west] at (4.65,1.25) {Estimate};
+  \node[note,text=softgreen,anchor=west] at (.35,1.30) {Uncertainty};
+  \draw[softgreen!70,line width=.55pt] (1.27,1.15) -- (1.60,.80);
+\end{scope}
+\node[note] at (3.6,.30) {Learn as data arrive};
+\endmini
+\end{document}

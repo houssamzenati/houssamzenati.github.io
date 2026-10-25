@@ -59,7 +59,7 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 - **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
   ***Houssam Zenati***, Arthur Gretton.  
   *NeurIPS*, 2026.  
-  [[Paper]](https://arxiv.org/pdf/2605.08034)
+  [[Paper]](https://arxiv.org/pdf/2605.08034) [[Code]](https://github.com/houssamzenati/interpretable-dr-me-test)
 
 - **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**  
   ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  

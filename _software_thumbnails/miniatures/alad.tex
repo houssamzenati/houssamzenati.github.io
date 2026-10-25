@@ -1,0 +1,44 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+% Conceptual redraw of talk T02 (2018), page 8. Large nodes represent
+% latent/data spaces, not a particular sample. G and E map between them.
+% The original D_xz sample-pair inputs are collapsed into dashed links.
+% Outer loops denote E(G(z)) and G(E(x)) round trips, supervised in ALAD
+% by D_zz and D_xx. Pair concatenation and repeated reference samples are
+% intentionally omitted; loops are composite maps, not D outputs.
+\begin{scope}[rotate around={3:(3.6,2.35)}]
+  \node[rounded corners=5pt,draw=fitblue!70,fill=fitblue!8,
+    minimum width=.94cm,minimum height=1.02cm,inner sep=2pt,symbol]
+    (z) at (1.65,2.28) {$\mathcal{Z}$};
+  \node[rounded corners=5pt,draw=softgreen!85,fill=softgreen!12,
+    minimum width=.94cm,minimum height=1.02cm,inner sep=2pt,symbol]
+    (x) at (5.55,2.28) {$\mathcal{X}$};
+  \node[module,draw=warmorange!80,fill=warmorange!12,
+    minimum width=1.05cm,symbol] (g) at (3.6,3.32) {$G$};
+  \node[module,draw=fitblue!75,fill=fitblue!10,
+    minimum width=1.05cm,symbol] (e) at (3.6,1.23) {$E$};
+  \node[diamond,draw=ink!60,fill=white,aspect=1.35,
+    minimum width=.90cm,minimum height=.64cm,inner sep=1pt,symbol]
+    (d) at (3.6,2.28) {$D$};
+  \draw[flow] (z.north) to[out=75,in=180] (g.west);
+  \draw[flow] (g.east) to[out=0,in=105] (x.north);
+  \draw[flow] (x.south) to[out=255,in=0] (e.east);
+  \draw[flow] (e.west) to[out=180,in=285] (z.south);
+  \draw[muted!75,densely dashed,line width=.7pt] (z.east) -- (d.west);
+  \draw[muted!75,densely dashed,line width=.7pt] (d.east) -- (x.west);
+  % Side loops encode the composite round trips with upright labels.
+  \draw[flow,targetred!85] (z.south west)
+    to[out=225,in=270] (.48,2.28)
+    to[out=90,in=135] (z.north west);
+  \draw[flow,targetred!85] (x.north east)
+    to[out=45,in=90] (6.72,2.28)
+    to[out=270,in=315] (x.south east);
+  \node[text=targetred,font=\fontsize{9}{10.5}\selectfont]
+    at (1.02,3.64) {$E\!\circ\!G$};
+  \node[text=targetred,font=\fontsize{9}{10.5}\selectfont]
+    at (6.18,.94) {$G\!\circ\!E$};
+\end{scope}
+\node[note] at (3.6,.30) {Joint learning with cycles};
+\endmini
+\end{document}

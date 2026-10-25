@@ -1,0 +1,33 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+  % Schematic comparison of two treatment-outcome laws using kernel distance.
+  % The data sequence is illustrative; it does not claim a sampling guarantee.
+  \node[text=muted] at (1.69,3.79) {Outcome laws};
+  \node[text=muted] at (5.27,3.79) {Kernel distance};
+
+  \begin{scope}[rotate around={3:(1.74,2.05)}]
+    \draw[axis] (.55,1.42) -- (2.98,1.42);
+    \draw[target] plot[domain=.58:2.91,samples=85,smooth]
+      (\x,{1.42+1.52*exp(-.5*((\x-1.41)/.37)^2)});
+    \draw[fit] plot[domain=.58:2.91,samples=85,smooth]
+      (\x,{1.42+1.11*exp(-.5*((\x-1.93)/.51)^2)});
+  \end{scope}
+  \draw[muted!40,line width=.5pt,-{Latex[length=1.35mm]}]
+    (.72,.91) -- (2.84,.91);
+  \foreach \x/\c in {.91/fitblue,1.27/targetred,1.63/fitblue,1.99/fitblue,2.35/targetred}
+    \fill[\c] (\x,.91) circle (1.75pt);
+
+  \draw[flow] (3.18,2.20) -- (3.77,2.20);
+  \filldraw[fill=softgreen!8,draw=softgreen!55,line width=.8pt,
+    rotate around={-3:(5.30,2.21)}]
+    (5.30,2.21) ellipse[x radius=1.28cm,y radius=1.11cm];
+  \draw[ink!70,line width=1.1pt] (4.57,2.69) -- (5.99,1.85);
+  \fill[targetred] (4.57,2.69) circle (2.8pt);
+  \fill[fitblue] (5.99,1.85) circle (2.8pt);
+  \node[text=targetred,anchor=south] at (4.57,2.81) {$\mu_q$};
+  \node[text=fitblue,anchor=north] at (5.99,1.73) {$\mu_{q'}$};
+  \node at (5.50,2.74) {MMD};
+  \node[note] at (3.6,.30) {Compare treatment effects};
+\endmini
+\end{document}

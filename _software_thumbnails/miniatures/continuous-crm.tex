@@ -1,0 +1,33 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+% Schematic adaptation of the original proximal-point illustration.
+% Surrogate = f(theta) + .06(theta-theta_k)^2: above f, touching at theta_k.
+% The next policy is near the surrogate minimum. No measured results shown.
+\begin{scope}[shift={(.62,1.18)},rotate=-2.5]
+  \draw[axis] (0,.08) -- (5.72,.08);
+  \draw[axis] (0,.08) -- (0,2.65);
+  \path[fill=warmorange!10]
+    plot[domain=.15:5.45,samples=130] (\x,{.11*(\x-2.5)^2+.06*cos(3.5*\x r)+.45+.06*(\x-4.8)^2})
+    -- plot[domain=5.45:.15,samples=130] (\x,{.11*(\x-2.5)^2+.06*cos(3.5*\x r)+.45}) -- cycle;
+  \draw[warmorange,line width=1.25pt]
+    plot[domain=.15:5.45,samples=130] (\x,{.11*(\x-2.5)^2+.06*cos(3.5*\x r)+.45+.06*(\x-4.8)^2});
+  \draw[fit]
+    plot[domain=.15:5.45,samples=130] (\x,{.11*(\x-2.5)^2+.06*cos(3.5*\x r)+.45});
+  \draw[guide] (4.8,.12) -- (4.8,{.11*(4.8-2.5)^2+.06*cos(3.5*4.8 r)+.45});
+  \draw[guide] (2.90,.12) -- (2.90,{.11*(2.90-2.5)^2+.06*cos(3.5*2.90 r)+.45+.06*(2.90-4.8)^2});
+  \filldraw[fill=white,draw=fitblue,line width=1.1pt]
+    (4.8,{.11*(4.8-2.5)^2+.06*cos(3.5*4.8 r)+.45}) circle (2.3pt);
+  \filldraw[fill=warmorange,draw=white,line width=.6pt]
+    (2.90,{.11*(2.90-2.5)^2+.06*cos(3.5*2.90 r)+.45+.06*(2.90-4.8)^2}) circle (2.5pt);
+  \draw[warmorange,line width=1pt,-{Latex[length=1.9mm,width=1.3mm]}]
+    (4.61,.27) -- (3.10,.27);
+  \node[below,note,text=fitblue] at (4.8,.02) {$\theta_k$};
+  \node[below,note,text=warmorange] at (2.90,.02) {$\theta_{k+1}$};
+  \node[note,text=warmorange,anchor=west] at (.58,2.55) {Local surrogate};
+  \node[note,text=fitblue,anchor=west] at (3.65,1.65) {Policy loss};
+  \node[note] at (.12,2.80) {Loss};
+\end{scope}
+\node[note] at (3.6,.30) {Optimize continuous policies};
+\endmini
+\end{document}

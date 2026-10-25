@@ -1,0 +1,33 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+  % Two schematic intervention laws are represented in one shared RKHS.
+  % The ellipse and point positions do not specify a finite-dimensional model.
+  \node[text=muted] at (1.65,3.79) {Outcome laws};
+  \node[text=muted] at (5.23,3.79) {Mean embeddings};
+
+  \begin{scope}[rotate around={3:(1.72,2.00)}]
+    \draw[axis] (.52,1.24) -- (2.98,1.24);
+    \draw[fit] plot[domain=.57:2.9,samples=85,smooth]
+      (\x,{1.24+1.65*exp(-.5*((\x-1.42)/.31)^2)});
+    \draw[warmorange,line width=1.35pt]
+      plot[domain=.57:2.9,samples=85,smooth]
+      (\x,{1.24+1.08*exp(-.5*((\x-1.97)/.47)^2)});
+  \end{scope}
+  \node[text=muted] at (1.70,.91) {Outcome};
+
+  \filldraw[fill=softgreen!9,draw=softgreen!60,line width=.8pt,
+    rotate around={-3:(5.23,2.20)}]
+    (5.23,2.20) ellipse[x radius=1.39cm,y radius=1.16cm];
+  \draw[fitblue!75,line width=.9pt,-{Latex[length=1.8mm]}]
+    (1.51,2.91) to[out=17,in=174] (4.51,2.69);
+  \draw[warmorange!85,line width=.9pt,-{Latex[length=1.8mm]}]
+    (2.16,2.23) to[out=-8,in=175] (5.64,1.81);
+  \fill[fitblue] (4.64,2.68) circle (2.65pt);
+  \fill[warmorange] (5.77,1.82) circle (2.65pt);
+  \node[text=fitblue,anchor=south west] at (4.70,2.76) {$\mu_{\pi}$};
+  \node[text=warmorange,anchor=south west] at (5.82,1.91) {$\mu_{\pi'}$};
+  \node[text=softgreen!75!black] at (5.07,1.35) {RKHS};
+  \node[note] at (3.6,.30) {Represent intervention laws};
+\endmini
+\end{document}

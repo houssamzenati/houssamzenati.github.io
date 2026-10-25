@@ -1,0 +1,33 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+  % Nystr\"om approximation: project RKHS feature vectors onto the span of
+  % selected dictionary features. Geometry is schematic, not a UCB plot.
+  \begin{scope}[rotate around={-3:(3.55,2.10)}]
+    \filldraw[fill=softgreen!10,draw=softgreen!65,line width=.9pt]
+      (1.13,1.61) -- (4.70,.95) -- (6.18,2.10) -- (2.61,2.76) -- cycle;
+    \coordinate (origin) at (3.43,1.82);
+    \draw[axis] (origin) -- (6.53,1.38);
+    \draw[axis] (origin) -- (1.03,.96);
+    \draw[axis] (origin) -- (3.43,3.97);
+
+    % Dictionary landmarks define the smaller approximation space.
+    \foreach \x/\y in {2.10/1.65,3.59/1.29,5.20/2.10}
+      \fill[fitblue] (\x,\y) circle (2.4pt);
+
+    % Full feature vectors and their projections, with vertical residuals.
+    \draw[target,-{Latex[length=1.9mm]}] (origin) -- (2.55,3.45);
+    \draw[targetred!65,line width=.8pt,dashed] (2.55,3.45) -- (2.55,2.15);
+    \draw[fit,-{Latex[length=1.8mm]}] (origin) -- (2.55,2.15);
+    \draw[warmorange,line width=1.15pt,-{Latex[length=1.9mm]}]
+      (origin) -- (4.86,3.12);
+    \draw[warmorange!70,line width=.8pt,dashed] (4.86,3.12) -- (4.86,1.68);
+    \draw[fit,-{Latex[length=1.8mm]}] (origin) -- (4.86,1.68);
+    \fill[ink] (origin) circle (1.5pt);
+  \end{scope}
+  \node[text=targetred] at (2.45,3.80) {$\varphi(x)$};
+  \node[text=warmorange] at (5.02,3.42) {$\varphi(x')$};
+  \node[text=muted,anchor=west] at (3.78,3.84) {RKHS};
+  \node[note] at (3.6,.30) {Project onto dictionary span};
+\endmini
+\end{document}

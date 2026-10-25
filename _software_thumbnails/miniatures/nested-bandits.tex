@@ -1,0 +1,43 @@
+\input{style.tex}
+\begin{document}
+\beginmini
+% Schematic simplification of the original four-level, eight-leaf tree.
+% Group membership and one possible selection path are retained; no
+% probabilities, weights or performance values are implied by the geometry.
+\begin{scope}[rotate around={-2.5:(3.6,2.35)}]
+  \foreach \x in {1.0,2.73,4.47,6.2} {
+    \path[fill=softgreen!10,rounded corners=7pt]
+      ({\x-.67},.98) rectangle ({\x+.67},2.27);
+  }
+  \coordinate (r) at (3.6,3.62);
+  \coordinate (l) at (1.87,2.90);
+  \coordinate (q) at (5.33,2.90);
+  \foreach \i/\x in {1/1.0,2/2.73,3/4.47,4/6.2} {
+    \coordinate (g\i) at (\x,2.05);
+  }
+  \foreach \i/\x in {1/.55,2/1.45,3/2.28,4/3.18,5/4.02,6/4.92,7/5.75,8/6.65} {
+    \coordinate (a\i) at (\x,1.21);
+  }
+  \foreach \parent/\child in {r/l,r/q,l/g1,l/g2,q/g3,q/g4,g1/a1,g1/a2,g2/a3,g2/a4,g3/a5,g3/a6,g4/a7,g4/a8} {
+    \draw[muted!55,line width=.8pt] (\parent) -- (\child);
+  }
+  \foreach \parent/\child in {r/l,l/g2,g2/a4} {
+    \draw[warmorange,line width=1.7pt] (\parent) -- (\child);
+  }
+  \foreach \n in {r,l,q,g1,g2,g3,g4} {
+    \filldraw[fill=white,draw=fitblue!70,line width=.9pt] (\n) circle (3pt);
+  }
+  \foreach \n in {r,l,g2} {
+    \filldraw[fill=warmorange!18,draw=warmorange,line width=1pt] (\n) circle (3pt);
+  }
+  \foreach \i in {1,...,8} {
+    \filldraw[fill=white,draw=fitblue!70,line width=.9pt] (a\i) circle (3pt);
+    \node[note,text=ink,below=6pt] at (a\i) {$a_\i$};
+  }
+  \filldraw[fill=warmorange,draw=warmorange,line width=1pt] (a4) circle (3.2pt);
+  \node[note,text=ink,above=6pt] at (r) {Actions};
+  \node[note,text=warmorange,anchor=east] at (1.25,2.83) {Choose};
+\end{scope}
+\node[note] at (3.6,.30) {Choose through nested groups};
+\endmini
+\end{document}

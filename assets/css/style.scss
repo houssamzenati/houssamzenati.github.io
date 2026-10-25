@@ -281,6 +281,10 @@ section {
   margin: 0;
 }
 
+.research-stage {
+  color: var(--accent);
+}
+
 .research-block h3 {
   color: var(--text);
   font-size: 15px;
@@ -574,12 +578,12 @@ h3 {
 }
 
 .research-identity-subtitle {
-  color: var(--muted);
-  font-size: 16.5px;
-  font-style: italic;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.55;
   margin: 0;
-  max-width: 680px;
+  text-align: left;
 }
 
 .site-footer {
@@ -634,6 +638,109 @@ blockquote {
 
 .photo-grid.photo-grid-wide {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.software-intro strong {
+  color: var(--accent);
+}
+
+.software-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.software-card {
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 224px minmax(0, 1fr);
+  margin: 0;
+  padding: 18px 0;
+}
+
+.software-card:last-child {
+  border-bottom: 0;
+}
+
+.software-thumbnail {
+  aspect-ratio: 18 / 11;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.software-details {
+  min-width: 0;
+}
+
+.software-heading {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.software-title {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.software-title a {
+  text-decoration: none;
+}
+
+.software-title a:hover {
+  text-decoration: underline;
+}
+
+.software-publication {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+  margin: 0 0 5px;
+}
+
+.software-description {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media screen and (max-width: 560px) {
+  .software-card {
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px 0;
+  }
+
+  .software-thumbnail {
+    max-width: 224px;
+  }
+
+  .software-heading {
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .software-title {
+    font-size: 16px;
+  }
+
+  .software-description {
+    font-size: 14px;
+  }
+
 }
 
 @media screen and (max-width: 960px) {
