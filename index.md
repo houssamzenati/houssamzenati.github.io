@@ -41,7 +41,7 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
 
 ### Inference on Intervention Effects
 
-- **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
+- **Semiparametric Efficient Tests for Interpretable Distributional Treatment Effects**  
   ***Houssam Zenati***, Arthur Gretton.  
   *NeurIPS*, 2026.  
   [[Paper]](https://arxiv.org/pdf/2605.08034)
@@ -59,7 +59,7 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
 
 ## News
 
-- **September 2026:** Our paper **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects** was accepted at NeurIPS 2026.
+- **September 2026:** Our paper **Semiparametric Efficient Tests for Interpretable Distributional Treatment Effects** was accepted at NeurIPS 2026.
 - **June 2026:** Lead organiser of the [Advances in Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/) at the Gatsby Unit, UCL.
 - **June 2026:** Our paper **Fast Best-in-Class Regret for Contextual Bandits** was accepted at UAI 2026.
 

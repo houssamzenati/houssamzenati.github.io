@@ -41,6 +41,11 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 
 ## Inference on Intervention Effects
 
+- **Doubly Robust Deep Kernel Tests for Structured Outcomes**  
+  Robin Leman, Bariscan Bozkurt, Sofiane Tanji, Arthur Gretton, ***Houssam Zenati***.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/abs/2610.37227)
+
 - **Doubly Robust Proxy Causal Learning with Neural Mean Embeddings**  
   Bariscan Bozkurt, Alexandre Galashov, Dimitri Meunier, Zikai Shen, Arthur Gretton, ***Houssam Zenati***.  
   *Preprint*, 2026.  
@@ -51,12 +56,12 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
   *Preprint*, 2026.  
   [[Paper]](https://arxiv.org/pdf/2604.24660)
 
-- **Semiparametric Efficient Bilevel Gradient Estimation**  
+- **Parametric Rates for Nonparametric Conditional-Moment Bilevel Optimization**  
   Fares El Khoury\*, ***Houssam Zenati***\*, Nathan Kallus, Michael Arbel, Aurelien Bibaut.  
   *Preprint*, 2026.  
   [[Paper]](https://arxiv.org/abs/2605.21341)
 
-- **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
+- **Semiparametric Efficient Tests for Interpretable Distributional Treatment Effects**  
   ***Houssam Zenati***, Arthur Gretton.  
   *NeurIPS*, 2026.  
   [[Paper]](https://arxiv.org/pdf/2605.08034) [[Code]](https://github.com/houssamzenati/interpretable-dr-me-test)
