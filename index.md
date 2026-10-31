@@ -41,19 +41,17 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
 
 ### Inference on Intervention Effects
 
-- **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects**  
-  ***Houssam Zenati***, Arthur Gretton.  
-  *NeurIPS*, 2026.  
-  [[Paper]](https://arxiv.org/pdf/2605.08034)
+- **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**  
+  ***Houssam Zenati***, Bariscan Bozkurt, Arthur Gretton.  
+  *NeurIPS*, 2025.  
+  [[Paper]](https://arxiv.org/pdf/2506.02793) · [[Code]](https://github.com/houssamzenati/counterfactual-policy-mean-embedding)
 
 ### Adaptive Experimentation
 
-- **Efficient Inference after Directionally Stable Adaptive Experiments**  
-  Z. Shen\*, ***H. Zenati***\*, N. Kallus, A. Gretton, K. Khamaru, A. Bibaut.  
-  *Preprint*, 2026.  
-  [[arXiv]](https://arxiv.org/abs/2602.21478)
-
-\* Equal contribution.
+- **Efficient Kernelized UCB for Contextual Bandits**  
+  ***Houssam Zenati***, Alberto Bietti, Eustache Diemert, Julien Mairal, Matthieu Martin, Pierre Gaillard.  
+  *AISTATS*, 2022.  
+  [[Paper]](https://proceedings.mlr.press/v151/zenati22a.html) · [[Code]](https://github.com/criteo-research/Efficient-Kernel-UCB)
 
 [All publications]({{ "/publications/" | relative_url }})
 
