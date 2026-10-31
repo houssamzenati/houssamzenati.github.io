@@ -33,6 +33,12 @@
   \end{minipage}\par\vspace{0.8em}
 }
 
+\newcommand{\softwareentry}[4]{%
+  \noindent\href{#1}{\textbf{#2}}\hfill
+  {\small\color{black!60}#3}\par\nobreak
+  {\small #4\par}\vspace{0.45em}
+}
+
 \hypersetup{pdftitle={Houssam Zenati - Academic CV},pdfauthor={Houssam Zenati}}
 \begin{document}
 
@@ -317,26 +323,70 @@ Support for a research attachment at A*STAR, Singapore.
 }
 
 \cvsection{Software}{
-\href{https://judithabk6.github.io/med_bench/}{\textbf{med\_bench}}: A Python package for causal mediation analysis that implements the most common estimators within a unified framework, while allowing flexible choices for nuisance parameter models. It accompanies the paper \textit{Causal mediation analysis with one or multiple mediators: a comparative study}.
+\setlength{\parskip}{0pt}
+\textbf{Open-source library}\par
 
-\vspace{0.6em}
+\vspace{0.35em}
+\softwareentry
+  {https://judithabk6.github.io/med_bench/}
+  {med\_bench}
+  {Psychological Methods 2025}
+  {Python package for causal mediation analysis with common estimators and flexible nuisance models.}
 
-Open-source research code:
+\vspace{0.35em}
+\textbf{Research software}\par
 
-\vspace{0.2em}
-
-\begin{itemize}
-\item \href{https://github.com/houssamzenati/interpretable-dr-me-test}{interpretable-dr-me-test}
-\item \href{https://github.com/houssamzenati/adaptive-KTE}{adaptive-KTE}
-\item \href{https://github.com/houssamzenati/counterfactual-policy-mean-embedding}{counterfactual-policy-mean-embedding}
-\item \href{https://github.com/houssamzenati/double-debiased-machine-learning-mediation-continuous-treatments}{double-debiased-machine-learning-mediation-continuous-treatments}
-\item \href{https://github.com/criteo-research/sequential-counterfactual-risk-minimization}{sequential-counterfactual-risk-minimization}
-\item \href{https://github.com/criteo-research/Efficient-Kernel-UCB}{Efficient-Kernel-UCB}
-\item \href{https://github.com/criteo-research/Nested-Exponential-Weights}{Nested-Exponential-Weights}
-\item \href{https://github.com/criteo-research/optimization-continuous-action-crm}{optimization-continuous-action-crm}
-\item \href{https://github.com/houssamzenati/Adversarially-Learned-Anomaly-Detection}{Adversarially-Learned-Anomaly-Detection}
-\item \href{https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection}{Efficient-GAN-Anomaly-Detection}
-\end{itemize}
+\vspace{0.35em}
+\softwareentry
+  {https://github.com/houssamzenati/adaptive-KTE}
+  {adaptive-KTE}
+  {AISTATS 2026}
+  {Kernel treatment effects with adaptively collected data.}
+\softwareentry
+  {https://github.com/houssamzenati/interpretable-dr-me-test}
+  {Interpretable distributional treatment effects}
+  {NeurIPS 2026}
+  {Semiparametrically efficient local testing with learned outcome locations.}
+\softwareentry
+  {https://github.com/houssamzenati/double-debiased-machine-learning-mediation-continuous-treatments}
+  {Continuous-treatment mediation}
+  {AISTATS 2025}
+  {Double debiased machine learning for mediation analysis with continuous treatments.}
+\softwareentry
+  {https://github.com/houssamzenati/counterfactual-policy-mean-embedding}
+  {Counterfactual policy mean embeddings}
+  {NeurIPS 2025}
+  {Doubly robust estimation of counterfactual policy mean embeddings.}
+\softwareentry
+  {https://github.com/criteo-research/sequential-counterfactual-risk-minimization}
+  {Sequential counterfactual risk minimization}
+  {ICML 2023}
+  {Sequential counterfactual risk minimization for policy learning.}
+\softwareentry
+  {https://github.com/criteo-research/Efficient-Kernel-UCB}
+  {Efficient Kernel UCB}
+  {AISTATS 2022}
+  {Efficient kernelized UCB for contextual bandits.}
+\softwareentry
+  {https://github.com/criteo-research/Nested-Exponential-Weights}
+  {Nested bandits}
+  {ICML 2022}
+  {Nested exponential weights for nested bandits.}
+\softwareentry
+  {https://github.com/criteo-research/optimization-continuous-action-crm}
+  {Continuous-action counterfactual risk minimization}
+  {ICLR Workshop 2020; TMLR 2025}
+  {Counterfactual learning and optimization of stochastic policies with continuous actions.}
+\softwareentry
+  {https://github.com/houssamzenati/Adversarially-Learned-Anomaly-Detection}
+  {Adversarially learned anomaly detection}
+  {ICDM 2018}
+  {Adversarially learned models for anomaly detection.}
+\softwareentry
+  {https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection}
+  {Efficient GAN anomaly detection}
+  {ICLR Workshop 2018}
+  {Efficient GAN-based anomaly detection.}
 }
 
 \end{document}
