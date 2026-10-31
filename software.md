@@ -109,7 +109,7 @@ I develop software for <strong>learning intervention rules</strong>, <strong>inf
 %}
 {% include software-card.html
   title="Efficient GAN anomaly detection"
-  venue="ICLR Workshop (submitted)"
+  venue="ICLR Workshop"
   year="2018"
   url="https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection"
   image="efficient-gan"

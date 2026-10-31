@@ -132,7 +132,7 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 
 - **Efficient GAN-Based Anomaly Detection**  
   ***Houssam Zenati***, Chuan-Sheng Foo, Bruno Lecouat, Gaurav Manek, Vijay Ramaseshan Chandrasekhar.  
-  *submitted ICLR Workshop*, 2018.  
+  *ICLR Workshop*, 2018.  
   [[Paper]](https://arxiv.org/pdf/1802.06222.pdf) · [[Code]](https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection)
 
 - **Semi-Supervised Learning with GANs: Revisiting Manifold Regularization**  
