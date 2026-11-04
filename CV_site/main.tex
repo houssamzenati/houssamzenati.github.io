@@ -33,6 +33,12 @@
   \end{minipage}\par\vspace{0.8em}
 }
 
+\newcommand{\softwareentry}[4]{%
+  \noindent\href{#1}{\textbf{#2}}\hfill
+  {\small\color{black!60}#3}\par\nobreak
+  {\small #4\par}\vspace{0.45em}
+}
+
 \hypersetup{pdftitle={Houssam Zenati - Academic CV},pdfauthor={Houssam Zenati}}
 \begin{document}
 
@@ -53,7 +59,7 @@
 
 
 \cvsection{Research Interests}{
-I develop statistical theory and algorithms for reliable inference and decision-making with learned models. My work connects nuisance-robust inference, policy learning and adaptive experimentation: controlling the estimation errors that affect a target or decision, and collecting the observations needed to assess it. I am particularly interested in applying these ideas to biology and biomedicine.
+I develop machine learning algorithms and statistical theory for learning from partial feedback, understanding intervention effects, and designing adaptive experiments. My research progresses from learning which interventions to choose, to establishing what they change, to deciding what to try next---when good decisions and informative experiments need not favor the same assignments.
 }
 
 \cvsection{Professional\\Experience}{
@@ -61,15 +67,15 @@ I develop statistical theory and algorithms for reliable inference and decision-
 \begin{tabularx}{\linewidth}{@{}Xr@{}}
 \textit{Research Fellow} & 2025--present \\
 \end{tabularx}
-Developing methods for semiparametric efficient distributional causal inference, adaptive data collection, and sequential decision-making.
+I work with Arthur Gretton.
 
 \vspace{0.6em}
 
-{\bfseries INRIA MIND / PreMeDical}, France\\
+{\bfseries MIND team, Inria}, France\\
 \begin{tabularx}{\linewidth}{@{}Xr@{}}
 \textit{Postdoctoral Researcher} & 2023--2024 \\
 \end{tabularx}
-Research on causal inference and mediation analysis, including double machine learning estimators and open-source software development.
+Research on causal inference and mediation analysis.
 
 \vspace{0.6em}
 
@@ -78,7 +84,7 @@ Research on causal inference and mediation analysis, including double machine le
 \textit{PhD Researcher} & 2020--2023 \\
 \textit{Research Engineer} & 2019--2020 \\
 \end{tabularx}
-Worked on counterfactual policy learning and online/bandit problems, including optimization methods, contextual bandits, and kernel methods.
+PhD jointly with Inria Thoth and Criteo AI Lab on offline policy learning and sequential learning.
 
 \vspace{0.6em}
 
@@ -87,7 +93,7 @@ Worked on counterfactual policy learning and online/bandit problems, including o
 \textit{Research Engineer} & \\
 \textit{Research Intern} & \\
 \end{tabularx}
-Worked on deep representation learning, generative adversarial networks, anomaly detection, and semi-supervised learning, with applications to medical imaging.
+Worked on deep generative models and anomaly detection.
 }
 
 \cvsection{Education}{
@@ -107,62 +113,68 @@ M.Eng.\ in applied mathematics and computer science.
 }
 
 \cvsection{Selected\\Publications}{
-{\small $\ast$ marks authors who contributed equally to the paper.}
-
-Z. Shen$^\ast$, \textbf{H. Zenati}$^\ast$, N. Kallus, A. Gretton, K. Khamaru, A. Bibaut (2026). \textit{Efficient Inference after Directionally Stable Adaptive Experiments}. Preprint.\\
-\href{https://arxiv.org/abs/2602.21478}{arXiv:2602.21478}
-
-\vspace{0.5em}
-
-\textbf{H. Zenati}, B. Bozkurt, A. Gretton (2026). \textit{Kernel Treatment Effects with Adaptively Collected Data}. AISTATS.\\
-\href{https://proceedings.mlr.press/v300/zenati26a.html}{AISTATS 2026 proceedings}
-
-\vspace{0.5em}
-
-\textbf{H. Zenati}, A. Gretton (2026). \textit{Semiparametric Efficient Test for Interpretable Distributional Treatment Effects}. NeurIPS.\\
-\href{https://arxiv.org/pdf/2605.08034}{arXiv:2605.08034}
-
-\vspace{0.5em}
-
-S. Girard, A. Bibaut, J.-J. Vie, A. Gretton, N. Kallus, \textbf{H. Zenati} (2026). \textit{Fast Best-in-Class Regret for Contextual Bandits}. UAI.\\
-\href{https://proceedings.mlr.press/v337/girard26a.html}{UAI 2026 proceedings}
-
-\vspace{0.5em}
-
 \textbf{H. Zenati}, E. Diemert, M. Martin, J. Mairal, P. Gaillard (2023). \textit{Sequential Counterfactual Risk Minimization}. ICML.\\
-\href{https://arxiv.org/pdf/2302.12120.pdf}{arXiv:2302.12120}
+\href{https://proceedings.mlr.press/v202/zenati23a.html}{ICML 2023 proceedings}
+
+\vspace{0.5em}
+
+\textbf{H. Zenati}, B. Bozkurt, A. Gretton (2025). \textit{Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings}. NeurIPS.\\
+\href{https://proceedings.neurips.cc/paper_files/paper/2025/hash/49a77f5557668b87a568c2d9468d4d6b-Abstract-Conference.html}{NeurIPS 2025 proceedings}
+
+\vspace{0.5em}
+
+\textbf{H. Zenati}, A. Bietti, E. Diemert, J. Mairal, M. Martin, P. Gaillard (2022). \textit{Efficient Kernelized UCB for Contextual Bandits}. AISTATS.\\
+\href{https://proceedings.mlr.press/v151/zenati22a.html}{AISTATS 2022 proceedings}
 }
 
 \newpage
 
-\cvsection{Other\\Publications}{
+\cvsection{Preprints}{
 {\small $\ast$ marks authors who contributed equally to the paper.}
 
-F. El Khoury$^\ast$, \textbf{H. Zenati}$^\ast$, N. Kallus, M. Arbel, A. Bibaut (2026). \textit{Semiparametric Efficient Bilevel Gradient Estimation}. Preprint.
+R. Leman, B. Bozkurt, S. Tanji, A. Gretton, \textbf{H. Zenati} (2026). \href{https://arxiv.org/abs/2610.37227}{\textit{Doubly Robust Deep Kernel Tests for Structured Outcomes}}. Preprint.
 
 \vspace{0.4em}
 
-B. Bozkurt, A. Galashov, D. Meunier, Z. Shen, A. Gretton, \textbf{H. Zenati} (2026). \textit{Doubly Robust Proxy Causal Learning with Neural Mean Embeddings}. Preprint.
+F. El Khoury$^\ast$, \textbf{H. Zenati}$^\ast$, N. Kallus, M. Arbel, A. Bibaut (2026). \href{https://arxiv.org/abs/2605.21341}{\textit{Parametric Rates for Nonparametric Conditional-Moment Bilevel Optimization}}. Preprint.
 
 \vspace{0.4em}
 
-Z. Shen, N. Kallus, D. Meunier, \textbf{H. Zenati}, A. Gretton, A. Bibaut (2026). \textit{Nonparametric Instrumental Variable Analysis Without Structural Equations: Debiased Inference on Functionals of Inverse Problems with No Solutions}. Preprint.
+B. Bozkurt, A. Galashov, D. Meunier, Z. Shen, A. Gretton, \textbf{H. Zenati} (2026). \href{https://arxiv.org/abs/2605.09514}{\textit{Doubly Robust Proxy Causal Learning with Neural Mean Embeddings}}. Preprint.
 
 \vspace{0.4em}
 
-A. Bibaut, \textbf{H. Zenati}, T. Rahier, N. Kallus (2026). \textit{Functional Natural Policy Gradients}. Preprint.
+Z. Shen, N. Kallus, D. Meunier, \textbf{H. Zenati}, A. Gretton, A. Bibaut (2026). \href{https://arxiv.org/abs/2604.24660}{\textit{Nonparametric Instrumental Variable Analysis Without Structural Equations: Debiased Inference on Functionals of Inverse Problems with No Solutions}}. Preprint.
 
 \vspace{0.4em}
 
-\textbf{H. Zenati}, B. Bozkurt, A. Gretton (2025). \textit{Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings}. NeurIPS.
+A. Bibaut, \textbf{H. Zenati}, T. Rahier, N. Kallus (2026). \href{https://arxiv.org/abs/2603.28681}{\textit{Functional Natural Policy Gradients}}. Preprint.
 
 \vspace{0.4em}
 
-B. Bozkurt, \textbf{H. Zenati}, D. Meunier, L. Xu, A. Gretton (2025). \textit{Density Ratio-Free Doubly Robust Proxy Causal Learning}. NeurIPS.
+Z. Shen$^\ast$, \textbf{H. Zenati}$^\ast$, N. Kallus, A. Gretton, K. Khamaru, A. Bibaut (2026). \href{https://arxiv.org/abs/2602.21478}{\textit{Efficient Inference after Directionally Stable Adaptive Experiments}}. Preprint.
+}
+
+\cvsection{Other\\Publications}{
+{\small $\dagger$ marks alphabetical author order.}
+
+\textbf{H. Zenati}, B. Bozkurt, A. Gretton (2026). \href{https://proceedings.mlr.press/v300/zenati26a.html}{\textit{Kernel Treatment Effects with Adaptively Collected Data}}. AISTATS.
+
+\vspace{0.4em}
+
+S. Girard, A. Bibaut, J.-J. Vie, A. Gretton, N. Kallus, \textbf{H. Zenati} (2026). \href{https://proceedings.mlr.press/v337/girard26a.html}{\textit{Fast Best-in-Class Regret for Contextual Bandits}}. UAI.
+
+\vspace{0.4em}
+
+\textbf{H. Zenati}, A. Gretton (2026). \href{https://arxiv.org/abs/2605.08034}{\textit{Semiparametric Efficient Tests for Interpretable Distributional Treatment Effects}}. \href{https://neurips.cc/virtual/2026/poster/150512}{NeurIPS}.
 
 \vspace{0.4em}
 
 \textbf{H. Zenati}, J. Abecassis, J. Josse, B. Thirion (2025). \textit{Double Debiased Machine Learning for Mediation Analysis with Continuous Treatments}. AISTATS.
+
+\vspace{0.4em}
+
+B. Bozkurt, \textbf{H. Zenati}, D. Meunier, L. Xu, A. Gretton (2025). \textit{Density Ratio-Free Doubly Robust Proxy Causal Learning}. NeurIPS.
 
 \vspace{0.4em}
 
@@ -178,11 +190,7 @@ J. Zhou, P. Gaillard, T. Rahier, \textbf{H. Zenati}, J. Arbel (2024). \textit{To
 
 \vspace{0.4em}
 
-M. Martin, P. Mertikopoulos, T. Rahier, \textbf{H. Zenati} (2022). \textit{Nested Bandits}. ICML.
-
-\vspace{0.4em}
-
-\textbf{H. Zenati}, A. Bietti, E. Diemert, J. Mairal, M. Martin, P. Gaillard (2022). \textit{Efficient Kernelized UCB for Contextual Bandits}. AISTATS.
+M. Martin, P. Mertikopoulos, T. Rahier, \textbf{H. Zenati} (2022). \textit{Nested Bandits}$^\dagger$. ICML.
 
 \vspace{0.4em}
 
@@ -202,7 +210,7 @@ K. Ouardini, H. Yang, B. Unnikrishnan, M. Romain, C. Garcin, \textbf{H. Zenati},
 
 \vspace{0.4em}
 
-\textbf{H. Zenati}, C.-S. Foo, B. Lecouat, G. Manek, V. R. Chandrasekhar (2018). \textit{Efficient GAN-Based Anomaly Detection}. ICLR Workshop.
+\textbf{H. Zenati}, C.-S. Foo, B. Lecouat, G. Manek, V. R. Chandrasekhar (2018). \href{https://arxiv.org/abs/1802.06222}{\textit{Efficient GAN-Based Anomaly Detection}}. ICLR Workshop.
 
 \vspace{0.4em}
 
@@ -210,7 +218,7 @@ B. Lecouat, C.-S. Foo, \textbf{H. Zenati}, V. Chandrasekhar (2018). \textit{Semi
 
 \vspace{0.4em}
 
-B. Lecouat, C.-S. Foo, \textbf{H. Zenati}, V. Chandrasekhar (2018). \textit{Manifold Regularization with GANs for Semi-Supervised Learning}. arXiv preprint.
+B. Lecouat, C.-S. Foo, \textbf{H. Zenati}, V. Chandrasekhar (2018). \textit{Manifold Regularization with GANs for Semi-Supervised Learning}. ICLR Workshop.
 
 \vspace{0.4em}
 
@@ -220,60 +228,65 @@ B. Lecouat, K. Chang, C.-S. Foo, B. Unnikrishnan, J. M. Brown, \textbf{H. Zenati
 \newpage
 
 \cvsection{Teaching}{
-{\bfseries Data Visualisation}, Universit\'e Paris Dauphine -- PSL \hfill 2021--2022\\
-Instructor for Master's students in the IASD program. Covered visualisation as a statistical and algorithmic tool for exploring, summarizing, and communicating complex data, with topics including graphical principles and dimensionality-reduction methods such as PCA, multidimensional scaling, and t-SNE.
-
-\vspace{0.4em}
-
-{\bfseries Advanced Machine Learning}, CentraleSup\'elec \hfill 2024--2025\\
-Teaching assistant alongside Emilie Chouzenoux. Helped students connect the formal ideas in modern machine learning, statistics, and optimization to practical algorithms and empirical behavior.
+{\bfseries Introduction to Causal Inference with Hidden Confounders: Instruments and Proxies}, UM6P \hfill 12 November 2025\\
+\textbf{Guest lecture.} A 90-minute lecture followed by a separate 90-minute practical, progressing from potential outcomes and adjustment with observed covariates to instruments, proxy variables, and bridge functions for hidden confounding. \href{https://houssamzenati.github.io/assets/slides/causal-inference-hidden-confounders-um6p-2025.pdf}{Slides}.
 
 \vspace{0.4em}
 
 {\bfseries Causal Inference}, New York University Paris \hfill 2024--2025\\
-Co-instructor with Judith Abecassis. Taught four sessions, including lectures and recitations, on randomized and observational causal inference, including identification assumptions, weighting, matching, instrumental variables, and regression discontinuity.
+\textbf{Co-instructor}, with Judith Abecassis. This course introduces the main tools of causal inference, from randomized experiments to observational and quasi-experimental methods, with a particular emphasis on observational inference.
+
+\vspace{0.4em}
+
+{\bfseries Advanced Machine Learning}, CentraleSup\'elec \hfill 2024--2025\\
+\textbf{Teaching assistant}, alongside Emilie Chouzenoux. This course covers modern machine learning methods at the interface of statistics and optimization, with an emphasis on connecting theory, assumptions, and algorithmic practice.
+
+\vspace{0.4em}
+
+{\bfseries Data Visualisation}, Universit\'e Paris Dauphine -- PSL \hfill 2021--2022\\
+\textbf{Instructor} for Master's students in the IASD program, presenting data visualisation as a statistical and algorithmic tool for exploring, summarizing, and communicating complex data.
 
 \vspace{0.6em}
 
-Teaching philosophy: conceptual clarity, mathematical rigor, and active engagement.
+When teaching, I like to emphasize conceptual clarity, mathematical rigor, and active engagement, with the goal of helping students understand both the structure of a method and the assumptions that make it work.
 }
 
 \cvsection{Student\\Supervision}{
-\textit{Research co-supervision and mentoring at Master's and doctoral levels.}
+I have been fortunate to co-supervise and mentor students on research projects:
 
 \vspace{0.3em}
-\textbf{Julien Zhou}, Master's student, with Pierre Gaillard \hfill 2023\\
-Co-supervised research on covariance-adaptive combinatorial semi-bandits, leading to a NeurIPS 2024 publication.
+\textbf{Julien Zhou}, Master's student, mentoring, with Pierre Gaillard \hfill 2023\\
+\href{https://papers.nips.cc/paper_files/paper/2024/hash/3640a1997a4c9571cea9db2c82e1fc35-Abstract-Conference.html}{\textit{Towards Efficient and Optimal Covariance-Adaptive Algorithms for Combinatorial Semi-Bandits}}. NeurIPS 2024.
 
 \vspace{0.35em}
-\textbf{Samuel Girard}, PhD student, with Aur\'elien Bibaut \hfill 2025--2026\\
-Mentored research on contextual bandits, leading to a UAI 2026 publication.
+\textbf{Samuel Girard}, PhD student, co-supervision, with Aurelien Bibaut \hfill 2025--2026\\
+\href{https://proceedings.mlr.press/v337/girard26a.html}{\textit{Fast Best-in-Class Regret for Contextual Bandits}}. UAI 2026.
 
 \vspace{0.35em}
-\textbf{Robin Leman}, Master's student, with Arthur Gretton \hfill 2026\\
-Research supervision and mentoring.
+\textbf{Robin Leman}, Master's student, supervision, with Arthur Gretton \hfill 2026\\
+\href{https://arxiv.org/abs/2610.37227}{\textit{Doubly Robust Deep Kernel Tests for Structured Outcomes}}. Preprint, 2026.
 
 \vspace{0.35em}
-\textbf{Bariscan Bozkurt}, PhD student, with Arthur Gretton \hfill 2026\\
-Research mentoring.
+\textbf{Bariscan Bozkurt}, PhD student, co-supervision, with Arthur Gretton \hfill 2026\\
+\href{https://arxiv.org/abs/2605.09514}{\textit{Doubly Robust Proxy Causal Learning with Neural Mean Embeddings}}. Preprint, 2026.
 
 \vspace{0.35em}
-\textbf{Sofiane Tanji}, PhD student, UCLouvain \hfill 2026\\
-Co-supervising with Yassine Laguel.
+\textbf{Sofiane Tanji}, PhD student, co-supervision, with Yassine Laguel \hfill 2026\\
+\textit{Work in progress.}
 }
 
 \cvsection{Service}{
 \textbf{Workshop organisation}\\
-Lead Organiser, \href{https://aae-workshop.github.io/info/}{Advances in Adaptive Experimentation (AAE) Workshop}, Gatsby Computational Neuroscience Unit, UCL, 18--19 June 2026. Two-day programme with seven invited speakers, a poster session and an open-problems session. Organising committee: Houssam Zenati, Bariscan Bozkurt, I-Chun Lin and Arthur Gretton.
+Lead Organiser, \href{https://aae-workshop.github.io/info/}{Advances in Adaptive Experimentation (AAE) Workshop}, Gatsby Computational Neuroscience Unit, UCL, 18--19 June 2026, with Bariscan Bozkurt, I-Chun Lin and Arthur Gretton. The two-day programme included seven invited speakers, posters and an open-problems session.
 
 \vspace{0.4em}
 \textbf{Seminar organisation}\\
-Organiser of Gatsby's external machine learning seminars, UCL, September 2025--August 2026.
+Organiser of the external machine learning seminars at Gatsby Unit, UCL, September 2025--August 2026.
 
 \vspace{0.4em}
 \textbf{Reading groups}\\
-Co-organised, with Dimitri Meunier, a reading group on van der Vaart's \textit{Asymptotic Statistics}, Gatsby, UCL, 2026.\\
-Co-organised, with Fateme Ghayem, a reading group on Wainwright's \textit{High-Dimensional Statistics: A Non-Asymptotic Viewpoint}, Inria Paris, 2023--2024.
+Co-organized, with Dimitri Meunier, a reading group at Gatsby, UCL on Aad van der Vaart's \textit{Asymptotic Statistics}, 2026.\\
+Organized, with Fateme Ghayem, a reading group at Inria Paris on Martin Wainwright's \textit{High-Dimensional Statistics: A Non-Asymptotic Viewpoint}, 2023--2024.
 
 \vspace{0.4em}
 \textbf{Peer review}\\
@@ -295,40 +308,85 @@ Support for conference participation.
 Support for a research attachment at A*STAR, Singapore.
 }
 
-\cvsection{Talks}{
+\cvsection{Selected\\Talks}{
 \begin{tabularx}{\linewidth}[t]{@{}>{\raggedright\arraybackslash}X>{\raggedleft\arraybackslash}p{1.7cm}@{}}
-\textit{Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings}, INRIA Thoth, France & Oct.\ 2025\\[0.35em]
-\textit{Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings}, Symposium on Mathematical Foundations of Trustworthy Learning, Switzerland & Oct.\ 2025\\[0.35em]
-\textit{Sequential Counterfactual Risk Minimization}, ELLIS Unconference, France & Jul.\ 2023\\[0.35em]
-\textit{Sequential Counterfactual Risk Minimization}, INRIA Lille, France & Jun.\ 2023\\[0.35em]
-\textit{Nested Bandits}, ICML, United States & Jul.\ 2022\\[0.35em]
-\textit{Efficient Kernelized Contextual Bandits}, virtual talk & May 2022\\[0.35em]
-\textit{Optimization Approaches for Counterfactual Risk Minimization with Continuous Actions}, virtual talk & Apr.\ 2020\\[0.35em]
+\href{https://houssamzenati.github.io/assets/slides/ime-2026-handout.pdf}{\textit{Interventional Mean Embeddings for Distributional Causal Inference}}, Gatsby Unit, UCL, London, United Kingdom & Oct.\ 2026\\[0.35em]
+\href{https://houssamzenati.github.io/assets/slides/T15-2025-10-monte-verita-dr-cpme.pdf}{\textit{Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings}}, Symposium on Mathematical Foundations of Trustworthy Learning, Monte Verit\`a, Ascona, Switzerland & Oct.\ 2025\\[0.35em]
+\href{https://houssamzenati.github.io/assets/slides/T14-2025-01-gatsby-mljc-understanding-influence-functions.pdf}{\textit{Understanding Influence Functions}}, Gatsby Machine Learning Journal Club, Gatsby Unit, UCL, London, United Kingdom & Jan.\ 2025\\[0.35em]
+\textit{Sequential Counterfactual Risk Minimization}, ELLIS UnConference, HEC Paris, Jouy-en-Josas, France & Jul.\ 2023\\[0.35em]
+\textit{Nested Bandits}, ICML, Baltimore, United States & Jul.\ 2022\\[0.35em]
+\textit{Efficient Kernel UCB for Contextual Bandits}, Thoth seminar, Inria, Grenoble, France & Jan.\ 2022\\[0.35em]
+\textit{Counterfactual Learning of Stochastic Policies with Continuous Actions}, MIPT--UGA AI Workshop, online & Jul.\ 2021\\[0.35em]
+\textit{Optimization Approaches for Counterfactual Risk Minimization with Continuous Actions}, ICLR Workshop on Causal Learning for Decision Making, online & Apr.\ 2020\\[0.35em]
 \textit{Adversarially Learned Anomaly Detection}, ICDM, Singapore & Nov.\ 2018\\[0.35em]
-\textit{Efficient GAN-Based Anomaly Detection}, DL2.0 Workshop, I2R, A*STAR, Singapore & Apr.\ 2018\\[0.35em]
 \end{tabularx}
 }
 
 \cvsection{Software}{
-\href{https://judithabk6.github.io/med_bench/}{\textbf{med\_bench}}: Python package for causal mediation analysis with a unified implementation of common estimators and flexible nuisance models.
+\setlength{\parskip}{0pt}
+\textbf{Open-source library}\par
 
-\vspace{0.6em}
+\vspace{0.35em}
+\softwareentry
+  {https://judithabk6.github.io/med_bench/}
+  {med\_bench}
+  {Psychological Methods 2025}
+  {Python package for causal mediation analysis with common estimators and flexible nuisance models.}
 
-Open-source research code:
+\vspace{0.35em}
+\textbf{Research software}\par
 
-\vspace{0.2em}
-
-\begin{itemize}
-\item \href{https://github.com/houssamzenati/adaptive-KTE}{adaptive-KTE}
-\item \href{https://github.com/houssamzenati/counterfactual-policy-mean-embedding}{counterfactual-policy-mean-embedding}
-\item \href{https://github.com/houssamzenati/double-debiased-machine-learning-mediation-continuous-treatments}{double-debiased-machine-learning-mediation-continuous-treatments}
-\item \href{https://github.com/criteo-research/sequential-counterfactual-risk-minimization}{sequential-counterfactual-risk-minimization}
-\item \href{https://github.com/criteo-research/Efficient-Kernel-UCB}{Efficient-Kernel-UCB}
-\item \href{https://github.com/criteo-research/Nested-Exponential-Weights}{Nested-Exponential-Weights}
-\item \href{https://github.com/criteo-research/optimization-continuous-action-crm}{optimization-continuous-action-crm}
-\item \href{https://github.com/houssamzenati/Adversarially-Learned-Anomaly-Detection}{Adversarially-Learned-Anomaly-Detection}
-\item \href{https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection}{Efficient-GAN-Anomaly-Detection}
-\end{itemize}
+\vspace{0.35em}
+\softwareentry
+  {https://github.com/houssamzenati/adaptive-KTE}
+  {adaptive-KTE}
+  {AISTATS 2026}
+  {Kernel treatment effects with adaptively collected data.}
+\softwareentry
+  {https://github.com/houssamzenati/interpretable-dr-me-test}
+  {Interpretable distributional treatment effects}
+  {NeurIPS 2026}
+  {Semiparametrically efficient local testing with learned outcome locations.}
+\softwareentry
+  {https://github.com/houssamzenati/double-debiased-machine-learning-mediation-continuous-treatments}
+  {Continuous-treatment mediation}
+  {AISTATS 2025}
+  {Double debiased machine learning for mediation analysis with continuous treatments.}
+\softwareentry
+  {https://github.com/houssamzenati/counterfactual-policy-mean-embedding}
+  {Counterfactual policy mean embeddings}
+  {NeurIPS 2025}
+  {Doubly robust estimation of counterfactual policy mean embeddings.}
+\softwareentry
+  {https://github.com/criteo-research/sequential-counterfactual-risk-minimization}
+  {Sequential counterfactual risk minimization}
+  {ICML 2023}
+  {Sequential counterfactual risk minimization for policy learning.}
+\softwareentry
+  {https://github.com/criteo-research/Efficient-Kernel-UCB}
+  {Efficient Kernel UCB}
+  {AISTATS 2022}
+  {Efficient kernelized UCB for contextual bandits.}
+\softwareentry
+  {https://github.com/criteo-research/Nested-Exponential-Weights}
+  {Nested bandits}
+  {ICML 2022}
+  {Nested exponential weights for nested bandits.}
+\softwareentry
+  {https://github.com/criteo-research/optimization-continuous-action-crm}
+  {Continuous-action counterfactual risk minimization}
+  {ICLR Workshop 2020; TMLR 2025}
+  {Counterfactual learning and optimization of stochastic policies with continuous actions.}
+\softwareentry
+  {https://github.com/houssamzenati/Adversarially-Learned-Anomaly-Detection}
+  {Adversarially learned anomaly detection}
+  {ICDM 2018}
+  {Adversarially learned models for anomaly detection.}
+\softwareentry
+  {https://github.com/houssamzenati/Efficient-GAN-Anomaly-Detection}
+  {Efficient GAN anomaly detection}
+  {ICLR Workshop 2018}
+  {Efficient GAN-based anomaly detection.}
 }
 
 \end{document}
