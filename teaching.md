@@ -31,11 +31,11 @@ I have been fortunate to co-supervise and mentor students on research projects:
     - [Fast Best-in-Class Regret for Contextual Bandits](https://proceedings.mlr.press/v337/girard26a.html) — *UAI 2026*.
 
 - [**Robin Leman**](https://robinleman.com/) (Master's student, supervision, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
-    - *Work in progress.*
+    - [Doubly Robust Deep Kernel Tests for Structured Outcomes](https://arxiv.org/pdf/2610.37227) — *Preprint, 2026*.
 
 - [**Bariscan Bozkurt**](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, co-supervision, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
-    - [Sampling Interventional Distributions with Orthogonal MMD Flow](https://arxiv.org/pdf/2611.03962) — *Preprint, 2026*.
     - [Doubly Robust Proxy Causal Learning with Neural Mean Embeddings](https://arxiv.org/abs/2605.09514) — *Preprint, 2026*.
+    - [Sampling Interventional Distributions with Orthogonal MMD Flow](https://arxiv.org/pdf/2611.03962) — *Preprint, 2026*.
 
 - [**Sofiane Tanji**](https://sofianetanji.com/) (PhD student, co-supervision, with [Yassine Laguel](https://yassine-laguel.github.io/), 2026)
     - *Work in progress.*

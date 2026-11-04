@@ -12,7 +12,11 @@ math: true
 </div>
 
 <p class="research-overview">
-How much feedback do we need to <strong>learn better intervention rules</strong>? What can we <strong>reliably conclude about their effects</strong>? And how should we <strong>choose the next experiment</strong> when the interventions that improve outcomes may not be those that tell us the most? These questions motivate my work on learning, inference, and adaptive experimentation. I develop algorithms and statistical theory to understand how these goals fit together, and where they call for different choices.
+How much feedback do we need to <strong>learn better intervention rules</strong>? What can we <strong>reliably conclude about their effects</strong>? How should we <strong>choose the next experiment</strong> when improving outcomes and gaining information call for different actions? And how can we <strong>generate outcomes under an intervention</strong> from observational data?
+</p>
+
+<p class="research-overview">
+These questions connect my work on policy learning, causal inference, adaptive experimentation, and generative modelling. I develop algorithms and statistical theory to understand how estimation errors, learned representations, and optimization shape our ability to learn, infer, and generate.
 </p>
 
 <details id="learning-to-intervene" class="research-block research-collapsible">
@@ -68,7 +72,7 @@ How much feedback do we need to <strong>learn better intervention rules</strong>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
     <p class="research-block-intro">
-      Learning which interventions perform well leaves further questions about <strong>what they change and how precisely their effects can be established</strong>. I study how to represent, test, and sample interventional outcome distributions, as well as targets defined through nested or inverse problems, including mediated effects and inference under unobserved confounding.
+      Learning which interventions perform well leaves further questions about <strong>what they change and how precisely their effects can be established</strong>. I study how to represent and test interventional outcome distributions, as well as targets defined through nested or inverse problems, including mediated effects and inference under unobserved confounding.
     </p>
     {% include research-figure.html
       name="nuisance_robust_inference"
@@ -87,18 +91,17 @@ How much feedback do we need to <strong>learn better intervention rules</strong>
 
     <h3>What changes beyond the mean, and how can those changes be understood?</h3>
     <p>
-      Interventions can have similar average outcomes while changing variability, tails or other features of the outcome distribution. My <a href="https://arxiv.org/abs/2506.02793">counterfactual policy mean-embedding work</a> represents and compares interventional outcome distributions, including for structured outcomes such as images and sequences.
-    </p>
-    <p>
-      A global test can establish that distributions differ without explaining which features distinguish them. My <a href="https://arxiv.org/abs/2605.08034">interpretable distributional test</a> learns informative outcome locations and evaluates discrepancies there, while accounting for their data-driven selection.
+      Interventions can have similar average outcomes while changing variability, tails or other features of the outcome distribution. My <a href="https://arxiv.org/abs/2506.02793">counterfactual policy mean-embedding work</a> represents and compares interventional outcome distributions, including for structured outcomes such as images and sequences. These representations also supply targets for <a href="#interventional-sampling">interventional sampling</a>.
     </p>
 
-    <h3 id="interventional-sampling">How can we generate representative outcomes under an intervention?</h3>
+    <h3 id="deep-kernel-tests">How can learned representations make distributional tests more powerful?</h3>
     <p>
-      Our <a href="https://arxiv.org/abs/2611.03962">IMMD-Flow work</a> builds on doubly robust counterfactual policy mean embeddings to generate representative outcomes under an intervention. We estimate a <strong>Neyman-orthogonal kernel target once, then transport particles toward it with MMD gradient flow</strong>, without fitting an additional intervention-specific generative sampler. The framework accommodates supported hard interventions and context-dependent stochastic policies, including continuous actions.
+      Our <a href="https://arxiv.org/abs/2610.37227">DR-KTE-Deep work</a> learns outcome kernels to detect distributional treatment effects in images, text, and graphs. It combines doubly robust estimation with held-out testing to account for learning the kernel.
     </p>
+
+    <h3>Which outcome features explain an intervention's effect?</h3>
     <p>
-      We analyze how embedding-estimation error propagates through the particle dynamics. For image outcomes, transport takes place in a fixed representation, with a fixed decoder mapping the resulting particles back to images. The method targets population-level interventional distributions and requires adjustment for observed confounders and sufficient overlap.
+      A global test can establish that distributions differ without explaining which features distinguish them. My <a href="https://arxiv.org/abs/2605.08034">interpretable distributional test</a> learns informative outcome locations and evaluates discrepancies there, while accounting for their data-driven selection.
     </p>
 
     <h3>How can we infer functionals defined through nested regressions or inverse equations?</h3>
@@ -166,14 +169,14 @@ How much feedback do we need to <strong>learn better intervention rules</strong>
   </div>
 </details>
 
-<details id="adversarial-optimization" class="research-block research-collapsible">
+<details id="generative-modelling-and-sampling" class="research-block research-collapsible">
   <summary class="research-block-summary">
     <div class="research-block-header">
-      <h2>Generative Models and Representation Learning</h2>
+      <h2 id="adversarial-optimization">Generative Modelling and Sampling</h2>
       <span class="research-toggle" aria-hidden="true"></span>
     </div>
     <p class="research-block-intro">
-      My work studies how <strong>learned representations support interventional sampling, anomaly detection, and prediction with limited labels</strong>, alongside the optimization dynamics used to train adversarial models.
+      How can we <strong>generate samples from a target distribution</strong>, and what makes the required representations and optimization methods effective? My work spans sampling under interventions, learning generative representations for anomaly detection and prediction, and understanding adversarial training dynamics.
     </p>
     {% include research-figure.html
       name="adversarial_optimization"
@@ -186,9 +189,12 @@ How much feedback do we need to <strong>learn better intervention rules</strong>
   </summary>
 
   <div class="research-block-content">
-    <h3>How can fixed representations support interventional sampling?</h3>
+    <h3 id="interventional-sampling">How can we generate outcomes under an intervention?</h3>
     <p>
-      <a href="https://arxiv.org/abs/2611.03962">IMMD-Flow</a> connects this representation-learning perspective to the <a href="#interventional-sampling">distributional inference work above</a>. It uses a fixed encoder and decoder to generate image outcomes through particle transport in the representation space. The interventional target supplies the causal adjustment while the representation supplies useful image structure.
+      Observed outcomes reflect the way treatments were assigned. Generating outcomes under a different intervention therefore requires a causally adjusted target. Our <a href="https://arxiv.org/abs/2611.03962">IMMD-Flow work</a> estimates a <strong>doubly robust, Neyman-orthogonal kernel mean embedding, then transports particles toward this fixed target using MMD gradient flow</strong>. The estimated target can be reused to generate samples without training an additional intervention-specific generative model.
+    </p>
+    <p>
+      The framework covers supported hard interventions and stochastic policies, including continuous actions. We analyze how target-estimation error affects the particle dynamics. For images, particles move in a fixed representation and are decoded afterward; the analysis separates sampling error from reconstruction error. The goal is to sample population-level interventional outcomes, assuming no unmeasured confounding and sufficient overlap.
     </p>
 
     <h3>How can generative representations make learning with limited labels practical?</h3>

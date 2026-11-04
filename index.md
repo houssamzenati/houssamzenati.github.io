@@ -57,7 +57,8 @@ Feel free to reach out if you wish to collaborate, exchange ideas, or seek Maste
 
 ## News
 
-- **November 2026:** New preprint: [**Sampling Interventional Distributions with Orthogonal MMD Flow**](https://arxiv.org/pdf/2611.03962). We turn doubly robust interventional mean embeddings into representative outcomes through MMD particle transport.
+- **November 2026:** New preprint: [**Sampling Interventional Distributions with Orthogonal MMD Flow**](https://arxiv.org/pdf/2611.03962).
+- **October 2026:** New preprint: [**Doubly Robust Deep Kernel Tests for Structured Outcomes**](https://arxiv.org/pdf/2610.37227).
 - **September 2026:** Our paper **Semiparametric Efficient Test for Interpretable Distributional Treatment Effects** was accepted at NeurIPS 2026.
 - **June 2026:** Lead organiser of the [Advances in Adaptive Experimentation (AAE) Workshop](https://aae-workshop.github.io/info/) at the Gatsby Unit, UCL.
 - **June 2026:** Our paper **Fast Best-in-Class Regret for Contextual Bandits** was accepted at UAI 2026.

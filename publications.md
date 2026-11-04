@@ -10,7 +10,7 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 
 † Marks papers whose authors are listed in alphabetical order.
 
-[Learning to Intervene](#learning-to-intervene) · [Inference on Intervention Effects](#inference-on-intervention-effects) · [Adaptive Experimentation](#adaptive-experimentation) · [Generative Models and Representation Learning](#generative-models-and-representation-learning)
+[Learning to Intervene](#learning-to-intervene) · [Inference on Intervention Effects](#inference-on-intervention-effects) · [Adaptive Experimentation](#adaptive-experimentation) · [Generative Modelling and Sampling](#generative-modelling-and-sampling)
 
 ## Learning to Intervene
 
@@ -41,10 +41,10 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 
 ## Inference on Intervention Effects
 
-- **Sampling Interventional Distributions with Orthogonal MMD Flow**  
-  Bariscan Bozkurt, Hugh Dance, Zonghao Chen, Alexandre Galashov, Arthur Gretton, ***Houssam Zenati***.  
+- **Doubly Robust Deep Kernel Tests for Structured Outcomes**  
+  Robin Leman, Bariscan Bozkurt, Sofiane Tanji, Arthur Gretton, ***Houssam Zenati***.  
   *Preprint*, 2026.  
-  [[Paper]](https://arxiv.org/pdf/2611.03962)
+  [[Paper]](https://arxiv.org/pdf/2610.37227)
 
 - **Doubly Robust Proxy Causal Learning with Neural Mean Embeddings**  
   Bariscan Bozkurt, Alexandre Galashov, Dimitri Meunier, Zikai Shen, Arthur Gretton, ***Houssam Zenati***.  
@@ -113,7 +113,14 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
   *AISTATS*, 2022.  
   [[Paper]](https://proceedings.mlr.press/v151/zenati22a.html) · [[Code]](https://github.com/criteo-research/Efficient-Kernel-UCB)
 
-## Generative Models and Representation Learning
+<span id="generative-models-and-representation-learning"></span>
+
+## Generative Modelling and Sampling
+
+- **Sampling Interventional Distributions with Orthogonal MMD Flow**  
+  Bariscan Bozkurt, Hugh Dance, Zonghao Chen, Alexandre Galashov, Arthur Gretton, ***Houssam Zenati***.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2611.03962)
 
 - **Optimistic Mirror Descent in Saddle-Point Problems: Going the Extra (Gradient) Mile**  
   Panagiotis Mertikopoulos, Bruno Lecouat, ***Houssam Zenati***, Chuan-Sheng Foo, Vijay Chandrasekhar, Georgios Piliouras.  
