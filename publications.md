@@ -41,6 +41,11 @@ An up-to-date list is available on [Google Scholar](https://scholar.google.com/c
 
 ## Inference on Intervention Effects
 
+- **Sampling Interventional Distributions with Orthogonal MMD Flow**  
+  Bariscan Bozkurt, Hugh Dance, Zonghao Chen, Alexandre Galashov, Arthur Gretton, ***Houssam Zenati***.  
+  *Preprint*, 2026.  
+  [[Paper]](https://arxiv.org/pdf/2611.03962)
+
 - **Doubly Robust Proxy Causal Learning with Neural Mean Embeddings**  
   Bariscan Bozkurt, Alexandre Galashov, Dimitri Meunier, Zikai Shen, Arthur Gretton, ***Houssam Zenati***.  
   *Preprint*, 2026.  

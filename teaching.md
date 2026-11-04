@@ -34,6 +34,7 @@ I have been fortunate to co-supervise and mentor students on research projects:
     - *Work in progress.*
 
 - [**Bariscan Bozkurt**](https://scholar.google.com/citations?user=bxD9hhUAAAAJ&hl=en) (PhD student, co-supervision, with [Arthur Gretton](https://www.gatsby.ucl.ac.uk/~gretton/), 2026)
+    - [Sampling Interventional Distributions with Orthogonal MMD Flow](https://arxiv.org/pdf/2611.03962) — *Preprint, 2026*.
     - [Doubly Robust Proxy Causal Learning with Neural Mean Embeddings](https://arxiv.org/abs/2605.09514) — *Preprint, 2026*.
 
 - [**Sofiane Tanji**](https://sofianetanji.com/) (PhD student, co-supervision, with [Yassine Laguel](https://yassine-laguel.github.io/), 2026)
