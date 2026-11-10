@@ -6,7 +6,7 @@ permalink: /talks/
 
 ## Selected talks
 
-- **Interventional Mean Embeddings for Distributional Causal Inference**, London School of Economics, London, United Kingdom, 9 November 2026. [[Slides]]({{ "/assets/slides/ime-2026-11-lse.pdf" | relative_url }})
+- **Interventional Mean Embeddings for Distributional Causal Inference**, London School of Economics, London, United Kingdom, November 2026. [[Slides]]({{ "/assets/slides/ime-2026-11-lse.pdf" | relative_url }})
 
 - **Doubly-Robust Estimation of Counterfactual Policy Mean Embeddings**, Symposium on Mathematical Foundations of Trustworthy Learning, Monte Verità, Ascona, Switzerland, October 2025. [[Slides]]({{ "/assets/slides/T15-2025-10-monte-verita-dr-cpme.pdf" | relative_url }})
 
@@ -26,7 +26,7 @@ permalink: /talks/
 
 ## All talks
 
-- **Interventional Mean Embeddings for Distributional Causal Inference**, London School of Economics, London, United Kingdom, 9 November 2026. [[Slides]]({{ "/assets/slides/ime-2026-11-lse.pdf" | relative_url }})
+- **Interventional Mean Embeddings for Distributional Causal Inference**, London School of Economics, London, United Kingdom, November 2026. [[Slides]]({{ "/assets/slides/ime-2026-11-lse.pdf" | relative_url }})
 
 - **Interventional Mean Embeddings for Distributional Causal Inference**, Gatsby Unit, UCL, London, United Kingdom, October 2026. [[Slides]]({{ "/assets/slides/ime-2026-handout.pdf" | relative_url }})
 
